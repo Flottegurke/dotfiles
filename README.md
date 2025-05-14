@@ -141,8 +141,40 @@ To not have to wait 5 seconds for grub to autostart Arch, you can change the tim
 Then type `sudo grub-mkconfig -o /boot/grub/grub.cfg` to reload the grub coniguration
 
 
-### 2. Display manager customisation
-Instead of using `gdm` (the default GNOME welcome screen) i want to use [jy](https://github.com/fairyglade/ly). Changing the Displax mannager can be done like tjis:
+### 2. cloning dotfiles and installing stow
+Before we can start customising the new installation further, we should download stow and the dotfiles.
+
+For this we should firstly setup git.
+> [!NOTE]
+>  This is ownly important for people that want to be able to push into the dotfiles directory, so if you do not want to, just execute `git clone https://github.com/Flottegurke/dotfiles` and skip the rest of the git setup steps.
+
+#### Seting up Git
+To setup git, execute:
+```shell
+git config --global user.name "<yourUsername>"
+git config --global user.email "<your.email@example.com>"
+``` 
+If you have not already donne sow, create a ssh.key like this:
+```shell
+ssh-keygen -t ed25519 -C "<your_email@example.com>"
+```
+And then add it in your github account under `Settings/SSh and GPT keys`
+
+
+Now, you can finaly clone the git repo:
+```shell
+cd ~/.config
+git clone git@github.com:Flottegurke/dotfiles.git
+```
+### Installing stow
+After that, i think it is time to install stow: `pacman -S stow`
+
+
+### 3. Display manager customisation
+Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](https://github.com/fairyglade/ly). Changing the Displax mannager can be done like this:
 1. install ly: `pacman -S ly`
 2. uninstall gdm: `sudo pacman -Rns gdm`
 3. enable ly: `sudo systemctl enable ly.service`
+4. remove old configuration file: `sudo rm /etc/ly/config.ini`
+5. add preconfigured file from dotfiles repo: `sudo stow --target=/etc ly`
+6. if you now reload the Display Menager, you should see the custom config: `sudo systemctl reload ly.service`
