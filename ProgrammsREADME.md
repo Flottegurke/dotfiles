@@ -1,0 +1,30 @@
+# ProgrammsREADME
+This is a file with all programm i reccomend installing
+
+## Utility Programms
+### Utility programms which need no additionally configuration 
+| Name | Installer | description | web-app | wayland/x11 |
+|------|-----------|-------------|---------|-------------|
+| playerctl | pacman (playerctl) | used to controll media playing via cli (and the function keys due to keybindings) | - | - |
+| wl-clipboard | pacman (wl-clipboard) | provided clipboar acces to the cli | - | - |
+| hyprpicker| pacman (hyprpickeer) requires: pacman (wl-clipboard) | used to pic colous from the screen | no | wayland |
+| xdg-desktop-portal-hyprland | pacman (pacman xdg-desktop-portal-hyprland) | lets other applications communicate with the compositor through D-Bus | - | wayland |
+| hyprpolkitagent | pacman (hyprpolkitagent) | used by GUI programms to ask for root privileges | no | wayland |
+| hyprland-qt-support | pacman (hyprland-qt-support) | fixes the behaviour of QT based programms | no | wayland |
+| hyprland-qtutils | pacman (hyprland-qtutils) | additional qt fixes and qt-popup styling | - | wayland |
+| qt6-wayland | pacman (qt6-wayland) | runns qt6 apps on wayland | - | wayland |
+| qt5-wayland | pacman (qt5-wayland) | runns qt5 apps on wayland | - | wayland |
+| ttf-font-awesome | pacmsn (ttf-font-awesome) | the font waybar needs for special characters | - | - |
+| hyprshot | yay (hyprshot) | programm to take screenshots | no | wayland |
+| swaync | pacman (swaync) | notofication deamon | no | wayland |
+|	brightnessctl | pacman(brightnessctl) | used to change displax brightnes on the CLI | - | - |
+| Neofetch | pacman (neofetch) | used to display basic system information | - | - |
+
+
+### Utility programms which need additionally configuration 
+| Name | Installer | description | web-app | wayland/x11 |
+|------|-----------|-------------|---------|-------------|
+| ly | pacman (ly) | Display Manager (connonly known as Login mannager, or Welcome screen) | no | wayland |
+| hyprlock | pacman (hyprlock) | used to lock the screen | no | wayland | 
+| hypridle | pacman (hypridle) requires: pacman (hyprlock) | used to idel the screen after timeout with no activity | no | wayland |
+| waybar | pacman (waybar) | the status bar | no | wayland |
