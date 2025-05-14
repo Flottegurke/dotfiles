@@ -135,7 +135,14 @@ After then logging in into your account, and restarting the PC, averything shoul
 ## OS - Configuration
 This is a short explenation on how to apply the dotfiles, and further optimise the PC.
 
-### GRUB optimisations
+### 1. GRUB optimisations
 To not have to wait 5 seconds for grub to autostart Arch, you can change the timeout by edditing the grub configuration file (`sudo nano /etc/default/grub`) and setting the `GRUB_TIMEOUT` to somthing like `2` seconds.
 
 Then type `sudo grub-mkconfig -o /boot/grub/grub.cfg` to reload the grub coniguration
+
+
+### 2. Display manager customisation
+Instead of using `gdm` (the default GNOME welcome screen) i want to use [jy](https://github.com/fairyglade/ly). Changing the Displax mannager can be done like tjis:
+1. install ly: `pacman -S ly`
+2. uninstall gdm: `sudo pacman -Rns gdm`
+3. enable ly: `sudo systemctl enable ly.service`
