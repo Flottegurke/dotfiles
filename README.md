@@ -178,3 +178,7 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 4. remove old configuration file: `sudo rm /etc/ly/config.ini`
 5. add preconfigured file from dotfiles repo: `sudo stow --target=/etc ly`
 6. if you now reload the Display Menager, you should see the custom config: `sudo systemctl reload ly.service`
+
+### 4. installing utility programms
+Now is a good time to install all kinds of utility programms, which some other programms and shortcuts need to function, especially all [utility programms, which need no additionally configuration](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsREADME.md#utility-programms-which-need-no-additionally-configuration). 
+I suggest you go throug all of these programms mannualy and resolve anny errors that might appear.
