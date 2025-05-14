@@ -137,3 +137,5 @@ This is a short explenation on how to apply the dotfiles, and further optimise t
 
 ### GRUB optimisations
 To not have to wait 5 seconds for grub to autostart Arch, you can change the timeout by edditing the grub configuration file (`sudo nano /etc/default/grub`) and setting the `GRUB_TIMEOUT` to somthing like `2` seconds.
+
+Then type `sudo grub-mkconfig -o /boot/grub/grub.cfg` to reload the grub coniguration
