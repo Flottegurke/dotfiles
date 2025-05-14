@@ -3,7 +3,7 @@ This repo contains all my dotfiles, which can be applyed using [GNU Stow](https:
 
 I am using arch-linux with Hyprland (a dynamic tiling Wayland compositor (window manager))
 
-# OS - Setup
+## OS - Setup
 This is a short description on how to setup arch-linux
 > [!CAUTION]
 > This installation description is a quickinstall guide, for users that are already a bit fammiliar with arch.
@@ -130,3 +130,10 @@ After the restart, you will see GRUB and after 5 seconds, it will boot into linu
 
 If, now a kernal pannic (Blue screen) appears, restart the computer and select `Advanced options for Arch Linux` and then `Save/Faalback mode`.
 After then logging in into your account, and restarting the PC, averything should now work normaly.
+
+
+## OS - Configuration
+This is a short explenation on how to apply the dotfiles, and further optimise the PC.
+
+### GRUB optimisations
+To not have to wait 5 seconds for grub to autostart Arch, you can change the timeout by edditing the grub configuration file (`sudo nano /etc/default/grub`) and setting the `GRUB_TIMEOUT` to somthing like `2` seconds.
