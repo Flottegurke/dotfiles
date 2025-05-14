@@ -140,8 +140,16 @@ To not have to wait 5 seconds for grub to autostart Arch, you can change the tim
 
 Then type `sudo grub-mkconfig -o /boot/grub/grub.cfg` to reload the grub coniguration
 
+### 2. Installing and lounching Hyprland
+Install Hyprland by executing: `pacman -S hyprland`.
 
-### 2. cloning dotfiles and installing stow
+It is also bennefitial to also instal the default terminal emulator and programm louncher of hyprland:
+```shell
+pacman -S kitty wofi
+```
+
+
+### 3. cloning dotfiles and installing stow
 Before we can start customising the new installation further, we should download stow and the dotfiles.
 
 For this we should firstly setup git.
@@ -170,7 +178,7 @@ git clone git@github.com:Flottegurke/dotfiles.git
 After that, i think it is time to install stow: `pacman -S stow`
 
 
-### 3. Display manager customisation
+### 4. Display manager customisation
 Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](https://github.com/fairyglade/ly). Changing the Displax mannager can be done like this:
 1. install ly: `pacman -S ly`
 2. uninstall gdm: `sudo pacman -Rns gdm`
@@ -179,6 +187,7 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 5. add preconfigured file from dotfiles repo: `sudo stow --target=/etc ly`
 6. if you now reload the Display Menager, you should see the custom config: `sudo systemctl reload ly.service`
 
-### 4. installing utility programms
+
+### 5. installing utility programms
 Now is a good time to install all kinds of utility programms, which some other programms and shortcuts need to function, especially all [utility programms, which need no additionally configuration](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsREADME.md#utility-programms-which-need-no-additionally-configuration). 
 I suggest you go throug all of these programms mannualy and resolve anny errors that might appear.
