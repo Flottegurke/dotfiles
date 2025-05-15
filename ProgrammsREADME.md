@@ -19,6 +19,7 @@ This is a file with all programm i reccomend installing
 | swaync | pacman (swaync) | notofication deamon | no | wayland |
 | hyprpolkitagent | pacman (hyprpolkitagent) | used by GUI programms to ask for root privileges | no | wayland |
 | ttf-cascadia nerd fond | pacman (ttf-cascadia-code-nerd) | used by starship for icons | - | - |
+| htop | pacman )htop) | used to moniitor system reyources is the cli  | - | - |
 
 
 ### Utility programms which need additionally configuration 
