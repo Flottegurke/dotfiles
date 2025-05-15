@@ -21,7 +21,7 @@ This is a file with all programm i reccomend installing
 | ttf-cascadia nerd fond | pacman (ttf-cascadia-code-nerd) | used by starship for icons | - | - |
 | htop | pacman (htop) | used to moniitor system reyources is the cli  | - | - |
 | stow | pacman (stow) | used to chreate and mannage simlinking files (usually for dotfiles) | - | - |
-
+| pavucontrol | pacman (pavucontrol) | used to controll the audio via a GUI | no | wayland |
 
 
 ### Utility programms which need additionally configuration 
