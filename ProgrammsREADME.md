@@ -25,6 +25,7 @@ This is a file with all programm i reccomend installing
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
 | ly | pacman (ly) | Display Manager (connonly known as Login mannager, or Welcome screen) | no | wayland |
+| starship | pacman (starship) | Used to style the promt of consoles | no | wayland |
 | hyprlock | pacman (hyprlock) | used to lock the screen | no | wayland | 
 | hypridle | pacman (hypridle) requires: pacman (hyprlock) | used to idel the screen after timeout with no activity | no | wayland |
 | waybar | pacman (waybar) | the status bar | no | wayland |
