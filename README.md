@@ -23,6 +23,7 @@ It is also bennefitial to also instal the default terminal emulator and programm
 ```shell
 pacman -S kitty wofi
 ```
+Before proceeding, you can now log out, and log in, this time with HYPRLAND.
 
 
 ### 3. cloning dotfiles and installing stow
@@ -50,11 +51,30 @@ Now, you can finaly clone the git repo:
 cd ~/.config
 git clone git@github.com:Flottegurke/dotfiles.git
 ```
-### Installing stow
+> [!IMPORTANT]
+> It is inportant to ownly clone the dotfiles repo into the `~/.onfig` folder.
+> `stow` won't use the right target root directory if this is not donne.
+
+#### Installing stow
 After that, i think it is time to install stow: `pacman -S stow`
 
+### 4. installing utility programms
+Now is a good time to install all kinds of utility programms, which some other programms and shortcuts need to function, especially all [utility programms, which need no additionally configuration](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsREADME.md#utility-programms-which-need-no-additionally-configuration). 
+I suggest you go throug all of these programms mannualy and resolve anny errors that might appear.
 
-### 4. Display manager customisation
+
+### 5. Applying hyprland dotfiles
+1. To apply the hyprland config, the old one needs to get semooved first: `rm ~/.config/hypr/hyprland.conf`
+2. Now, make shure the `/hyp` directory is filly empty: `ls ~/.config/hypr/`-
+3. Finnaly, the hyprland dotfiles can be imported: `stow hyprland`
+> [!NOTE]
+>  all `stow` command sneed to get executed in the root directory of the `dotfiles` repo:
+> ```shell
+> cd ~/.config/dotfiles
+> ```
+
+
+### 6. Display manager customisation
 Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](https://github.com/fairyglade/ly). Changing the Displax mannager can be done like this:
 1. install ly: `pacman -S ly`
 2. uninstall gdm: `sudo pacman -Rns gdm`
@@ -64,11 +84,7 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 6. if you now reload the Display Menager, you should see the custom config: `sudo systemctl reload ly.service`
 
 
-### 5. installing utility programms
-Now is a good time to install all kinds of utility programms, which some other programms and shortcuts need to function, especially all [utility programms, which need no additionally configuration](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsREADME.md#utility-programms-which-need-no-additionally-configuration). 
-I suggest you go throug all of these programms mannualy and resolve anny errors that might appear.
-
-### 6. Setting up the console (kitty)
+### 7. Setting up the console (kitty)
 #### 1. Styling
    1. Start of by downloading starship: `sudo pacman -S starship`.
    2. Then just stow the config files for kitty `stow kitty` and for starship `stow starship`.
