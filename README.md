@@ -78,4 +78,17 @@ I suggest you go throug all of these programms mannualy and resolve anny errors 
 #### 2. Bat
    1. Now we are going to set up bat: `sudo pacman -S bat`
    2. then just `stow bat` to apply the custom config
-   
+#### 3. fzf
+   1. download fzf: `pacman -S fzf`.
+   2. inside the `.bashrc` file: add
+      ```shell
+      # Set up fzf key bindings and fuzzy completion
+      eval "$(fzf --bash)"
+      ```
+   3. you can also chreate some usefull aliases loike this:
+      ```shell
+      alias fzf='fzf --preview="bat --color=always --line-range 0:500 {}"'
+      alias fzfo='nano $(fzf)'
+      ```
+      to always search with preview,
+   4. Finaly `source .bashrc` to apply the changes.
