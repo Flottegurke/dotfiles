@@ -1,4 +1,4 @@
-# ProgrammsREADME
+# ProgrammsReadme
 This is a file with all programm i reccomend installing
 
 ## Utility Programms
