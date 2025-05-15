@@ -13,7 +13,6 @@ This is a file with all programm i reccomend installing
 | hyprland-qtutils | pacman (hyprland-qtutils) | additional qt fixes and qt-popup styling | - | wayland |
 | qt6-wayland | pacman (qt6-wayland) | runns qt6 apps on wayland | - | wayland |
 | qt5-wayland | pacman (qt5-wayland) | runns qt5 apps on wayland | - | wayland |
-| ttf-font-awesome | pacmsn (ttf-font-awesome) | the font waybar needs for special characters | - | - |
 | hyprshot | yay (hyprshot) | programm to take screenshots | no | wayland |
 |	brightnessctl | pacman(brightnessctl) | used to change displax brightnes on the CLI | - | - |
 | Neofetch | pacman (neofetch) | used to display basic system information | - | - |
