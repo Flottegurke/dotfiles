@@ -191,3 +191,11 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 ### 5. installing utility programms
 Now is a good time to install all kinds of utility programms, which some other programms and shortcuts need to function, especially all [utility programms, which need no additionally configuration](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsREADME.md#utility-programms-which-need-no-additionally-configuration). 
 I suggest you go throug all of these programms mannualy and resolve anny errors that might appear.
+
+### 6. Styling the console (kitty)
+1. Start of by downloading starship: `sudo pacman -S starship`.
+2. Then just stow the config files for kitty `stow kitty` and for starship `stow starship`.
+3. now you need to add `eval "$(starship init bash)"` into your `~/.bashrc` file.
+4. once you source the `~/.bashrc` file the new promt shoudl appear.
+5. also make shure you installed the 	ttf-cascadia-code nerd fonts, in step `5. installing utility programms`, otherwise, the symbols will look wired.
+
