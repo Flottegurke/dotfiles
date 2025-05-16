@@ -1,0 +1,114 @@
+{
+    "position": "top",
+    "modules-left": ["hyprland/workspaces", "cpu", "custom/combinedTemperature"],
+
+    "cpu": {
+        "interval": 10,
+        "format": "   {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "format-icons": [
+            "<span color='#a6e3a1'>▁</span>", // green
+            "<span color='#cfeedb'>▂</span>", // blue
+            "<span color='#eff8e0'>▃</span>", // white
+            "<span color='#f8e5cf'>▄</span>", // white-yelllow
+            "<span color='#f9e2af'>▅</span>", // yellow
+            "<span color='#facdab'>▆</span>", // yellow
+            "<span color='#fab387'>▇</span>", // orange
+            "<span color='#f38ba8'>█</span>"  // red
+        ],
+        "on-click": "gnome-system-monitor -r"
+    },
+
+
+    "modules-center": ["systemd-failed-units", "hyprland/window"],
+
+    "systemd-failed-units": {
+        "hide-on-ok": true, // Hide if there is zero failed units.
+        "format": "<b>  {nr_failed} systemd units failed  </b>",
+        "system": true, // Monitor failed systemwide units.
+        "user": false, // Ignore failed user units.
+    },
+
+
+
+    "modules-right": ["pulseaudio", "backlight", "custom/network", "battery", "clock"],
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "{icon}  Muted",
+        "format-bluetooth": "{icon}󰂯 {volume}% ",
+        "format-icons": {
+            "default": ["", "", " "],
+            "default-muted": " ",
+            "headphone": "󰋋 ",
+            "headphone-muted" : "󰟎 ",
+            "headset": "󰋎 ",
+            "headset-muted": "󰋐 ",
+            "phone": [" ", "󰏶 "],
+            "phone-muted": " ",
+            "portable": [" ", "󰏶 "],
+            "prtable-muted": " ",
+            "car": " ",
+            "car-muted": "󰸜 "
+        },
+        "tooltip-format": "Device: {desc}",
+        "scroll-step": 2,
+        "reverse-scrolling": true,
+        "smooth-scrolling-threshold": 1,
+        "on-click": "pavucontrol"
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}  {percent}% ",
+        "format-icons": ["󰹐 ", "󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󱩖 ", "󰛨 "],
+        "reverse-scrolling": true,
+        "scroll-step": 5,
+        "smooth-scrolling-threshold": 1
+
+    },
+
+    "custom/network": {
+        "exec": "~/.config/waybar/scripts/CustomNetworkData.sh",
+        "return-type": "json",
+        "interval": 30,
+        "format": "{}",
+        "on-click": "~/.config/waybar/scripts/CustomNetworkData.sh && kitty -e nmtui",
+        "on-click-middle": "~/.config/waybar/scripts/CustomNetworkData.sh",
+        "on-click-right": "~/.config/waybar/scripts/CustomNetworkData.sh"
+        
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span size='13000'>{icon}</span> {capacity}%",
+        "format-warning": "<span size='13000' foreground='#f38ba8'>{icon} </span> {capacity}%",
+        "format-critical": "<span size='13000' foreground='#fab387'>{icon} </span> {capacity}%",
+        "format-charging": "<span size='13000'> </span>{capacity}%",
+        "format-plugged": "<span size='13000'> </span>{capacity}%",
+        "format-alt": "<span size='13000'>{icon} </span> {time}",
+        "format-full": "<span size='13000'>󰋔 </span>{capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "tooltip-format": "Current: {timeTo}\n\nHealth: {health}%\nCycles(linux): {cycles}",
+        "on-click": null
+    },
+
+
+    "custom/combinedTemperature": {
+        "exec": "~/.config/waybar/scripts/CombinedTemperature.sh",
+        "return-type": "json",
+        "interval": 30,
+        "on-click": "~/.config/waybar/scripts/CombinedTemperature.sh",
+        "on-click-middle": "~/.config/waybar/scripts/CombinedTemperature.sh",
+        "on-click-right": "~/.config/waybar/scripts/CombinedTemperature.sh"
+    },
+
+
+    "clock": {
+        "format": "   {:%H:%M  %a %b %d}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    }
+}
+ 
