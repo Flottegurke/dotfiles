@@ -24,6 +24,7 @@ This is a file with all programm i reccomend installing
 | pavucontrol | pacman (pavucontrol) | used to controll the audio via a GUI | no | wayland |
 | hyprgraphics | pacman (hyprgraphics) | enables finer controll over graphics | - | - |
 | nmtui | pacman (networkmanager) | provids a TUI for network mannagement | - | - |
+| bc | pacman (bc) | precision calculation library (used to calculate component temperatures in custom script) | - | - |
 
 
 ### Utility programms which need additionally configuration 
