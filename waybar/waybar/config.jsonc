@@ -1,10 +1,10 @@
 {
     "position": "top",
-    "modules-left": ["hyprland/workspaces", "cpu", "custom/combinedTemperature"],
+    "modules-left": ["hyprland/workspaces", "cpu", "custom/combinedTemperature", "idle_inhibitor", "mpris"],
 
     "cpu": {
-        "interval": 10,
-        "format": "   {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "interval": 1,
+        "format": "   {icon0}{icon4}{icon8}{icon11}",
         "format-icons": [
             "<span color='#a6e3a1'>▁</span>", // green
             "<span color='#cfeedb'>▂</span>", // blue
@@ -18,6 +18,48 @@
         "on-click": "gnome-system-monitor -r"
     },
 
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "  (Ideling inhibited)",
+            "deactivated": ""
+        },
+        "tooltip-format-deactivated": "Ideling:\n\n2.5min:  monitor brightnes reduced by 75%\n3min:     lock screen\n4min:     dpms (screen) off\n5min:     suspend pc",
+        "tooltip-format-activated": "Ideling inhibited"
+    },
+
+
+"mpris": {
+	"format": "{player_icon} {dynamic}",
+	"format-paused": "{status_icon} <i>{dynamic}</i>",
+	"player-icons": {
+		"default": " ",
+		"chromium": " ",
+                "discord": " ",
+                "signal": " ",
+                "brave": "󰗃 "
+	},
+	"status-icons": {
+		"paused": "",
+                "stopped": ""
+	},
+        "dynamic-order": "{title} {artist} {album} <small>[{position}/{length}]</small>",
+        "dynamic-separator": "  -  ",
+        "dynamic-importance-order": ["title", "position", "length", "album", "artist"],
+        "dynamic-len": 85,
+        "title-len": 50,
+        "artist-len": 20,
+        "album-len": 25,
+        "ellipsis": "…",
+        
+        "enable-tooltip-len-limits": false,
+        "tooltip-format": "Status: {status}\nSource: {player}\n\nTitle: {title}\nArtist: {artist}\nAlbum: {album}\nPosition: {position} from {length}",
+        //"tooltip-format-playing": "playing",
+        //"tooltip-format-paused": "paused",
+        //"tooltip-format-stopped": "stopped",
+	// "ignored-players": ["firefox"]
+},
+
 
     "modules-center": ["systemd-failed-units", "hyprland/window"],
 
@@ -30,7 +72,7 @@
 
 
 
-    "modules-right": ["pulseaudio", "backlight", "custom/network", "battery", "clock"],
+    "modules-right": ["pulseaudio", "backlight", "bluetooth", "custom/network", "battery", "clock", "group/group-power"],
 
     "pulseaudio": {
         "format": "{icon}  {volume}%",
@@ -63,8 +105,24 @@
         "format-icons": ["󰹐 ", "󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󱩖 ", "󰛨 "],
         "reverse-scrolling": true,
         "scroll-step": 5,
-        "smooth-scrolling-threshold": 1
+        "smooth-scrolling-threshold": 1,
+        "tooltip": false
 
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-on": " {status}",
+        "format-disabled": "󰂲 {status}",
+        "format-off": "󰂲 {status}",
+        "format-connected": "󰂰  {device_alias}",
+        "format-connected-battery": "󰂰  {device_alias} ({device_battery_percentage}%)",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueberry"
     },
 
     "custom/network": {
@@ -100,15 +158,17 @@
         "exec": "~/.config/waybar/scripts/CombinedTemperature.sh",
         "return-type": "json",
         "interval": 30,
-        "on-click": "~/.config/waybar/scripts/CombinedTemperature.sh",
+        "on-click": "~/.config/waybar/scripts/CombinedTemperature.sh & gnome-system-monitor -p",
         "on-click-middle": "~/.config/waybar/scripts/CombinedTemperature.sh",
         "on-click-right": "~/.config/waybar/scripts/CombinedTemperature.sh"
     },
 
 
     "clock": {
-        "format": "   {:%H:%M  %a %b %d}",
-        "tooltip-format": "<tt>{calendar}</tt>"
+        "format": "   {:%H:%M  %a %d %b}",
+        "tooltip": true,
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "on-click": "gnome-calendar"
     }
 }
  

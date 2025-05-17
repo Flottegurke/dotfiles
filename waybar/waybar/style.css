@@ -50,7 +50,7 @@ button:hover {
     border-top: 2px solid @mauve;
 }
 
-c#workspaces button.urgent {
+#workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
@@ -69,6 +69,7 @@ c#workspaces button.urgent {
 #mode,
 #systemd-failed-units,
 #custom-combinedTemperature,
+#bluetooth,
 #scratchpad {
     margin-top: 2px;
     margin-bottom: 2px;
@@ -89,8 +90,8 @@ c#workspaces button.urgent {
 }
 
 #pulseaudio {
-    color: @sapphire;
-    border-bottom: 2px solid @sapphire;
+    color: @lavender;
+    border-bottom: 2px solid @lavender;
 }
 
 #network {
@@ -99,13 +100,24 @@ c#workspaces button.urgent {
 }
 
 #idle_inhibitor {
-    margin-right: 12px;
-    color: #7cb342;
+    color: @maroon;
+    border-bottom: 2px solid @maroon;
+
+
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 4px;
+    padding-right: 10px;
 }
 
 #idle_inhibitor.activated {
     color: @red;
+    border-bottom: 2px solid @red;
+    padding-right: 4px;
 }
+
 
 #battery {
     color: @green;
@@ -152,11 +164,20 @@ c#workspaces button.urgent {
     margin-right: 4px;
     padding-left: 4px;
     padding-right: 4px;
-    color: @green;
-    border-bottom: 2px solid @green;
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
 }
 
 #backlight {
-    color: @sky;
-    border-bottom: 2px solid @sky;
+    color: @blue;
+    border-bottom: 2px solid @blue;
+}
+
+#bluetooth {
+    color: @sapphire;
+    border-bottom: 2px solid @sapphire;
+}
+
+#mpris {
+   color: @mauve;
 }
