@@ -43,9 +43,9 @@
 		"paused": "",
                 "stopped": ""
 	},
-        "dynamic-order": "{title} {artist} {album} <small>[{position}/{length}]</small>",
+        "dynamic-order": "{title} {artist} {album}",
         "dynamic-separator": "  -  ",
-        "dynamic-importance-order": ["title", "position", "length", "album", "artist"],
+        "dynamic-importance-order": ["title", "album", "artist"],
         "dynamic-len": 85,
         "title-len": 50,
         "artist-len": 20,
@@ -54,9 +54,6 @@
         
         "enable-tooltip-len-limits": false,
         "tooltip-format": "Status: {status}\nSource: {player}\n\nTitle: {title}\nArtist: {artist}\nAlbum: {album}\nPosition: {position} from {length}",
-        //"tooltip-format-playing": "playing",
-        //"tooltip-format-paused": "paused",
-        //"tooltip-format-stopped": "stopped",
 	// "ignored-players": ["firefox"]
 },
 
