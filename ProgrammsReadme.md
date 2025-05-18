@@ -2,6 +2,8 @@
 This is a file with all programm i reccomend installing
 
 ## Utility Programms
+These programms provides some quallity of live improovements, for example by allowing color picking from the screen.
+
 ### Utility programms which need no additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
@@ -39,3 +41,9 @@ This is a file with all programm i reccomend installing
 | hyprlock | pacman (hyprlock) | used to lock the screen | no | wayland | 
 | hypridle | pacman (hypridle) requires: pacman (hyprlock) | used to idel the screen after timeout with no activity | no | wayland |
 | waybar | pacman (waybar) | the status bar | no | wayland |
+
+
+## General programms
+| Name | Installer | description | web-app | wayland/x11 |
+|------|-----------|-------------|---------|-------------|
+| Kdenlive | pacman (kdenlive) | no | wayland |
