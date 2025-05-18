@@ -24,7 +24,7 @@ This is a file with all programm i reccomend installing
 | pavucontrol | pacman (pavucontrol) | used to controll the audio via a GUI | no | wayland |
 | hyprgraphics | pacman (hyprgraphics) | enables finer controll over graphics | - | - |
 | nmtui | pacman (networkmanager) | provids a TUI for network mannagement | - | - |
-
+| cliphist | pacman (cliphist) | provides a clipboard hostory and preview | - | - |
 
 ### Utility programms which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
