@@ -26,6 +26,7 @@ This is a file with all programm i reccomend installing
 | nmtui | pacman (networkmanager) | provids a TUI for network mannagement | - | - |
 | cliphist | pacman (cliphist) | provides a clipboard hostory and preview | - | - |
 | Overskride | yay (overskride) | bluetooth mannager UI | - | - |
+| udiskie  | pacman (udiskie) | used to enable storrage mounting via cli (automaunts all disks) | - | - |
 
 ### Utility programms which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
