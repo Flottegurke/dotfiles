@@ -29,6 +29,7 @@ These programms provides some quallity of live improovements, for example by all
 | cliphist | pacman (cliphist) | provides a clipboard hostory and preview | - | - |
 | Overskride | yay (overskride) | bluetooth mannager UI | - | - |
 | udiskie  | pacman (udiskie) | used to enable storrage mounting via cli (automaunts all disks) | - | - |
+| catppuccin-gtk-theme-mocha-revamped | yay (catppuccin-gtk-theme-mocha-revamped) | catppuccin theme for gnome apps | - | wayland |
 
 ### Utility programms which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
@@ -41,7 +42,7 @@ These programms provides some quallity of live improovements, for example by all
 | waybar | pacman (waybar) | the status bar | no | wayland |
 | hyprlock | pacman (hyprlock) | used to lock the screen | no | wayland | 
 | hypridle | pacman (hypridle) requires: pacman (hyprlock) | used to idel the screen after timeout with no activity | no | wayland |
-
+| nwg-look | pacman (nwg-look) requires: yay (catppuccin-gtk-theme-mocha-revamped) | applyes custom styles gnome apps | no | wayland |
 
 
 ## General programms
