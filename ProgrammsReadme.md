@@ -25,6 +25,7 @@ This is a file with all programm i reccomend installing
 | hyprgraphics | pacman (hyprgraphics) | enables finer controll over graphics | - | - |
 | nmtui | pacman (networkmanager) | provids a TUI for network mannagement | - | - |
 | cliphist | pacman (cliphist) | provides a clipboard hostory and preview | - | - |
+| Overskride | yay (overskride) | bluetooth mannager UI | - | - |
 
 ### Utility programms which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
