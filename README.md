@@ -126,3 +126,12 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 ### 9. Setting up hyprlock
    1. install hyprlock `sudo pacman -S hyprlock`
    2. chreate config file simlink: `stow hyprlock`
+
+
+### 11. Styling gnome apps
+   1. make shure, you installed the `catppuccin-gtk-theme-mocha-revamped` theme from the [Utility programs which do no trquire setup](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsReadme.md#utility-programms-which-need-no-additionally-configuration) list.#
+   2. install `nwg-look`: `sudo pacman -S nwg-look`
+   3. open the app (for example by executing `nwg-look` in the terminal
+   4. choose the theme you like the most (I choose `catppuccin-mocha-sapphire-standard+default`)
+   5. choose the font you like (choose `CaskaydiaCove Nerd Font Propo SemiBold 11` (the 8th last CaskaydiaCove font)
+   6. klick `apply` and `exit`
