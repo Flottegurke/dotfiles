@@ -38,9 +38,10 @@ These programms provides some quallity of live improovements, for example by all
 | bat | pacman (bat) | used to display files (like cat but with syntax gihlighting + other cool stuf) | - | - |
 | fzf | pacman (fzf) | used to search files in the CLI | - | - |
 | zoxide | pacman (zoxide) | makes changing directorys easyer by weighting them | - | - |
+| waybar | pacman (waybar) | the status bar | no | wayland |
 | hyprlock | pacman (hyprlock) | used to lock the screen | no | wayland | 
 | hypridle | pacman (hypridle) requires: pacman (hyprlock) | used to idel the screen after timeout with no activity | no | wayland |
-| waybar | pacman (waybar) | the status bar | no | wayland |
+
 
 
 ## General programms
