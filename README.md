@@ -91,7 +91,7 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
    1. Start of by downloading starship: `sudo pacman -S starship`.
    2. Then just stow the config files for kitty `stow kitty` and for starship `stow starship`.
    3. now you need to add `eval "$(starship init bash)"` into your `~/.bashrc` file.
-   4. once you source the `~/.bashrc` file the new promt shoudl appear.
+   4. once you source the `~/.bashrc` file the new promt should appear: `source .bashrc`.
    5. also make shure you installed the 	ttf-cascadia-code nerd fonts, in step `5. installing utility programms`, otherwise, the symbols will look wired.
 #### 2. Bat
    1. Now we are going to set up bat: `sudo pacman -S bat`
@@ -110,6 +110,10 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
       ```
       to always search with preview,
    4. Finaly `source .bashrc` to apply the changes.
+#### 4. zoxide
+   1. download zoxide: `sudo pacman -S zoxide`
+   2. add `eval "$(zoxide init --cmd cd bash)"` to the `.bashrc` file.
+   5. source the `.bashrc` file: `source .bashrc`
 
 
 ### 8. Setting up waybar
