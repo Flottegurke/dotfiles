@@ -68,7 +68,7 @@ I suggest you go throug all of these programms mannualy and resolve anny errors 
 ### 5. Applying hyprland dotfiles
 1. To apply the hyprland config, the old one needs to get semooved first: `rm ~/.config/hypr/hyprland.conf`
 2. Now, make shure the `/hyp` directory is filly empty: `ls ~/.config/hypr/`-
-3. Finnaly, the hyprland dotfiles can be imported: `stow hyprland`
+3. Finnaly, the hyprland dotfiles can be imported: `stow hyprland` and `stow hyprmocha`
 > [!NOTE]
 >  all `stow` command sneed to get executed in the root directory of the `dotfiles` repo:
 > ```shell
@@ -135,3 +135,7 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
    4. choose the theme you like the most (I choose `catppuccin-mocha-sapphire-standard+default`)
    5. choose the font you like (choose `CaskaydiaCove Nerd Font Propo SemiBold 11` (the 8th last CaskaydiaCove font)
    6. klick `apply` and `exit`
+
+
+### 12. Styling wofi (application runner)
+   1. chreate simlinks: `stow wofi` - that's it
