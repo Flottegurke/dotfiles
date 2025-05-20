@@ -1,0 +1,15 @@
+configuration {
+    show-icons: true;
+
+    modes: [ combi ];
+    combi-modes: [ "window", "drun" ];
+
+    display-ssh:    "󰣀 ssh:";
+    display-run:    "󱓞 run:";
+    display-drun:   "󰣖 drun:";
+    display-window: "󱂬 window:";
+    display-combi:  "󱂬 window + 󰣖 drun:";
+    display-filebrowser: "󰉋 filebrowser:";
+}
+
+@theme "catppuccin-mocha.rasi"
