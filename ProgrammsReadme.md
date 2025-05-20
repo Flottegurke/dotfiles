@@ -35,6 +35,7 @@ These programms provides some quallity of live improovements, for example by all
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
 | ly | pacman (ly) | Display Manager (connonly known as Login mannager, or Welcome screen) | no | wayland |
+| kitty | pacman (kitty) | Console emmulator | no | wayland |
 | starship | pacman (starship) | Used to style the promt of consoles | no | wayland |
 | bat | pacman (bat) | used to display files (like cat but with syntax gihlighting + other cool stuf) | - | - |
 | fzf | pacman (fzf) | used to search files in the CLI | - | - |
@@ -43,6 +44,7 @@ These programms provides some quallity of live improovements, for example by all
 | hyprlock | pacman (hyprlock) | used to lock the screen | no | wayland | 
 | hypridle | pacman (hypridle) requires: pacman (hyprlock) | used to idel the screen after timeout with no activity | no | wayland |
 | nwg-look | pacman (nwg-look) requires: yay (catppuccin-gtk-theme-mocha-revamped) | applyes custom styles gnome apps | no | wayland |
+| rofi | pacman (rofi)| applicatino runner | no | wayland | 
 
 
 ## General programms
