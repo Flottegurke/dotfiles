@@ -44,7 +44,9 @@ These programms provides some quallity of live improovements, for example by all
 | hyprlock | pacman (hyprlock) | used to lock the screen | no | wayland | 
 | hypridle | pacman (hypridle) requires: pacman (hyprlock) | used to idel the screen after timeout with no activity | no | wayland |
 | nwg-look | pacman (nwg-look) requires: yay (catppuccin-gtk-theme-mocha-revamped) | applyes custom styles gnome apps | no | wayland |
-| rofi | pacman (rofi)| applicatino runner | no | wayland | 
+| rofi | pacman (rofi)| applicatino runner | no | wayland |
+| rofi-emoji | pacman (rofi-emoji) | rofi extension to select emojis | - | - |
+| rofi-calc | pacan (rofi-calc) | rofi extension to perofrm calculations | - | - |
 
 
 ## General programms
