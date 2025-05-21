@@ -32,6 +32,7 @@ These programms provides some quallity of live improovements, for example by all
 | udiskie  | pacman (udiskie) | used to enable storrage mounting via cli (automaunts all disks) | - | - |
 | catppuccin-gtk-theme-mocha-revamped | yay (catppuccin-gtk-theme-mocha-revamped) | catppuccin theme for gnome apps | - | wayland |
 | wtype | pacman (wtype) | used to simulate keyboard inputs (for example: insert emojis) | - | wayland |
+| koha | pacman (koha) | screen recorder | no | wayland |
 
 ### Utility programms which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
@@ -63,4 +64,3 @@ These programms provides some quallity of live improovements, for example by all
 | intellij-idea-ultimate-edition | yay (intellij-idea-ultimate-edition)  | IDE | no | wayland |
 | signal-desktop | pacman (signal-desktop) | chat programm | no | wayland |
 | tidal-hifi | pacman (tidal-hifi) | music player | no | wayland |
-
