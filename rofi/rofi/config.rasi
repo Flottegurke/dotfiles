@@ -1,8 +1,8 @@
 configuration {
     show-icons: true;
 
-    modes: [ combi ];
-    combi-modes: [ "window", "drun" ];
+    modes: ["drun", "combi", "emoji", "calc"];
+    combi-modes: ["window", "drun"];
 
     display-ssh:    "󰣀 ssh:";
     display-run:    "󱓞 run:";
@@ -10,6 +10,8 @@ configuration {
     display-window: "󱂬 window:";
     display-combi:  "󱂬 window + 󰣖 drun:";
     display-filebrowser: "󰉋 filebrowser:";
+    display-emoji: "󰱨 emoji:";
+    display-calc: " calc:";
 }
 
 @theme "catppuccin-mocha.rasi"
