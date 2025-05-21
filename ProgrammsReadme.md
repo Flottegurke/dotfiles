@@ -10,7 +10,7 @@ These programms provides some quallity of live improovements, for example by all
 | playerctl | pacman (playerctl) | used to controll media playing via cli (and the function keys due to keybindings) | - | - |
 | wl-clipboard | pacman (wl-clipboard) | provides clipboard acces to the cli | - | - |
 | hyprpicker| pacman (hyprpickeer) requires: pacman (wl-clipboard) | used to pic colours from the screen | no | wayland |
-| xdg-desktop-portal-hyprland | pacman (pacman xdg-desktop-portal-hyprland) | lets other applications communicate with the compositor through D-Bus | - | wayland |
+| xdg-desktop-portal-hyprland-git | pacman (yay xdg-desktop-portal-hyprland-git) | lets other applications communicate with the compositor through D-Bus | - | wayland |
 | hyprland-qt-support | pacman (hyprland-qt-support) | fixes the behaviour of QT based programms | no | wayland |
 | hyprland-qtutils | pacman (hyprland-qtutils) | additional qt fixes and qt-popup styling | - | wayland |
 | qt6-wayland | pacman (qt6-wayland) | runns qt6 apps on wayland | - | wayland |
