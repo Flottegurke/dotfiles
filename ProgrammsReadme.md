@@ -32,7 +32,7 @@ These programms provides some quallity of live improovements, for example by all
 | udiskie  | pacman (udiskie) | used to enable storrage mounting via cli (automaunts all disks) | - | - |
 | catppuccin-gtk-theme-mocha-revamped | yay (catppuccin-gtk-theme-mocha-revamped) | catppuccin theme for gnome apps | - | wayland |
 | wtype | pacman (wtype) | used to simulate keyboard inputs (for example: insert emojis) | - | wayland |
-| koha | pacman (koha) | screen recorder | no | wayland |
+| kooha | pacman (kooha) | screen recorder | no | wayland |
 
 ### Utility programms which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
