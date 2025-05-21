@@ -54,3 +54,4 @@ These programms provides some quallity of live improovements, for example by all
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
 | Kdenlive | pacman (kdenlive) | video editor | no | wayland |
+| Thunderbird | pacman (thunderbird) | Mail mamnager | no | -- | 
