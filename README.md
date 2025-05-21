@@ -90,7 +90,13 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 3. enable ly: `sudo systemctl enable ly.service`
 4. remove old configuration file: `sudo rm /etc/ly/config.ini`
 5. add preconfigured file from dotfiles repo: `sudo stow --target=/etc ly`
-6. if you now reload the Display Menager, you should see the custom config: `sudo systemctl reload ly.service`
+6. open `/etc/pam.d/login` and add
+   ```shell
+   auth       optional     pam_gnome_keyring.so
+   session    optional     pam_gnome_keyring.so auto_start
+   ```
+   this will unlock keyring automaticaly on bootup.
+8. if you now reload the Display Menager, you should see the custom config: `sudo systemctl reload ly.service`
 
 
 ### 7. Setting up the console (kitty)
