@@ -145,4 +145,5 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 
 
 ### 12. Styling rofi (application runner)
-   1. chreate simlinks: `stow rofi` - that's it
+   1. chreate simlinks: `stow rofi`
+   2. install `rofi-emoji` and `rofi-calc`
