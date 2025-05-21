@@ -7,6 +7,7 @@ These programms provides some quallity of live improovements, for example by all
 ### Utility programms which need no additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
+| yay | pacman (yay) | unoffition package downloader | - | - |
 | playerctl | pacman (playerctl) | used to controll media playing via cli (and the function keys due to keybindings) | - | - |
 | wl-clipboard | pacman (wl-clipboard) | provides clipboard acces to the cli | - | - |
 | hyprpicker| pacman (hyprpickeer) requires: pacman (wl-clipboard) | used to pic colours from the screen | no | wayland |
@@ -53,5 +54,13 @@ These programms provides some quallity of live improovements, for example by all
 ## General programms
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
-| Kdenlive | pacman (kdenlive) | video editor | no | wayland |
-| Thunderbird | pacman (thunderbird) | Mail mamnager | no | -- | 
+| brave-bin | pacman (brave-bin) | browser | no | x11 |
+| kdenlive | pacman (kdenlive) | video editor | no | wayland |
+| thunderbird | pacman (thunderbird) | Mail mamnager | no | -- | 
+| gimp | pacman (gimp) | immage editor | no | wayland |
+| discord | pacman (discord) | chat programm | no | wayland |
+| htop | pacman (htop) | resource monitor (tui) | - | - |
+| intellij-idea-ultimate-edition | yay (intellij-idea-ultimate-edition)  | IDE | no | wayland |
+| signal-desktop | pacman (signal-desktop) | chat programm | no | wayland |
+| tidal-hifi | pacman (tidal-hifi) | music player | no | wayland |
+
