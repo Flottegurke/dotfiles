@@ -30,6 +30,7 @@ These programms provides some quallity of live improovements, for example by all
 | Overskride | yay (overskride) | bluetooth mannager UI | - | - |
 | udiskie  | pacman (udiskie) | used to enable storrage mounting via cli (automaunts all disks) | - | - |
 | catppuccin-gtk-theme-mocha-revamped | yay (catppuccin-gtk-theme-mocha-revamped) | catppuccin theme for gnome apps | - | wayland |
+| wtype | pacman (wtype) | used to simulate keyboard inputs (for example: insert emojis) | - | wayland |
 
 ### Utility programms which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
@@ -45,7 +46,7 @@ These programms provides some quallity of live improovements, for example by all
 | hypridle | pacman (hypridle) requires: pacman (hyprlock) | used to idel the screen after timeout with no activity | no | wayland |
 | nwg-look | pacman (nwg-look) requires: yay (catppuccin-gtk-theme-mocha-revamped) | applyes custom styles gnome apps | no | wayland |
 | rofi | pacman (rofi)| applicatino runner | no | wayland |
-| rofi-emoji | pacman (rofi-emoji) | rofi extension to select emojis | - | - |
+| rofi-emoji | pacman (rofi-emoji) requires: wtype | rofi extension to select emojis | - | - |
 | rofi-calc | pacan (rofi-calc) | rofi extension to perofrm calculations | - | - |
 
 
