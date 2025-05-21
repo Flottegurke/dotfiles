@@ -141,7 +141,7 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
    2. install `nwg-look`: `sudo pacman -S nwg-look`
    3. open the app (for example by executing `nwg-look` in the terminal
    4. choose the theme you like the most (I choose `catppuccin-mocha-sapphire-standard+default`)
-   5. choose the font you like (choose `CaskaydiaCove Nerd Font Propo SemiBold 11` (the 8th last CaskaydiaCove font)
+   5. choose the font you like (choose `CaskaydiaCove Nerd Font Regular 11`)
    6. klick `apply` and `exit`
 
 
