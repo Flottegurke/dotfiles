@@ -114,6 +114,7 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
       ```shell
       alias fzf='fzf --preview="bat --color=always --line-range 0:500 {}"'
       alias fzfo='nano $(fzf)'
+      alias fzfc='fzf | wl-copy'
       ```
       to always search with preview,
    4. Finaly `source .bashrc` to apply the changes.
