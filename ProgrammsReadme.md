@@ -33,6 +33,8 @@ These programms provides some quallity of live improovements, for example by all
 | catppuccin-gtk-theme-mocha-revamped | yay (catppuccin-gtk-theme-mocha-revamped) | catppuccin theme for gnome apps | - | wayland |
 | wtype | pacman (wtype) | used to simulate keyboard inputs (for example: insert emojis) | - | wayland |
 | kooha | pacman (kooha) | screen recorder | no | wayland |
+| dnsmasq | pacman (dnsmasq) | handles various DNS tasks | - | - |
+| wihotspot | pacman (linux-wifi-hotspot-bin) requires: dnsmasq | GUI for creating hotspots | no | wayland |
 
 ### Utility programms which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
