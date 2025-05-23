@@ -154,3 +154,9 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 ### 12. Styling rofi (application runner)
    1. chreate simlinks: `stow rofi`
    2. install `rofi-emoji` and `rofi-calc`
+
+### 13. Setting up immage to text (ocr)
+   1. install tesseract: `sudo pacman -S tesseract`
+   2. make shure all 3 language datasets (English, German, French) are correctly installed: `tesseract --list-langs`
+   3. change customScript permissions: `sudo chmod +x ~/.config/hypr/scripts/ocrClipboard.sh` 
+   
