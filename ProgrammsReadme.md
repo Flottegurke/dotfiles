@@ -35,6 +35,10 @@ These programms provides some quallity of live improovements, for example by all
 | kooha | pacman (kooha) | screen recorder | no | wayland |
 | dnsmasq | pacman (dnsmasq) | handles various DNS tasks | - | - |
 | wihotspot | pacman (linux-wifi-hotspot-bin) requires: dnsmasq | GUI for creating hotspots | no | wayland |
+| tesseract-data-eng | pacman (tesseract-data-eng) | tesseract english language dataset | - | - |
+| tesseract-data-deu | pacman (tesseract-data-deu) | tesseract german language dataset | - | - |
+| tesseract-data-fra | pacman (tesseract-data-fra) | tesseract french language dataset | - | - |
+
 
 ### Utility programms which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
@@ -52,6 +56,7 @@ These programms provides some quallity of live improovements, for example by all
 | rofi | pacman (rofi)| applicatino runner | no | wayland |
 | rofi-emoji | pacman (rofi-emoji) requires: wtype | rofi extension to select emojis | - | - |
 | rofi-calc | pacan (rofi-calc) | rofi extension to perofrm calculations | - | - |
+| tesseract | pacman (tesseract) | cli tool for immage to text (ocd) converison | - | - |
 
 
 ## General programms
