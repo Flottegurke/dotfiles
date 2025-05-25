@@ -38,6 +38,7 @@ These programms provides some quallity of live improovements, for example by all
 | tesseract-data-eng | pacman (tesseract-data-eng) | tesseract english language dataset | - | - |
 | tesseract-data-deu | pacman (tesseract-data-deu) | tesseract german language dataset | - | - |
 | tesseract-data-fra | pacman (tesseract-data-fra) | tesseract french language dataset | - | - |
+| socat | pacman (socat) | port utility (functions and listeners) | - | - |
 
 
 ### Utility programms which need additionally configuration 
