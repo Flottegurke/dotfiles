@@ -143,6 +143,11 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
    2. chreate config file simlink: `stow hyprlock`
 
 
+### 10. Configuring hypridle
+   1. install `hpridle`: `sudo pacman -S hypridle`
+   2. apply dotfiles: `stow hypridle`
+
+
 ### 11. Styling gnome apps
    1. make shure, you installed the `catppuccin-gtk-theme-mocha-revamped` theme from the [Utility programs which do no trquire setup](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsReadme.md#utility-programms-which-need-no-additionally-configuration) list.#
    2. install `nwg-look`: `sudo pacman -S nwg-look`
