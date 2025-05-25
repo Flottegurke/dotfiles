@@ -9,3 +9,4 @@ sudo stow --target=/etc ly
 sudo stow waybar
 sudo stow hyprlock
 sudo stow rofi
+sudo stow swaync

@@ -3,7 +3,7 @@
     "modules-left": ["hyprland/workspaces", "cpu", "custom/combinedTemperature", "idle_inhibitor", "mpris"],
 
     "cpu": {
-        "interval": 1,
+        "interval": 2,
         "format": "   {icon0}{icon4}{icon8}{icon11}",
         "format-icons": [
             "<span color='#a6e3a1'>▁</span>", // green
@@ -17,7 +17,6 @@
         ],
         "on-click": "gnome-system-monitor -r"
     },
-
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -27,22 +26,20 @@
         "tooltip-format-deactivated": "Ideling:\n\n2.5min:  monitor brightnes reduced by 75%\n3min:     lock screen\n4min:     dpms (screen) off\n5min:     suspend pc",
         "tooltip-format-activated": "Ideling inhibited"
     },
-
-
-"mpris": {
-	"format": "{player_icon} {dynamic}",
-	"format-paused": "{status_icon} <i>{dynamic}</i>",
-	"player-icons": {
-		"default": " ",
-		"chromium": " ",
-                "discord": " ",
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": " ",
+            "chromium": " ",
+               "discord": " ",
                 "signal": " ",
                 "brave": "󰗃 "
-	},
-	"status-icons": {
-		"paused": "",
-                "stopped": ""
-	},
+        },
+        "status-icons": {
+            "paused": "",
+            "stopped": ""
+        },
         "dynamic-order": "{title} {artist} {album}",
         "dynamic-separator": "  -  ",
         "dynamic-importance-order": ["title", "album", "artist"],
@@ -54,8 +51,9 @@
         
         "enable-tooltip-len-limits": false,
         "tooltip-format": "Status: {status}\nSource: {player}\n\nTitle: {title}\nArtist: {artist}\nAlbum: {album}\nPosition: {position} from {length}",
-	// "ignored-players": ["firefox"]
-},
+        // "ignored-players": ["firefox"]
+    },
+
 
 
     "modules-center": ["systemd-failed-units", "hyprland/window"],
@@ -69,7 +67,7 @@
 
 
 
-    "modules-right": ["pulseaudio", "backlight", "bluetooth", "custom/network", "battery", "clock", "group/group-power"],
+    "modules-right": ["pulseaudio", "backlight", "bluetooth", "custom/network", "battery", "clock", "custom/notification"],
 
     "pulseaudio": {
         "format": "{icon}  {volume}%",
@@ -95,7 +93,6 @@
         "smooth-scrolling-threshold": 1,
         "on-click": "pavucontrol"
     },
-
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon}  {percent}% ",
@@ -106,7 +103,6 @@
         "tooltip": false
 
     },
-
     "bluetooth": {
         "format": " {status}",
         "format-on": " {status}",
@@ -121,7 +117,6 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
         "on-click": "overskride"
     },
-
     "custom/network": {
         "exec": "~/.config/waybar/scripts/CustomNetworkData.sh",
         "return-type": "json",
@@ -132,7 +127,6 @@
         "on-click-right": "~/.config/waybar/scripts/CustomNetworkData.sh"
         
     },
-
     "battery": {
         "states": {
             "warning": 30,
@@ -149,8 +143,6 @@
         "tooltip-format": "Current: {timeTo}\n\nHealth: {health}%\nCycles(linux): {cycles}",
         "on-click": null
     },
-
-
     "custom/combinedTemperature": {
         "exec": "~/.config/waybar/scripts/CombinedTemperature.sh",
         "return-type": "json",
@@ -159,13 +151,31 @@
         "on-click-middle": "~/.config/waybar/scripts/CombinedTemperature.sh",
         "on-click-right": "~/.config/waybar/scripts/CombinedTemperature.sh"
     },
-
-
     "clock": {
         "format": "   {:%H:%M  %a %d %b}",
         "tooltip": true,
         "tooltip-format": "<tt>{calendar}</tt>",
         "on-click": "gnome-calendar"
-    }
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon} {text}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": " ",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "  ",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": " ",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": " "
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
 }
- 
+
