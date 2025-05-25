@@ -27,6 +27,7 @@
         "tooltip-format-activated": "Ideling inhibited"
     },
     "mpris": {
+        "interval": 2,
         "format": "{player_icon} {dynamic}",
         "format-paused": "{status_icon} <i>{dynamic}</i>",
         "player-icons": {
