@@ -73,14 +73,15 @@ I suggest you go throug all of these programms mannualy and resolve anny errors 
 
 
 ### 5. Applying hyprland dotfiles
-1. To apply the hyprland config, the old one needs to get semooved first: `rm ~/.config/hypr/hyprland.conf`
-2. Now, make shure the `/hyp` directory is filly empty: `ls ~/.config/hypr/`-
-3. Finnaly, the hyprland dotfiles can be imported: `stow hyprland` and `stow hyprmocha`
+1. To apply the hyprland config, the old one needs to get remooved first: `rm ~/.config/hypr/hyprland.conf`
+2. Now, make shure the `/hyp` directory is completly empty: `ls ~/.config/hypr/`-
+3. Now, the hyprland dotfiles can be imported: `stow hyprland` and `stow hyprmocha`
 > [!NOTE]
 >  all `stow` commands need to get executed in the root directory of the `dotfiles` repo:
 > ```shell
 > cd ~/.config/dotfiles
 > ```
+4. finnaly, add execution permissions to the custom script: `sudo chmod +x ~/.config/hypr/scripts/handleMonitorConnect.sh`
 
 
 ### 6. Display manager customisation
