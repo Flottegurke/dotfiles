@@ -63,7 +63,7 @@ These programms provides some quallity of live improovements, for example by all
 ## General programms
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
-| brave-bin | pacman (brave-bin) | browser | no | x11 |
+| brave-bin | yay (brave-bin) | browser | no | x11 |
 | kdenlive | pacman (kdenlive) | video editor | no | wayland |
 | thunderbird | pacman (thunderbird) | Mail mamnager | no | -- | 
 | gimp | pacman (gimp) | immage editor | no | wayland |
