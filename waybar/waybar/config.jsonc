@@ -131,12 +131,12 @@
     "battery": {
         "states": {
             "warning": 20,
-            "critical": 5
+            "critical": 10
         },
         "format": "<span size='13000'>{icon}</span> {capacity}%",
-        "format-warning": "<span size='13000' foreground='#fab387'>{icon} </span> {capacity}% ({time})",
-        "format-critical": "<span size='13000' foreground='#f38ba8'>{icon}  {time} remaining!</span> ({capacity}%)",
-        "format-charging": "<span size='13000'> </span>{capacity} ({time})%",
+        "format-warning": "<span size='13000' foreground='#fab387'>{icon}</span> {capacity}% ({time})",
+        "format-critical": "<span size='13000' foreground='#f38ba8'>{icon} {time} remaining! ({capacity}%)</span>",
+        "format-charging": "<span size='13000'> </span>{capacity}% ({time})",
         "format-plugged": "<span size='13000'> </span>{capacity}%!",
         "format-full": "<span size='13000'> </span>{capacity}%",
         "format-icons": [" ", " ", " ", " ", " "],
