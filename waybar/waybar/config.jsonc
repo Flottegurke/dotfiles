@@ -130,16 +130,15 @@
     },
     "battery": {
         "states": {
-            "warning": 30,
-            "critical": 15
+            "warning": 20,
+            "critical": 5
         },
         "format": "<span size='13000'>{icon}</span> {capacity}%",
-        "format-warning": "<span size='13000' foreground='#f38ba8'>{icon} </span> {capacity}%",
-        "format-critical": "<span size='13000' foreground='#fab387'>{icon} </span> {capacity}%",
-        "format-charging": "<span size='13000'> </span>{capacity}%",
-        "format-plugged": "<span size='13000'> </span>{capacity}%",
-        "format-alt": "<span size='13000'>{icon} </span> {time}",
-        "format-full": "<span size='13000'>󰋔 </span>{capacity}%",
+        "format-warning": "<span size='13000' foreground='#fab387'>{icon} </span> {capacity}% ({time})",
+        "format-critical": "<span size='13000' foreground='#f38ba8'>{icon}  {time} remaining!</span> ({capacity}%)",
+        "format-charging": "<span size='13000'> </span>{capacity} ({time})%",
+        "format-plugged": "<span size='13000'> </span>{capacity}%!",
+        "format-full": "<span size='13000'> </span>{capacity}%",
         "format-icons": [" ", " ", " ", " ", " "],
         "tooltip-format": "Current: {timeTo}\n\nHealth: {health}%\nCycles(linux): {cycles}",
         "on-click": null
