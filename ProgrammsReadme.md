@@ -18,11 +18,9 @@ These programms provides some quallity of live improovements, for example by all
 | qt5-wayland | pacman (qt5-wayland) | runns qt5 apps on wayland | - | wayland |
 | hyprshot | yay (hyprshot) | programm to take screenshots | no | wayland |
 |	brightnessctl | pacman (brightnessctl) | used to change displax brightnes on the CLI | - | - |
-| neofetch | yay (neofetch) | used to display basic system information | - | - |
 | swaync | pacman (swaync) | notofication deamon | no | wayland |
 | hyprpolkitagent | pacman (hyprpolkitagent) | used by GUI programms to ask for root privileges | no | wayland |
 | ttf-cascadia nerd fond | pacman (ttf-cascadia-code-nerd) | used by starship for icons | - | - |
-| htop | pacman (htop) | used to moniitor system reyources is the cli  | - | - |
 | stow | pacman (stow) | used to chreate and mannage simlinking files (usually for dotfiles) | - | - |
 | pavucontrol | pacman (pavucontrol) | used to controll the audio via a GUI | no | wayland |
 | hyprgraphics | pacman (hyprgraphics) | enables finer controll over graphics | - | - |
@@ -72,3 +70,4 @@ These programms provides some quallity of live improovements, for example by all
 | intellij-idea-ultimate-edition | yay (intellij-idea-ultimate-edition)  | IDE | no | wayland |
 | signal-desktop | pacman (signal-desktop) | chat programm | no | wayland |
 | tidal-hifi | pacman (tidal-hifi) | music player | no | wayland |
+| neofetch | yay (neofetch) | used to display basic system information | - | - |
