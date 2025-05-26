@@ -7,6 +7,10 @@
     font-weight: bold;
 }
 
+#waybar {
+    background-color: @base;
+}
+
 window#waybar {
     color: @overlay1;
 }
