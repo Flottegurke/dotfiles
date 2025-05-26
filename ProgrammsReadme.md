@@ -69,5 +69,5 @@ These programms provides some quallity of live improovements, for example by all
 | htop | pacman (htop) | resource monitor (tui) | - | - |
 | intellij-idea-ultimate-edition | yay (intellij-idea-ultimate-edition)  | IDE | no | wayland |
 | signal-desktop | pacman (signal-desktop) | chat programm | no | wayland |
-| tidal-hifi | pacman (tidal-hifi) | music player | no | wayland |
+| tidal-hifi | yay (tidal-hifi) | music player | no | wayland |
 | neofetch | yay (neofetch) | used to display basic system information | - | - |
