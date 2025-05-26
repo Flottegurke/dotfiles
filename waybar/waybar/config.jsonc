@@ -44,7 +44,7 @@
         "dynamic-order": "{title} {artist} {album}",
         "dynamic-separator": "  -  ",
         "dynamic-importance-order": ["title", "album", "artist"],
-        "dynamic-len": 85,
+        "dynamic-len": 45,
         "title-len": 50,
         "artist-len": 20,
         "album-len": 25,
