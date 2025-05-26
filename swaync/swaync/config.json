@@ -1,3 +1,12 @@
-"notification": {
-    "output": "eDP-1"
+{
+    "position": "top-right",
+    "layer": "overlay",
+    "notification-visibility": {
+        "normal": true,
+        "low": true,
+        "critical": true
+    },
+    "widgets": [
+        "notifications"
+    ]
 }
