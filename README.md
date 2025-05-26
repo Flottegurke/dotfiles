@@ -175,3 +175,119 @@ Now you can install all the other programms you need, for inspiration, have a lo
 
 > [!NOTE]
 > For brave do not forget to add your vavourite plugins, like: `Proton Pass`,  `SponsorBlock` and `Youtube Custom Speed`  
+
+## Keybindings
+This is a short overview over all Hyprland shortcuts, this does not include programm specific shortcuts
+> [!WARNING]
+> All keybindings specifyed below will be "catched" by Hyprland, and prevented from reaching the programm. If this is a Issue, passthroughs can be setup
+
+### Main mod
+the main modifyer can be set at the top of the Keybindings file, per default it is set to the `super`/`windows` key.
+
+Every keybinding starts with the main modifyer, it is just not listed for improoved readability
+
+
+### Programm louch bindings
+- Q -> Terminal (kitty)
+- E -> fileManager (nautilus)
+- P -> Menu (rofi)
+- B -> Browser (brave)
+
+### Utility bindings
+- shift + C -> color picker
+- shift + W -> screenshot window (can be selected)
+- shift + A -> screenshot active window
+- shift + E -> screenshot region (can be selected)
+- shift + T -> coppy text from selected regin (using optical caracter recognition)
+- shift + R -> screen recording
+- V -> Clipboard history
+- . -> emoji selector
+- C -> calculator (a popup NOT the app)
+- N -> toggle notification hub
+- shift + n -> toggle DnD
+- D -> close latest notificarion (ownly works if the notificaiton is still displayed on screen, not in the hub)
+- shift + D -> close all notifications
+
+
+### Power bindins 
+- controll + S -> shutdown
+- controll + R -> reboot
+- controll + Q -> lock
+- controll + E -> exit (logout)
+
+### General (window bindings)
+- O -> kill active window
+- F -> toffle Floating (window)
+- R -> toggle pseudo
+- T -> toggle split (direction)
+- I -> Pin window (and toggle floating)
+#### Group bindings
+- G -> toggle group
+- tab -> change active group window -> forward
+- shift + tab -> change active group window -> backward
+#### Move focus
+- H -> change active window -> Left
+- J -> change active window -> Down
+- K -> change active window -> Up
+- L -> change active window -> Right
+#### Swap windows
+- controll + H -> change active window -> Left
+- controll + J -> change active window -> Down
+- controll K -> change active window -> Up
+- controll + L -> change active window -> Right
+#### Resize windows
+- shift + H -> change active window -> Left
+- shift + J -> change active window -> Down
+- shift K -> change active window -> Up
+- shift + L -> change active window -> Right
+#### Mouse binds
+- leftMouseKlick -> move window
+- rightMouseKlick -> resice window
+#### Switching workspaces
+- 1 -> focus workspace 1
+- 2 -> focus workspace 2
+- 3 -> focus workspace 3
+- 4 -> focus workspace 4
+- 5 -> focus workspace 5
+- 6 -> focus workspace 6
+- 7 -> focus workspace 7
+- 1 -> focus workspace 8
+- 9 -> focus workspace 9
+- 0 -> focus workspace 10
+#### Move active window to workspace
+- shift + 1 -> move (active) window to workspace  1
+- shift + 2 -> move (active) window to workspace 2
+- shift + 3 -> move (active) window to workspace 3
+- shift + 4 -> move (active) window to workspace 4
+- shift + 5 -> move (active) window to workspace 5
+- shift + 6 -> move (active) window to workspace 6
+- shift + 7 -> move (active) window to workspace 7
+- shift + 1 -> move (active) window to workspace 8
+- shift + 9 -> move (active) window to workspace 9
+- shift + 0 -> move (active) window to workspace 10
+#### move active workspace to monitor
+- controll + 1 -> move (active) window to workspace 0
+- controll + 2 -> move (active) window to workspace 1
+- controll + 3 -> move (active) window to workspace 2
+- controll + 4 -> move (active) window to workspace 3
+- controll + 5 -> move (active) window to workspace 4
+- controll + 6 -> move (active) window to workspace 5
+- controll + 7 -> move (active) window to workspace 6
+- controll + 1 -> move (active) window to workspace 7
+- controll + 9 -> move (active) window to workspace 8
+- controll + 0 -> move (active) window to workspace 9
+#### spetial workspace
+- S -> toggle spetial workspace
+- shift + S -> move (active) window to workspace
+
+### FN-key bindings
+- raiseVolume -> raise volume
+- lowerVolume -> lower volume
+- muteAudio -> mute audio
+- muteMic -> mute mic
+- brightnesUp -> brightnes up
+- brightnesDown -> brightnes down
+- mediaNext -> next reack
+- mediaPrev -> previous track
+- mediaPause -> pause
+- mediaPlay -> play
