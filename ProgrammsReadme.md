@@ -18,7 +18,6 @@ These programms provides some quallity of live improovements, for example by all
 | qt5-wayland | pacman (qt5-wayland) | runns qt5 apps on wayland | - | wayland |
 | hyprshot | yay (hyprshot) | programm to take screenshots | no | wayland |
 |	brightnessctl | pacman (brightnessctl) | used to change displax brightnes on the CLI | - | - |
-| swaync | pacman (swaync) | notofication deamon | no | wayland |
 | hyprpolkitagent | pacman (hyprpolkitagent) | used by GUI programms to ask for root privileges | no | wayland |
 | ttf-cascadia nerd fond | pacman (ttf-cascadia-code-nerd) | used by starship for icons | - | - |
 | stow | pacman (stow) | used to chreate and mannage simlinking files (usually for dotfiles) | - | - |
@@ -43,6 +42,7 @@ These programms provides some quallity of live improovements, for example by all
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
 | ly | pacman (ly) | Display Manager (connonly known as Login mannager, or Welcome screen) | no | wayland |
+| swaync | pacman (swaync) | Notification mannager | no | x11 |
 | kitty | pacman (kitty) | Console emmulator | no | wayland |
 | starship | pacman (starship) | Used to style the promt of consoles | no | wayland |
 | bat | pacman (bat) | used to display files (like cat but with syntax gihlighting + other cool stuf) | - | - |
