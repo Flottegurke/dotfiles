@@ -101,7 +101,12 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 8. if you now reload the Display Menager, you should see the custom config: `sudo systemctl reload ly.service`
 
 
-### 7. Setting up the console (kitty)
+### 7. setting up notofications
+1. install notification mannager: `sudo pacman -S swaync`
+2. apply configuration: `stow swaync`
+
+
+### 8. Setting up the console (kitty)
 #### 1. Styling
    1. Start of by downloading starship: `sudo pacman -S starship`.
    2. Then just stow the config files for kitty `stow kitty` and for starship `stow starship`.
@@ -133,24 +138,24 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
    5. source the `.bashrc` file: `source .bashrc`
 
 
-### 8. Setting up waybar
+### 9. Setting up waybar
    1. firstly, install waybar: `sudo pacman -S waybar`
    3. then, apply the dotfiles: `stow waybar`
    4. change permissions for custom scripts: `chmod +x .config/waybar/scripts/CustomNetworkData.sh` and `chmod + x .config/waybar/scripts/CombinedTemperature.sh`
 
 
-### 9. Setting up hyprlock
+### 10. Setting up hyprlock
    1. install hyprlock `sudo pacman -S hyprlock`
    2. chreate config file simlink: `stow hyprlock`
 
 
-### 10. Configuring hypridle
+### 11. Configuring hypridle
    1. install `hpridle`: `sudo pacman -S hypridle`
    2. apply dotfiles: `stow hypridle`
    3. make custom scripts executable: `~/.config/hypr/dimScreen75Percent.sh`
 
 
-### 11. Styling gnome apps
+### 12. Styling gnome apps
    1. make shure, you installed the `catppuccin-gtk-theme-mocha-revamped` theme from the [Utility programs which do no trquire setup](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsReadme.md#utility-programms-which-need-no-additionally-configuration) list.#
    2. install `nwg-look`: `sudo pacman -S nwg-look`
    3. open the app (for example by executing `nwg-look` in the terminal
@@ -160,21 +165,24 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
    7. klick `apply` and `exit`
 
 
-### 12. Styling rofi (application runner)
+### 13. Styling rofi (application runner)
    1. chreate simlinks: `stow rofi`
    2. install `rofi-emoji` and `rofi-calc`
 
-### 13. Setting up immage to text (ocr)
+### 14. Setting up immage to text (ocr)
    1. install tesseract: `sudo pacman -S tesseract`
    2. make shure all 3 language datasets (English, German, French) are correctly installed: `tesseract --list-langs`
    3. change customScript permissions: `sudo chmod +x ~/.config/hypr/scripts/ocrClipboard.sh` 
 
 
-### 14. Installing additoinal programms
+### 15. Installing additoinal programms
 Now you can install all the other programms you need, for inspiration, have a look at the [additional programms list](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsReadme.md#general-programms)
 
 > [!NOTE]
 > For brave do not forget to add your vavourite plugins, like: `Proton Pass`,  `SponsorBlock` and `Youtube Custom Speed`  
+
+
+
 
 ## Keybindings
 This is a short overview over all Hyprland shortcuts, this does not include programm specific shortcuts
