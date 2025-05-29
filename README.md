@@ -101,18 +101,20 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 8. if you now reload the Display Menager, you should see the custom config: `sudo systemctl reload ly.service`
 
 
-### 7. setting up notofications
+### 7. setting up notifications
 1. install notification mannager: `sudo pacman -S swaync`
 2. apply configuration: `stow swaync`
 
 
 ### 8. Setting up the console (kitty)
 #### 1. Styling
+   1. Start by remooving the auto generated `.bashrc` file: `sudo rm ~/.bashrc`
+   2. Then apply the custom bash dotfiles: `sudo stow -t ~ bashrc`
    1. Start of by downloading starship: `sudo pacman -S starship`.
    2. Then just stow the config files for kitty `stow kitty` and for starship `stow starship`.
    3. now you need to add `eval "$(starship init bash)"` into your `~/.bashrc` file.
    4. once you source the `~/.bashrc` file the new promt should appear: `source .bashrc`.
-   5. also make shure you installed the 	ttf-cascadia-code nerd fonts, in step `5. installing utility programms`, otherwise, the symbols will look wired.
+   5. also make shure you installed the ttf-cascadia-code nerd fonts, in step `5. installing utility programms`, otherwise, the symbols will look wired.
 #### 2. Bat
    1. Now we are going to set up bat: `sudo pacman -S bat`
    2. then just `stow bat` to apply the custom config
