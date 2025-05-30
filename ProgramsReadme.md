@@ -78,4 +78,5 @@ These programs provides some quallity of live improovements, for example by allo
 | lazydocker | yay (lazydocker) | TUI for docker | - | - |
 | arduino-ide | pacman (arduino-ide) | IDE for Arduinos | no | wayland |
 | Raspberry Pi imager | pacman (rpi-imager) | Raspberry Pi image creation tool | no | wayland |
-| Postman | yay (postman-bin) | API platform (testing) | no | wayland | 
+| Postman | yay (postman-bin) | API platform (testing) | yes | wayland | 
+| slack | yay (slack-desktop-wayland) | comminocaitno platform | no | wayland |
