@@ -74,3 +74,5 @@ These programms provides some quallity of live improovements, for example by all
 | Microsoft teams (Work edition) | yay (teams-for-linux-bin) | messanger (for companys) | no | wayland |
 | asciiquarium | pacman (asciiquarium) | verry important | - | - |
 | xmind | yay (xmind) | mindmap chreation tool | no | wayland | 
+| lazygit | pacman (lazygit) | TUI for git | - | - |
+| lazydocker | yay (lazydocker) | TUI for docker | - | - |
