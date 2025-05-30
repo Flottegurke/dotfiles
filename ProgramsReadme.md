@@ -1,10 +1,10 @@
-# ProgrammsReadme
-This is a file with all programm i reccomend installing
+# ProgramsReadme
+This is a file with all program i reccomend installing
 
-## Utility Programms
-These programms provides some quallity of live improovements, for example by allowing color picking from the screen.
+## Utility Programs
+These programs provides some quallity of live improovements, for example by allowing color picking from the screen.
 
-### Utility programms which need no additionally configuration 
+### Utility programs which need no additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
 | yay | pacman (yay) | unoffition package downloader | - | - |
@@ -12,13 +12,13 @@ These programms provides some quallity of live improovements, for example by all
 | wl-clipboard | pacman (wl-clipboard) | provides clipboard acces to the cli | - | - |
 | hyprpicker| pacman (hyprpickeer) requires: pacman (wl-clipboard) | used to pic colours from the screen | no | wayland |
 | xdg-desktop-portal-hyprland-git | yay (xdg-desktop-portal-hyprland-git) | lets other applications communicate with the compositor through D-Bus | - | wayland |
-| hyprland-qt-support | pacman (hyprland-qt-support) | fixes the behaviour of QT based programms | no | wayland |
+| hyprland-qt-support | pacman (hyprland-qt-support) | fixes the behaviour of QT based programs | no | wayland |
 | hyprland-qtutils | pacman (hyprland-qtutils) | additional qt fixes and qt-popup styling | - | wayland |
 | qt6-wayland | pacman (qt6-wayland) | runns qt6 apps on wayland | - | wayland |
 | qt5-wayland | pacman (qt5-wayland) | runns qt5 apps on wayland | - | wayland |
-| hyprshot | yay (hyprshot) | programm to take screenshots | no | wayland |
+| hyprshot | yay (hyprshot) | program to take screenshots | no | wayland |
 |	brightnessctl | pacman (brightnessctl) | used to change displax brightnes on the CLI | - | - |
-| hyprpolkitagent | pacman (hyprpolkitagent) | used by GUI programms to ask for root privileges | no | wayland |
+| hyprpolkitagent | pacman (hyprpolkitagent) | used by GUI programs to ask for root privileges | no | wayland |
 | ttf-cascadia nerd fond | pacman (ttf-cascadia-code-nerd) | used by starship for icons | - | - |
 | stow | pacman (stow) | used to chreate and mannage simlinking files (usually for dotfiles) | - | - |
 | pavucontrol | pacman (pavucontrol) | used to controll the audio via a GUI | no | wayland |
@@ -38,7 +38,7 @@ These programms provides some quallity of live improovements, for example by all
 | socat | pacman (socat) | port utility (functions and listeners) | - | - |
 
 
-### Utility programms which need additionally configuration 
+### Utility programs which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
 | ly | pacman (ly) | Display Manager (connonly known as Login mannager, or Welcome screen) | no | wayland |
@@ -58,17 +58,17 @@ These programms provides some quallity of live improovements, for example by all
 | tesseract | pacman (tesseract) | cli tool for immage to text (ocd) converison | - | - |
 
 
-## General programms
+## General programs
 | Name | Installer | description | web-app | wayland/x11 |
 |------|-----------|-------------|---------|-------------|
 | brave-bin | yay (brave-bin) | browser | no | x11 |
 | kdenlive | pacman (kdenlive) | video editor | no | wayland |
 | thunderbird | pacman (thunderbird) | Mail mamnager | no | -- | 
 | gimp | pacman (gimp) | immage editor | no | wayland |
-| discord | pacman (discord) | chat programm | no | wayland |
+| discord | pacman (discord) | chat program | no | wayland |
 | htop | pacman (htop) | resource monitor (tui) | - | - |
 | intellij-idea-ultimate-edition | yay (intellij-idea-ultimate-edition)  | IDE | no | wayland |
-| signal-desktop | pacman (signal-desktop) | chat programm | no | wayland |
+| signal-desktop | pacman (signal-desktop) | chat program | no | wayland |
 | tidal-hifi | yay (tidal-hifi) | music player | no | wayland |
 | neofetch | yay (neofetch) | used to display basic system information | - | - |
 | Microsoft teams (Work edition) | yay (teams-for-linux-bin) | messanger (for companys) | no | wayland |
@@ -76,3 +76,4 @@ These programms provides some quallity of live improovements, for example by all
 | xmind | yay (xmind) | mindmap chreation tool | no | wayland | 
 | lazygit | pacman (lazygit) | TUI for git | - | - |
 | lazydocker | yay (lazydocker) | TUI for docker | - | - |
+| arduino-ide | pacman (arduino-ide) | IDE for Arduinos | no | wayland |
