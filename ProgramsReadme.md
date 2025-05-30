@@ -77,3 +77,4 @@ These programs provides some quallity of live improovements, for example by allo
 | lazygit | pacman (lazygit) | TUI for git | - | - |
 | lazydocker | yay (lazydocker) | TUI for docker | - | - |
 | arduino-ide | pacman (arduino-ide) | IDE for Arduinos | no | wayland |
+| Raspberry Pi imager | pacman (rpi-imager) | Raspberry Pi image creation tool | no | wayland |
