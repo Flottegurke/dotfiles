@@ -108,36 +108,12 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 
 ### 8. Setting up the console (kitty)
 #### 1. Styling
-   1. Start by remooving the auto generated `.bashrc` file: `sudo rm ~/.bashrc`
-   2. Then apply the custom bash dotfiles: `sudo stow -t ~ bashrc`
-   1. Start of by downloading starship: `sudo pacman -S starship`.
-   2. Then just stow the config files for kitty `stow kitty` and for starship `stow starship`.
-   3. now you need to add `eval "$(starship init bash)"` into your `~/.bashrc` file.
-   4. once you source the `~/.bashrc` file the new promt should appear: `source .bashrc`.
-   5. also make shure you installed the ttf-cascadia-code nerd fonts, in step `5. installing utility programms`, otherwise, the symbols will look wired.
-#### 2. Bat
-   1. Now we are going to set up bat: `sudo pacman -S bat`
-   2. then just `stow bat` to apply the custom config
-#### 3. fzf
-   1. download fzf: `sudo pacman -S fzf`.
-   2. inside the `.bashrc` file: add
-      ```shell
-      # Set up fzf key bindings and fuzzy completion
-      eval "$(fzf --bash)"
-      ```
-   3. you can also chreate some usefull aliases like this:
-      ```shell
-      alias fzf='fzf --preview="bat --color=always --line-range 0:500 {}"'
-      alias fzfo='nano $(fzf)'
-      alias fzfc='fzf | wl-copy'
-      
-      ```
-      to always search with preview,
-   4. Finaly `source .bashrc` to apply the changes.
-#### 4. zoxide
-   1. download zoxide: `sudo pacman -S zoxide`
-   2. add `eval "$(zoxide init --cmd cd bash)"` to the `.bashrc` file.
-   5. source the `.bashrc` file: `source .bashrc`
+   1. Start by removing the auto generated `.bashrc` file: `sudo rm ~/.bashrc`
+   2. Then apply the custom bash dotfiles: `sudo stow -t ~ bash`
+   3. contignue  by downloading starship: `sudo pacman -S starship`.
+   4. Then just stow the config files for kitty `stow kitty` and for starship `stow starship`.
+   5. now, install bat (`sudo pacman -S bat`), fzf (`sudo pacman -S fzf`) and zoxide (`sudo pacman -S zoxide`)
+   6. finally, source the `.bashrc` file: `source ~/.bashrc`
 
 
 ### 9. Setting up waybar
