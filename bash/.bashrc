@@ -10,9 +10,10 @@ alias grep='grep --color=auto'
 
 alias ls='exa --icons --color=always'
 
+alias lgit=lazygit
+
 eval "$(starship init bash)"
 eval "$(zoxide init --cmd cd bash)"
-
 
 eval "$(fzf --bash)"
 alias fzf='fzf --preview="bat --color=always --line-range 0:500 {}"'
