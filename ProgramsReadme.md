@@ -82,8 +82,14 @@ These programs provides some quallity of live improovements, for example by allo
 | slack | yay (slack-desktop-wayland) | comminocaitno platform | no | wayland |
 | blender | pacman (blender) | 3D graphics chreation suite | no | wayland |
 | bottles | yay (bottles) | GUI for runnign windows peogramms | no | wayland |
+| virtualbox | pacman (virtualbox) | VM engine | no | wayland |
 
 
-## Windows peogramms
+## Windows programms
+These are the programms, that i was not able to get runnign on linux.
+
+To runnwindows programms i am using a VM. for further explenation about the setup see the [windows-VM setup readme](). 
 | Name | Installer | description |
 |------|-----------|-------------|
+| win-debloat-tools | [github](https://github.com/LeDragoX/Win-Debloat-Tools) | script to debloat windows |
+| Onenote | [onenote.com](https://www.onenote.com/?public=1&wdorigin=ondcauth2&wdorigin=ondc) | Note taking programm
