@@ -205,6 +205,7 @@ Every keybinding starts with the main modifyer, it is just not listed for improo
 | controll + S | shutdown |
 | controll + R | reboot |
 | controll + Q | lock |
+| controll + O | turn on dpms (backlight) (this is a faalback if ti does not turn on automatically) |
 | controll + E | exit (logout) |
 
 ### General (window bindings)
