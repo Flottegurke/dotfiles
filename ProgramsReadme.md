@@ -66,7 +66,7 @@ These programs provides some quallity of live improovements, for example by allo
 | thunderbird | pacman (thunderbird) | Mail mamnager | no | -- | 
 | gimp | pacman (gimp) | immage editor | no | wayland |
 | discord | pacman (discord) | chat program | no | wayland |
-| htop | pacman (htop) | resource monitor (tui) | - | - |
+| btop | pacman (btop) | resource monitor (tui) | - | - |
 | intellij-idea-ultimate-edition | yay (intellij-idea-ultimate-edition)  | IDE | no | wayland |
 | signal-desktop | pacman (signal-desktop) | chat program | no | wayland |
 | tidal-hifi | yay (tidal-hifi) | music player | no | wayland |
