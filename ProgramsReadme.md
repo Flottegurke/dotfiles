@@ -83,7 +83,7 @@ These programs provides some quallity of live improovements, for example by allo
 | blender | pacman (blender) | 3D graphics chreation suite | no | wayland |
 | bottles | yay (bottles) | GUI for runnign windows peogramms | no | wayland |
 | virtualbox | pacman (virtualbox) | VM engine | no | wayland |
-
+| mousai | pacman (mousai) | song recognition software | no | wayland |
 
 ## Windows programms
 These are the programms, that i was not able to get runnign on linux.

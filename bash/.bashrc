@@ -27,7 +27,7 @@ eval "$(zoxide init --cmd cd bash)"
 
 eval "$(fzf --bash)"
 alias fzf='fzf --preview="bat --color=always --line-range 0:500 {}"'
-alias fzfo='nano $(fzf)'
+alias fzfo='file=$(fzf) && history -s "nano \"$file\"" && nano "$file"'
 alias fzfc='fzf | wl-copy'
 
 alias grep='grep --color=auto'
@@ -36,6 +36,8 @@ alias ll='ls -al'
 alias la='ls -A'
 
 alias lgit=lazygit
+
+alias ssh-tui='python3 ~/Programming/ssh-tui/main.py'
 
 # Add an "alert" alias for long running commands.  Use like this:
 #   sleep 10; alert

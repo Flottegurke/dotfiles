@@ -1,9 +1,9 @@
 #!/bin/bash
 
 max_temp=-1000
-max_label=""
 tooltip=""
 
+# Determine max temp and store all current temps in $tooltip
 while IFS= read -r -d '' zone; do
     [ -f "$zone/temp" ] || continue
     type=$(<"$zone/type")
@@ -12,11 +12,8 @@ while IFS= read -r -d '' zone; do
     tooltip+="$type: ${temp_c}°C\\n"
     if (( temp_c > max_temp )); then
         max_temp=$temp_c
-        max_label=$type
     fi
 done < <(find /sys/class/thermal/thermal_zone* -maxdepth 0 -print0)
-
-# Strip trailing newline
 tooltip="${tooltip%\\n}"
 
 # Determine icon based on max_temp
@@ -32,5 +29,5 @@ else
     icon=""  # full
 fi
 
-# Output JSON
-echo "{ \"text\": \"$icon $max_label: ${max_temp}°C\", \"tooltip\": \"$tooltip\" }"
+# Output (waybar readable) JSON
+echo "{ \"text\": \"$icon ${max_temp}°C\", \"tooltip\": \"$tooltip\" }"

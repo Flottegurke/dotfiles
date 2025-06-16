@@ -2,8 +2,30 @@
     "position": "top",
     "modules-left": ["hyprland/workspaces", "cpu", "custom/combinedTemperature", "idle_inhibitor", "mpris"],
 
+    "hyprland/workspaces": {
+        "active-only": false,
+        "hide-active": false,
+        "all-outputs": false,
+        "show-special": true,
+        "special-visible-only": true,
+        "format": "{icon}",
+	"format-icons": {
+		"1": "1",
+		"2": "",
+		"3": "3",
+		"4": "4",
+		"5": "5",
+                "6": "6",
+                "7": "7",
+                "8": "",
+                "9": "",
+                "10":"󰝚",
+                "magic": "󰄉",
+		"default": ""
+	},
+    },
     "cpu": {
-        "interval": 2,
+        "interval": 1,
         "format": "   {icon0}{icon4}{icon8}{icon11}",
         "format-icons": [
             "<span color='#a6e3a1'>▁</span>", // green
@@ -17,6 +39,14 @@
         ],
         "on-click": "gnome-system-monitor -r"
     },
+    "custom/combinedTemperature": {
+        "exec": "~/.config/waybar/scripts/CombinedTemperature.sh",
+        "return-type": "json",
+        "interval": 30,
+        "on-click": "~/.config/waybar/scripts/CombinedTemperature.sh & gnome-system-monitor -p",
+        "on-click-middle": "~/.config/waybar/scripts/CombinedTemperature.sh",
+        "on-click-right": "~/.config/waybar/scripts/CombinedTemperature.sh"
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -27,7 +57,7 @@
         "tooltip-format-activated": "Ideling inhibited"
     },
     "mpris": {
-        "interval": 2,
+        "interval": 1,
         "format": "{player_icon} {dynamic}",
         "format-paused": "{status_icon} <i>{dynamic}</i>",
         "player-icons": {
@@ -41,9 +71,9 @@
             "paused": "",
             "stopped": ""
         },
-        "dynamic-order": "{title} {artist} {album}",
+        "dynamic-order": "{title} {album} {artist}",
         "dynamic-separator": "  -  ",
-        "dynamic-importance-order": ["title", "album", "artist"],
+        "dynamic-importance-order": ["title", "artist", "album"],
         "dynamic-len": 45,
         "title-len": 50,
         "artist-len": 20,
@@ -96,7 +126,7 @@
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon}  {percent}% ",
+        "format": "{icon} {percent}% ",
         "format-icons": ["󰹐 ", "󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󱩖 ", "󰛨 "],
         "reverse-scrolling": true,
         "scroll-step": 5,
@@ -113,7 +143,7 @@
         "format-connected-battery": "󰂰  {device_alias} ({device_battery_percentage}%)",
         // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected:\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
         "on-click": "overskride"
@@ -143,16 +173,8 @@
         "tooltip-format": "Current: {timeTo}\n\nHealth: {health}%\nCycles(linux): {cycles}",
         "on-click": null
     },
-    "custom/combinedTemperature": {
-        "exec": "~/.config/waybar/scripts/CombinedTemperature.sh",
-        "return-type": "json",
-        "interval": 30,
-        "on-click": "~/.config/waybar/scripts/CombinedTemperature.sh & gnome-system-monitor -p",
-        "on-click-middle": "~/.config/waybar/scripts/CombinedTemperature.sh",
-        "on-click-right": "~/.config/waybar/scripts/CombinedTemperature.sh"
-    },
     "clock": {
-        "format": "   {:%H:%M  %a %d %b}",
+        "format": "  {:%H:%M %a-%d-%b}",
         "tooltip": true,
         "tooltip-format": "<tt>{calendar}</tt>",
         "on-click": "gnome-calendar"
@@ -173,8 +195,6 @@
         "return-type": "json",
         "exec-if": "which swaync-client",
         "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
 }
