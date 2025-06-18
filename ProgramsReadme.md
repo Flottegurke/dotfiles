@@ -36,6 +36,7 @@ These programs provides some quallity of live improovements, for example by allo
 | tesseract-data-deu | pacman (tesseract-data-deu) | tesseract german language dataset | - | - |
 | tesseract-data-fra | pacman (tesseract-data-fra) | tesseract french language dataset | - | - |
 | socat | pacman (socat) | port utility (functions and listeners) | - | - |
+| sshpass | pacman (sshpass) | cli tool to push ssh-keys to servers | - | - |
 
 
 ### Utility programs which need additionally configuration 
