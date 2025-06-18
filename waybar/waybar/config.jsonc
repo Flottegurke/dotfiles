@@ -95,6 +95,13 @@
         "system": true, // Monitor failed systemwide units.
         "user": false, // Ignore failed user units.
     },
+    "hyprland/window": {
+        "format": "{title}",
+        "separate-outputs": true,
+        "icon": true,
+        "icon-size": 15,
+        "tooltip-format": "Active window:\nTitle: {title}\nClass: {class}"
+    },
 
 
 
@@ -103,7 +110,7 @@
     "pulseaudio": {
         "format": "{icon}  {volume}%",
         "format-muted": "{icon}  Muted",
-        "format-bluetooth": "{icon}󰂯 {volume}% ",
+        "format-bluetooth": "{icon}<span foreground='lightblue'><sub>󰂯</sub></span> {volume}% ",
         "format-icons": {
             "default": ["", "", " "],
             "default-muted": " ",
