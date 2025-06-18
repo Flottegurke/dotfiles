@@ -39,6 +39,7 @@ alias lgit=lazygit
 
 alias ssh-tui='python3 ~/Programming/ssh-tui/main.py'
 alias ssh-keygen-helper=' bash ~/Programming/flotte-linux-utils/ssh/ssh-key/ssh-keygen-helper/ssh-keygen-helper.sh'
+alias ssh-keypush-helper=' bash ~/Programming/flotte-linux-utils/ssh/ssh-key/ssh-keypush-helper/ssh-keypush-helper.sh'
 
 # Add an "alert" alias for long running commands.  Use like this:
 #   sleep 10; alert
