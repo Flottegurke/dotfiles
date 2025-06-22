@@ -85,6 +85,7 @@ These programs provides some quallity of live improovements, for example by allo
 | bottles | yay (bottles) | GUI for runnign windows peogramms | no | wayland |
 | virtualbox | pacman (virtualbox) | VM engine | no | wayland |
 | mousai | pacman (mousai) | song recognition software | no | wayland |
+| OBS | pacman (obs-studio) | recording | no | wayland |
 
 ## Windows programms
 These are the programms, that i was not able to get runnign on linux.

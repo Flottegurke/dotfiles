@@ -113,6 +113,7 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
    3. contignue  by downloading starship: `sudo pacman -S starship`.
    4. Then just stow the config files for kitty `stow kitty` and for starship `stow starship`.
    5. now, install bat (`sudo pacman -S bat`), fzf (`sudo pacman -S fzf`) and zoxide (`sudo pacman -S zoxide`)
+   6. to setup bat: `stow bat` `bat cache --build`
    6. finally, source the `.bashrc` file: `source ~/.bashrc`
 
 
@@ -152,13 +153,27 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
    2. make shure all 3 language datasets (English, German, French) are correctly installed: `tesseract --list-langs`
    3. change customScript permissions: `sudo chmod +x ~/.config/hypr/scripts/ocrClipboard.sh` 
 
+### 15. setting up further utilitie programms
+   1. chreate the `~/Programming` directory
+   2. in it: execute `git clone git@github.com:flottegurke/ssh-tui.git` and `git clone git@github.com:flottegurke/flotte-linux-utils.git`
 
 ### 15. Installing additoinal programms
 Now you can install all the other programms you need, for inspiration, have a look at the [additional programms list](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsReadme.md#general-programms)
 
 > [!NOTE]
-> For brave do not forget to add your vavourite plugins, like: `Proton Pass`,  `SponsorBlock` and `Youtube Custom Speed`  
-
+> For brave do not forget to add your vavourite plugins, like: `Proton Pass`,  `SponsorBlock`, `Youtube Custom Speed`, `Catppuccin for web file explorer icons` and `Stylus` (see [Catpuccin - stylus setup guide](https://github.com/catppuccin/userstyles))
+>
+> To style thunderbird, see [Catppuccin - thunderbird setup guide](https://github.com/catppuccin/thunderbird) and choose mocha - sapphire style
+> 
+> To style styling slack, see [Catppuccin - slack setup guide](https://github.com/catppuccin/slack?tab=readme-ov-file) and choose mocha style
+> 
+> To style btop, execute: `stow btop`, then open btop press `esc` choose options, and select `catppppuccin mocha` theme.
+> 
+> To style lazygit, execute: `stow lazygit`
+> 
+> To style OBS, execute: `stow obs` then open obs, klick: File -> Settings -> Appearence -> Catppuccin
+>
+> To style Jetbrains IDEs: install `Catppuccin Theme` and `Catppuccin Icons` plugins, then go to Settings -> Appearance & Behavior -> Appearance and choose Theme: Catppuccin Mocha. Also go to Settings -> Appearance & Behavior -> Catppuccin Icons and choose Variant: Catppuccin Mocha 
 
 
 

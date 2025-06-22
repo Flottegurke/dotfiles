@@ -2,6 +2,7 @@
 # ~/.bashrc
 #
 
+# --------------------General setup--------------------
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -21,11 +22,21 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-
 eval "$(starship init bash)"
 eval "$(zoxide init --cmd cd bash)"
 
 eval "$(fzf --bash)"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
+--color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
+--color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
+--color=selected-bg:#45475A \
+--color=border:#313244,label:#CDD6F4"
+
+export KITTY_LISTEN_ON=unix:/tmp/kitty
+
+
+# --------------------Aliases--------------------
 alias fzf='fzf --preview="bat --color=always --line-range 0:500 {}"'
 alias fzfo='file=$(fzf) && history -s "nano \"$file\"" && nano "$file"'
 alias fzfc='fzf | wl-copy'
