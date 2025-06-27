@@ -161,7 +161,7 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
 Now you can install all the other programms you need, for inspiration, have a look at the [additional programms list](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsReadme.md#general-programms)
 
 > [!NOTE]
-> For brave do not forget to add your vavourite plugins, like: `Proton Pass`,  `SponsorBlock`, `Youtube Custom Speed`, `Catppuccin for web file explorer icons` and `Stylus` (see [Catpuccin - stylus setup guide](https://github.com/catppuccin/userstyles))
+> For brave do not forget to add your vavourite plugins, like: `Proton Pass`,  `SponsorBlock`, `Youtube Custom Speed`, `Catppuccin for web file explorer icons`, `Catppuccin Chrome Theme - Mocha` and `Stylus` (see [Catpuccin - stylus setup guide](https://github.com/catppuccin/userstyles))
 >
 > To style thunderbird, see [Catppuccin - thunderbird setup guide](https://github.com/catppuccin/thunderbird) and choose mocha - sapphire style
 > 
@@ -174,7 +174,8 @@ Now you can install all the other programms you need, for inspiration, have a lo
 > To style OBS, execute: `stow obs` then open obs, klick: File -> Settings -> Appearence -> Catppuccin
 >
 > To style Jetbrains IDEs: install `Catppuccin Theme` and `Catppuccin Icons` plugins, then go to Settings -> Appearance & Behavior -> Appearance and choose Theme: Catppuccin Mocha. Also go to Settings -> Appearance & Behavior -> Catppuccin Icons and choose Variant: Catppuccin Mocha 
-
+>
+> To style Discord, install the betterdiscord installer: `yay -S betterdiscord-installer`. Then execute it and go through the installation process. Then in discord: open: settings -> betterdiscord -> Custom CSS and instert the file from [CappuccinMocha - Discord](https://raw.githubusercontent.com/catppuccin/discord/refs/heads/main/themes/mocha.theme.css). then click save and update.
 
 
 ## Keybindings
