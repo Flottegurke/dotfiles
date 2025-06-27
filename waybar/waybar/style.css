@@ -32,19 +32,20 @@ button:hover {
 #workspaces button {
     padding: 0 4px;
 }
-
 #workspaces button.focused {
     color: @rosewater;
 }
-
 #workspaces button.active {
     color: @green;
     border-color: @green;
 }
-
 #workspaces button.urgent {
     background-color: @red;
 }
+#workspaces button.visible {
+    color: @sky;
+}
+
 
 #pulseaudio,
 #clock,
