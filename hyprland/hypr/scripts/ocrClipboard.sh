@@ -3,12 +3,12 @@
 IMG="ocrshot.png"
 HOME="/tmp"
 FULL="/tmp/ocrshot.png"
+TIMEOUT=5 # in sec
 
 
 hyprshot -m region -o "$HOME" -f "$IMG" -s; # take screenshot
 
 # Wait for the screenshot file to be created (max 5 seconds)
-TIMEOUT=5 # in sec
 WAITED=0
 while [ ! -f "$FULL" ] && [ $WAITED -lt $TIMEOUT ]; do
     sleep 0.1

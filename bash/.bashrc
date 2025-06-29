@@ -12,7 +12,7 @@ HISTCONTROL=ignoredups:ignorespace
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# set historty filesize
 HISTSIZE=1000
 HISTFILESIZE=2000
 
@@ -22,9 +22,11 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# initialise starship
 eval "$(starship init bash)"
+# initialise zoxide to replace "cd"
 eval "$(zoxide init --cmd cd bash)"
-
+# initialise fzf (use custom cappuccin color theme)
 eval "$(fzf --bash)"
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
@@ -33,20 +35,23 @@ export FZF_DEFAULT_OPTS=" \
 --color=selected-bg:#45475A \
 --color=border:#313244,label:#CDD6F4"
 
-export KITTY_LISTEN_ON=unix:/tmp/kitty
-
+export VISUAL=vim
+export EDITOR=vim
 
 # --------------------Aliases--------------------
 alias fzf='fzf --preview="bat --color=always --line-range 0:500 {}"'
-alias fzfo='file=$(fzf) && history -s "nano \"$file\"" && nano "$file"'
-alias fzfc='fzf | wl-copy'
+alias fzfo='file=$(fzf); file="$(realpath "$file")"; history -s "vim \"$file\""; vim "$file"'
+alias fzfc='file=$(fzf); file="$(realpath "$file")"; wl-copy $file'
 
 alias grep='grep --color=auto'
+
 alias ls='exa --icons=auto --color=auto'
 alias ll='ls -al'
 alias la='ls -A'
 
 alias lgit=lazygit
+alias icat='kitten icat'
+alias hg='kitten hyperlinked-grep'
 
 alias ssh-tui='python3 ~/Programming/ssh-tui/main.py'
 alias ssh-keygen-helper=' bash ~/Programming/flotte-linux-utils/ssh/ssh-key/ssh-keygen-helper/ssh-keygen-helper.sh'

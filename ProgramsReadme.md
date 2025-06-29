@@ -17,7 +17,7 @@ These programs provides some quallity of live improovements, for example by allo
 | qt6-wayland | pacman (qt6-wayland) | runns qt6 apps on wayland | - | wayland |
 | qt5-wayland | pacman (qt5-wayland) | runns qt5 apps on wayland | - | wayland |
 | hyprshot | yay (hyprshot) | program to take screenshots | no | wayland |
-|	brightnessctl | pacman (brightnessctl) | used to change displax brightnes on the CLI | - | - |
+| brightnessctl | pacman (brightnessctl) | used to change displax brightnes on the CLI | - | - |
 | hyprpolkitagent | pacman (hyprpolkitagent) | used by GUI programs to ask for root privileges | no | wayland |
 | ttf-cascadia nerd fond | pacman (ttf-cascadia-code-nerd) | used by starship for icons | - | - |
 | stow | pacman (stow) | used to chreate and mannage simlinking files (usually for dotfiles) | - | - |
@@ -37,7 +37,7 @@ These programs provides some quallity of live improovements, for example by allo
 | tesseract-data-fra | pacman (tesseract-data-fra) | tesseract french language dataset | - | - |
 | socat | pacman (socat) | port utility (functions and listeners) | - | - |
 | sshpass | pacman (sshpass) | cli tool to push ssh-keys to servers | - | - |
-
+| ripgrep | pacman (ripgrep) | used to coppy and passte stuf in the console | - | - |
 
 ### Utility programs which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |

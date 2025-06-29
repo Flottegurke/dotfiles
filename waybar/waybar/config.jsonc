@@ -8,25 +8,11 @@
         "all-outputs": false,
         "show-special": true,
         "special-visible-only": true,
-        "format": "{icon}",
-	"format-icons": {
-		"1": "1",
-		"2": "",
-		"3": "3",
-		"4": "4",
-		"5": "5",
-                "6": "6",
-                "7": "7",
-                "8": "",
-                "9": "",
-                "10":"󰝚",
-                "magic": "󰄉",
-		"default": ""
-	},
+        "format": "{name}"
     },
     "cpu": {
         "interval": 1,
-        "format": "   {icon0}{icon4}{icon8}{icon11}",
+        "format": "   {icon0}{icon1}{icon2}{icon3}",
         "format-icons": [
             "<span color='#a6e3a1'>▁</span>", // green
             "<span color='#cfeedb'>▂</span>", // blue
@@ -81,7 +67,7 @@
         "ellipsis": "…",
         
         "enable-tooltip-len-limits": false,
-        "tooltip-format": "Status: {status}\nSource: {player}\n\nTitle: {title}\nArtist: {artist}\nAlbum: {album}\nPosition: {position} from {length}",
+        "tooltip-format": "Status: {status}\nSource: {player}\n\nTitle: {title}\nArtist: {artist}\nAlbum: {album}\nPosition: {position} from {length}"
         // "ignored-players": ["firefox"]
     },
 
@@ -90,10 +76,7 @@
     "modules-center": ["systemd-failed-units", "hyprland/window"],
 
     "systemd-failed-units": {
-        "hide-on-ok": true, // Hide if there is zero failed units.
-        "format": "<b>  {nr_failed} systemd units failed  </b>",
-        "system": true, // Monitor failed systemwide units.
-        "user": false, // Ignore failed user units.
+        "format": "<b>  {nr_failed} systemd units failed  </b>"
     },
     "hyprland/window": {
         "format": "{title}",
@@ -105,7 +88,7 @@
 
 
 
-    "modules-right": ["pulseaudio", "backlight", "bluetooth", "custom/network", "battery", "clock", "custom/notification"],
+    "modules-right": ["pulseaudio", "backlight", "custom/network", "bluetooth", "battery", "clock", "custom/notification"],
 
     "pulseaudio": {
         "format": "{icon}  {volume}%",
@@ -139,7 +122,15 @@
         "scroll-step": 5,
         "smooth-scrolling-threshold": 1,
         "tooltip": false
-
+    },
+    "custom/network": {
+        "exec": "~/.config/waybar/scripts/CustomNetworkData.sh",
+        "return-type": "json",
+        "interval": 30,
+        "format": "{}",
+        "on-click": "~/.config/waybar/scripts/CustomNetworkData.sh && kitty -e nmtui",
+        "on-click-middle": "~/.config/waybar/scripts/CustomNetworkData.sh",
+        "on-click-right": "~/.config/waybar/scripts/CustomNetworkData.sh"
     },
     "bluetooth": {
         "format": " {status}",
@@ -155,26 +146,16 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
         "on-click": "overskride"
     },
-    "custom/network": {
-        "exec": "~/.config/waybar/scripts/CustomNetworkData.sh",
-        "return-type": "json",
-        "interval": 30,
-        "format": "{}",
-        "on-click": "~/.config/waybar/scripts/CustomNetworkData.sh && kitty -e nmtui",
-        "on-click-middle": "~/.config/waybar/scripts/CustomNetworkData.sh",
-        "on-click-right": "~/.config/waybar/scripts/CustomNetworkData.sh"
-        
-    },
     "battery": {
         "states": {
-            "warning": 20,
+            "warning": 30,
             "critical": 10
         },
         "format": "<span size='13000'>{icon}</span> {capacity}%",
         "format-warning": "<span size='13000' foreground='#fab387'>{icon}</span> {capacity}% ({time})",
         "format-critical": "<span size='13000' foreground='#f38ba8'>{icon} {time} remaining! ({capacity}%)</span>",
         "format-charging": "<span size='13000'> </span>{capacity}% ({time})",
-        "format-plugged": "<span size='13000'> </span>{capacity}%!",
+        "format-plugged": "<span size='13000'> </span>{capacity}% !",
         "format-full": "<span size='13000'> </span>{capacity}%",
         "format-icons": [" ", " ", " ", " ", " "],
         "tooltip-format": "Current: {timeTo}\n\nHealth: {health}%\nCycles(linux): {cycles}",
@@ -203,6 +184,6 @@
         "exec-if": "which swaync-client",
         "exec": "swaync-client -swb",
         "escape": true
-    },
+    }
 }
 

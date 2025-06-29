@@ -3,143 +3,144 @@
 * {
     font-family: "MesloLGS Nerd Font Mono Bold";
     font-size: 16px;
-    min-height: 20px;
+    min-height: 22px;
     font-weight: bold;
+}
+
+tooltip {
+    font-size: 16px;
+    color: @text;
+    background-color: @surface0;
+    border-radius: 0.8rem;
 }
 
 #waybar {
     background-color: @base;
+    color: @text;
+}
+
+#workspaces {
+    border-radius: 0.8rem;
+    margin: 5px 1rem;
+    background-color: @surface0;
+}
+#workspaces button {
+    border-radius: 0.8rem;
+    padding: 8px 5px 3px 6px;
+}
+#workspaces button.active {
+    color: @green;
+    background-color: @surface2;
+}
+#workspaces button:hover {
+    color: @mauve;
+}
+#workspaces button.focused {
+    color: @rosewater;
+}
+#workspaces button.urgent {
+    background-color: @red;
+}
+
+#cpu,
+#custom-combinedTemperature,
+#idle_inhibitor,
+#mpris,
+#systemd-failed-units,
+#pulseaudio,
+#backlight,
+#bluetooth,
+#custom-network,
+#battery,
+#clock,
+#custom-notification {
+    background-color: @surface0;
+    padding-left:12px;
+    margin: 5px 0;
+}
+
+#cpu {
+    color: @yellow;
+    border-radius: 0.8rem 0 0 0.8rem;
+}
+
+#custom-combinedTemperature {
+    color: @peach;
+    border-radius: 0 0.8rem 0.8rem 0;
+    padding-right: 10px;
+    margin-right: 0.4rem;
+}
+
+#idle_inhibitor {
+    color: @maroon;
+    border-radius: 0.8rem;
+    padding-right: 18px;
+    margin-right: 1rem;
+}
+#idle_inhibitor.activated {
+    color: @red;
+    background-color: @surface1;
+    background-color: @surface1;
+    padding-right: 10px;
+}
+
+#mpris {
+    color: @mauve;
+    background-color: @surface1;
+    border-radius: 0.8rem;
+    padding-right: 10px;
+    margin-right: 1rem;
+}
+#mpris.paused {
+    background-color: @surface0;
+}
+#mpris.stopped {
+    background-color: transparent;
+}
+
+#systemd-failed-units {
+    color: @rosewater;
+    background-color: @red;
+    margin-right: 1rem;
 }
 
 window#waybar {
     color: @overlay1;
 }
 
-#window {
-    margin: 0 8px;
-    padding: 0 8px;
-}
-
-button {
-    border: none;
-    border-radius: 0;
-}
-
-button:hover {
-    color: @mauve;
-}
-
-#workspaces button {
-    padding: 0 4px;
-}
-#workspaces button.focused {
-    color: @rosewater;
-}
-#workspaces button.active {
-    color: @green;
-    border-color: @green;
-}
-#workspaces button.urgent {
-    background-color: @red;
-}
-#workspaces button.visible {
-    color: @sky;
-}
-
-
-#pulseaudio,
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#wireplumber,
-#tray,
-#network,
-#custom-network,
-#mode,
-#systemd-failed-units,
-#custom-combinedTemperature,
-#bluetooth,
-button,
-#idle_inhibitor,
-#custom-notification,
-#scratchpad {
-    margin-top: 4px;
-    margin-bottom: 2px;
-    margin-left: 4px;
-    margin-right: 4px;
-    padding-left: 4px;
-    padding-right: 4px;
-
-    border-bottom: 2px solid;
-}
-
-#clock {
-    color: @yellow;
-}
 
 #pulseaudio {
     color: @lavender;
-}
-
-#network {
-    color: @teal;
-}
-
-#idle_inhibitor {
-    color: @maroon;
-
-    padding-right: 10px;
-}
-#idle_inhibitor.activated {
-    color: @red;
-
-    padding-right: 4px;
-}
-
-#battery {
-    color: @green;
-}
-
-#custom-vpn {
-    color: @lavender;
-    border-radius: 15px;
-    padding-left: 6px;
-    padding-right: 6px;
-}
-
-#custom-network {
-    color: @teal;
-}
-
-#custom-combinedTemperature {
-    color: @peach;
-}
-
-#systemd-failed-units {
-    color: @rosewater;
-    border-color: @red;
-}
-
-#cpu {
-    color: @yellow;
+    border-radius: 0.8rem 0 0 0.8rem;
 }
 
 #backlight {
     color: @blue;
 }
 
-#bluetooth {
+#custom-network {
     color: @sapphire;
 }
 
-#mpris {
-   color: @mauve;
+#bluetooth {
+    color: @teal;
+    border-radius: 0 0.8rem 0.8rem 0;
+    padding-right: 10px;
+    margin-right: 0.4rem;
+}
+
+#battery {
+    color: @green;
+    border-radius: 0.8rem 0 0 0.8rem;
+}
+
+#clock {
+    color: @yellow;
 }
 
 #custom-notification {
     color: @peach;
+    border-radius: 0 0.8rem 0.8rem 0;
+    padding-right: 10px;
+    margin-right: 1rem;
 }
