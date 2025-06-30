@@ -153,6 +153,11 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
    2. make shure all 3 language datasets (English, German, French) are correctly installed: `tesseract --list-langs`
    3. change customScript permissions: `sudo chmod +x ~/.config/hypr/scripts/ocrClipboard.sh` 
 
+### 15. Settig up hyprpaper
+    1. chreate simliks: 'stow rofi'
+    2. install hyprpaper: 'sudo pacman -S hyprpaper'
+    3. add execution permissions: sudo chmod +x ~/.config/hypr/scripts/changeWallpapers.sh
+
 ### 15. setting up further utilitie programms
    1. chreate the `~/Programming` directory
    2. in it: execute `git clone git@github.com:flottegurke/ssh-tui.git` and `git clone git@github.com:flottegurke/flotte-linux-utils.git`

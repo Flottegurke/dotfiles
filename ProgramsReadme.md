@@ -38,6 +38,7 @@ These programs provides some quallity of live improovements, for example by allo
 | socat | pacman (socat) | port utility (functions and listeners) | - | - |
 | sshpass | pacman (sshpass) | cli tool to push ssh-keys to servers | - | - |
 | ripgrep | pacman (ripgrep) | used to coppy and passte stuf in the console | - | - |
+| hyprpaper | pacman (hyprpaper) | displays a background immage | no | wayland |
 
 ### Utility programs which need additionally configuration 
 | Name | Installer | description | web-app | wayland/x11 |

@@ -45,6 +45,7 @@ tooltip {
 #cpu,
 #custom-combinedTemperature,
 #idle_inhibitor,
+#window,
 #mpris,
 #systemd-failed-units,
 #pulseaudio,
@@ -80,7 +81,6 @@ tooltip {
 #idle_inhibitor.activated {
     color: @red;
     background-color: @surface1;
-    background-color: @surface1;
     padding-right: 10px;
 }
 
@@ -104,13 +104,17 @@ tooltip {
     margin-right: 1rem;
 }
 
-window#waybar {
+#window {
     color: @overlay1;
+    border-radius: 0.8rem;
+    background-color: @surface0;
+    padding-right:12px;
 }
 
 
 #pulseaudio {
     color: @lavender;
+    margin-left: 1rem;
     border-radius: 0.8rem 0 0 0.8rem;
 }
 

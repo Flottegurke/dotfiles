@@ -18,6 +18,7 @@ STOW_DIRS=(
     starship
     swaync
     waybar
+    hyprpaper
 )
 
 # For stowing into /etc
