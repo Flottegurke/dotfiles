@@ -157,12 +157,13 @@ Instead of using `gdm` (the default GNOME welcome screen) i want to use [ly](htt
     1. chreate simliks: 'stow rofi'
     2. install hyprpaper: 'sudo pacman -S hyprpaper'
     3. add execution permissions: sudo chmod +x ~/.config/hypr/scripts/changeWallpapers.sh
+    4. add all your favourite backgrounds to `~/.config/hypr/wallpapers/`
 
-### 15. setting up further utilitie programms
+### 16. setting up further utilitie programms
    1. chreate the `~/Programming` directory
    2. in it: execute `git clone git@github.com:flottegurke/ssh-tui.git` and `git clone git@github.com:flottegurke/flotte-linux-utils.git`
 
-### 15. Installing additoinal programms
+### 17. Installing additoinal programms
 Now you can install all the other programms you need, for inspiration, have a look at the [additional programms list](https://github.com/Flottegurke/dotfiles/blob/main/ProgrammsReadme.md#general-programms)
 
 > [!NOTE]
