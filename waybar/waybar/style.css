@@ -14,7 +14,7 @@ tooltip {
     border-radius: 0.8rem;
 }
 
-#waybar {
+#waybar{
     background-color: @base;
     color: @text;
 }
@@ -86,10 +86,13 @@ tooltip {
 
 #mpris {
     color: @mauve;
-    background-color: @surface1;
+    background-color: transparent;
     border-radius: 0.8rem;
     padding-right: 10px;
     margin-right: 1rem;
+}
+#mpris.playing {
+    background-color: @surface1;
 }
 #mpris.paused {
     background-color: @surface0;
@@ -110,7 +113,9 @@ tooltip {
     background-color: @surface0;
     padding-right:12px;
 }
-
+window#waybar.empty #window {
+    background-color: transparent;
+}
 
 #pulseaudio {
     color: @lavender;
