@@ -1,0 +1,7 @@
+# Ignore IntelliJ files
+.idea
+
+# Ignore backgrounds exept a few examples
+hyprpaper/hypr/wallpapers/*
+!hyprpaper/hypr/wallpapers/george.jpg
+!hyprpaper/hypr/wallpapers/duck.jpg
