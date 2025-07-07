@@ -26,12 +26,12 @@
         "on-click": "gnome-system-monitor -r"
     },
     "custom/combinedTemperature": {
-        "exec": "~/.config/waybar/scripts/CombinedTemperature.sh",
+        "exec": "~/.config/hypr/scripts/combinedTemperature.sh",
         "return-type": "json",
         "interval": 30,
-        "on-click": "~/.config/waybar/scripts/CombinedTemperature.sh & gnome-system-monitor -p",
-        "on-click-middle": "~/.config/waybar/scripts/CombinedTemperature.sh",
-        "on-click-right": "~/.config/waybar/scripts/CombinedTemperature.sh"
+        "on-click": "~~/.config/hypr/scripts/combinedTemperature.sh & gnome-system-monitor -p",
+        "on-click-middle": "~/.config/hypr/scripts/combinedTemperature.sh",
+        "on-click-right": "~/.config/hypr/scripts/combinedTemperature.sh"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -124,13 +124,13 @@
         "tooltip": false
     },
     "custom/network": {
-        "exec": "~/.config/waybar/scripts/CustomNetworkData.sh",
+        "exec": "~/.config/hypr/scripts/customNetworkData.sh",
         "return-type": "json",
         "interval": 30,
         "format": "{}",
-        "on-click": "~/.config/waybar/scripts/CustomNetworkData.sh && kitty -e nmtui",
-        "on-click-middle": "~/.config/waybar/scripts/CustomNetworkData.sh",
-        "on-click-right": "~/.config/waybar/scripts/CustomNetworkData.sh"
+        "on-click": "~/.config/hypr/scripts/customNetworkData.sh & kitty -e nmtui",
+        "on-click-middle": "~/.config/hypr/scripts/customNetworkData.sh",
+        "on-click-right": "~/.config/hypr/scripts/customNetworkData.s"
     },
     "bluetooth": {
         "format": " {status}",
