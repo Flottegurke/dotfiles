@@ -5,3 +5,8 @@
 hyprpaper/hypr/wallpapers/*
 !hyprpaper/hypr/wallpapers/george.jpg
 !hyprpaper/hypr/wallpapers/duck.jpg
+
+# Ignore obs settings exept themes
+obs/obs-studio/*
+!obs/obs-studio/themes/
+!obs/obs-studio/themes/**
