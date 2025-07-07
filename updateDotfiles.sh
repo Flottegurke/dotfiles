@@ -2,9 +2,8 @@
 
 set -euo pipefail
 
-# towing into ~/.config
+# stowing into ~/.config
 STOW_DIRS=(
-    bash
     bat
     btop
     hypridle
@@ -21,9 +20,14 @@ STOW_DIRS=(
     hyprpaper
 )
 
-# For stowing into /etc
+# stowing into /etc
 STOW_ETC_DIRS=(
     ly
+)
+
+# stowing into ~
+STOW_ROOT_DIRS=(
+    bash
 )
 
 echo "Stowing into \$HOME..."
@@ -38,6 +42,13 @@ for dir in "${STOW_ETC_DIRS[@]}"; do
     sudo stow --target=/etc "$dir"
 done
 
+echo "Stowing into ~..."
+for dir in "${STOW_ROOT_DIRS[@]}"; do
+    echo " -> $dir"
+    sudo stow --target=~ "$dir"
+done
+
 bat cache --build
+chmod +x ~/.config/hypr/scripts/*.sh
 source .bashrc
 echo "Done."
