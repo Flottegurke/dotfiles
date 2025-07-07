@@ -38,4 +38,6 @@ for dir in "${STOW_ETC_DIRS[@]}"; do
     sudo stow --target=/etc "$dir"
 done
 
+bat cache --build
+source .bashrc
 echo "Done."
