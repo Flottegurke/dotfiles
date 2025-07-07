@@ -68,6 +68,7 @@ These programs provides some quallity of live improovements, for example by allo
 | thunderbird | pacman (thunderbird) | Mail mamnager | no | -- | 
 | gimp | pacman (gimp) | immage editor | no | wayland |
 | discord | pacman (discord) | chat program | no | wayland |
+| betterdiscord-installer | yay (betterdiscord-installer) | more Discord settings (catppuchin theme) | no | wayland |
 | btop | pacman (btop) | resource monitor (tui) | - | - |
 | intellij-idea-ultimate-edition | yay (intellij-idea-ultimate-edition)  | IDE | no | wayland |
 | signal-desktop | pacman (signal-desktop) | chat program | no | wayland |
