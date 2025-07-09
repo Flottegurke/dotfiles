@@ -66,3 +66,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo system-run || ec
 if [ -f /usr/share/bash-completion/bash_completion ]; then
     source /usr/share/bash-completion/bash_completion
 fi
+
+# This allows for personal .bashrc configs which are not tracked by git
+source ~/.config/customBashrc
