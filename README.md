@@ -36,8 +36,8 @@ All setup instructions, configuration steps, keybindings, and informtions can be
 MIT - use at your own risk.  
 I maintain these for **personal reproducibility**, but feel free to adapt anything!
 
-> [!NOTE]2i
-If you got improovements / feature requests / ideas, feel free to open **PRs** or **issues**.
+> [!NOTE]
+> If you got improovements / feature requests / ideas, feel free to open **PRs** or **issues**.
 
 ---
 
