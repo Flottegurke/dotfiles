@@ -42,6 +42,7 @@ export EDITOR=vim
 alias fzf='fzf --preview="bat --color=always --line-range 0:500 {}"'
 alias fzfo='file="$(fzf)" && [ -n "$file" ] && file="$(realpath "$file")" && history -s "vim \"$file\"" && vim "$file"'
 alias fzfc='file="$(fzf)" && [ -n "$file" ] && file="$(realpath "$file")" && wl-copy "$file"'
+alias fzffc='file="$(fzf)" && [ -n "$file" ] && file="$(realpath "$file")" && cat "$file" | wl-copy'
 
 alias grep='grep --color=auto'
 
