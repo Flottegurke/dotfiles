@@ -2,23 +2,38 @@
 
 IMG="ocrshot.png"
 HOME="/tmp"
-FULL="/tmp/ocrshot.png"
-TIMEOUT=5 # in sec
+FULL="$HOME/$IMG"
+TIMEOUT=5  # in seconds
 
+# Take a region screenshot
+hyprshot -m region -o "$HOME" -f "$IMG" -s
 
-hyprshot -m region -o "$HOME" -f "$IMG" -s; # take screenshot
-
-# Wait for the screenshot file to be created (max 5 seconds)
+# Wait for the screenshot file to be created (max TIMEOUT seconds)
 WAITED=0
-while [ ! -f "$FULL" ] && [ $WAITED -lt $TIMEOUT ]; do
-    sleep 0.1
-    WAITED=$(echo "$WAITED + 0.2" | bc)
-done 
+STEP=0.2
+LIMIT=$(awk "BEGIN { print $TIMEOUT / $STEP }")  # number of iterations
 
+for ((i=0; i < LIMIT; i++)); do
+    if [ -f "$FULL" ]; then
+        break
+    fi
+    sleep $STEP
+    WAITED=$(awk "BEGIN { print $WAITED + $STEP }")
+done
 
-# If the screenshot was saved, run OCR
+# If the screenshot exists, perform OCR and copy to clipboard
 if [ -f "$FULL" ]; then
-    tesseract "$FULL" - -l eng+deu+fra --psm 1 | wl-copy
+    TEXT=$(tesseract "$FULL" - -l eng+deu --psm 1 2>/dev/null | sed '/^\s*$/d')
+
+    if [ -n "$TEXT" ]; then
+        echo "$TEXT" | wl-copy
+
+        # Limit length for notification (avoid spammy long text)
+        SHORT_TEXT=$(echo "$TEXT" | head -c 200)
+        notify-send -i dialog-information "OCR Success" "Copied text: $SHORT_TEXT"
+    else
+        notify-send -i dialog-warning "OCR Failed" "No text was detected in the image."
+    fi
 else
-    notify-send "❌ OCR Failed" "Screenshot file not found after waiting  ${WAITED} seconds."
+    notify-send -i dialog-error "OCR Failed" "Screenshot not found after waiting ${WAITED}s."
 fi
