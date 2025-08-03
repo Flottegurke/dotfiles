@@ -9,6 +9,7 @@ STOW_DIRS=(
     hyprland
     hyprlock
     hyprmocha
+    hyprpaper
     kitty
     lazygit
     obs
@@ -16,7 +17,6 @@ STOW_DIRS=(
     starship
     swaync
     waybar
-    hyprpaper
 )
 
 STOW_ETC_DIRS=(
