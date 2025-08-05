@@ -17,4 +17,4 @@ tooltip_text="$count updates available:\n$updates"
 tooltip_escaped=$(printf "%s" "$tooltip_text" | sed ':a;N;$!ba;s/\n/\\n/g')
 
 # Output JSON for Waybar
-echo "{\"text\": \" $count\", \"tooltip\": \"$tooltip_escaped\"}"
+echo "{\"text\": \"  $count\", \"tooltip\": \"$tooltip_escaped\"}"
