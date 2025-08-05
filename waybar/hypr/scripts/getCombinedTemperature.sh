@@ -1,7 +1,6 @@
 #!/bin/bash
 
 max_temp=-1000
-tooltip=""
 
 # Determine max temp and store all current temps in $tooltip
 while IFS= read -r -d '' zone; do
