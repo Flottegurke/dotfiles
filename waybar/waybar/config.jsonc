@@ -1,6 +1,6 @@
 {
     "position": "top",
-    "modules-left": ["hyprland/workspaces", "cpu", "custom/combinedTemperature", "idle_inhibitor", "mpris"],
+    "modules-left": ["hyprland/workspaces", "cpu", "custom/CombinedTemperature", "idle_inhibitor", "mpris"],
 
     "hyprland/workspaces": {
         "active-only": false,
@@ -25,13 +25,13 @@
         ],
         "on-click": "gnome-system-monitor -r"
     },
-    "custom/combinedTemperature": {
-        "exec": "~/.config/hypr/scripts/combinedTemperature.sh",
+    "custom/CombinedTemperature": {
+        "exec": "~/.config/hypr/scripts/getCombinedTemperature.sh",
         "return-type": "json",
         "interval": 30,
-        "on-click": "~~/.config/hypr/scripts/combinedTemperature.sh & gnome-system-monitor -p",
-        "on-click-middle": "~/.config/hypr/scripts/combinedTemperature.sh",
-        "on-click-right": "~/.config/hypr/scripts/combinedTemperature.sh"
+        "on-click": "~~/.config/hypr/scripts/getCombinedTemperature.sh & gnome-system-monitor -p",
+        "on-click-middle": "~/.config/hypr/scripts/getCombinedTemperature.sh",
+        "on-click-right": "~/.config/hypr/scripts/getCombinedTemperature.sh"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -88,7 +88,7 @@
 
 
 
-    "modules-right": ["pulseaudio", "backlight", "custom/network", "bluetooth", "battery", "clock", "custom/notification"],
+    "modules-right": ["pulseaudio", "backlight", "custom/getNetworkData", "bluetooth", "battery", "clock", "custom/outOfDatePackages", "custom/notification"],
 
     "pulseaudio": {
         "format": "{icon}  {volume}%",
@@ -123,14 +123,14 @@
         "smooth-scrolling-threshold": 1,
         "tooltip": false
     },
-    "custom/network": {
-        "exec": "~/.config/hypr/scripts/customNetworkData.sh",
+    "custom/NetworkData": {
+        "exec": "~/.config/hypr/scripts/getNetworkData.sh",
         "return-type": "json",
         "interval": 30,
         "format": "{}",
-        "on-click": "~/.config/hypr/scripts/customNetworkData.sh & kitty -e nmtui",
-        "on-click-middle": "~/.config/hypr/scripts/customNetworkData.sh",
-        "on-click-right": "~/.config/hypr/scripts/customNetworkData.s"
+        "on-click": "~/.config/hypr/scripts/getNetworkData.sh & kitty -e nmtui",
+        "on-click-middle": "~/.config/hypr/scripts/getNetworkData.sh",
+        "on-click-right": "~/.config/hypr/scripts/getNetworkData.sh"
     },
     "bluetooth": {
         "format": " {status}",
@@ -166,6 +166,15 @@
         "tooltip": true,
         "tooltip-format": "<tt>{calendar}</tt>",
         "on-click": "gnome-calendar"
+    },
+    "custom/outOfDatePackages": {
+        "exec": "~/.config/hypr/scripts/getOutOfDatePackages.sh",
+        "interval": 43200,
+        "return-type": "json",
+        "format": "{}",
+        "on-click": "~/.config/hypr/scripts/getOutOfDatePackages.sh & kitty -e update-helper",
+        "on-click-middle": "~/.config/hypr/scripts/getOutOfDatePackages.sh",
+        "on-click-right": "~/.config/hypr/scripts/getOutOfDatePackages.sh"
     },
     "custom/notification": {
         "tooltip": false,
