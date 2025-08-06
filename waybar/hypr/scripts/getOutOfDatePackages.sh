@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# Capture plain list of updates
-updates=$(yay -Qu --quiet --color=never)
-
 # Count how many updates
-count=$(echo "$updates" | wc -l)
+count=$(yay -Qu --quiet | wc -l)
 
 # Fallback for when no updates are available
 if [ "$count" -eq 0 ]; then
