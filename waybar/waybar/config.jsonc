@@ -169,7 +169,7 @@
     },
     "custom/outOfDatePackages": {
         "exec": "~/.config/hypr/scripts/getOutOfDatePackages.sh",
-        "interval": 43200,
+        "interval": 21600,
         "return-type": "json",
         "format": "{}",
         "on-click": "~/.config/hypr/scripts/getOutOfDatePackages.sh & kitty -e update-helper",
