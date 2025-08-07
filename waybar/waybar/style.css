@@ -43,7 +43,7 @@ tooltip {
 }
 
 #cpu,
-#custom-CombinedTemperature,
+#custom-combinedTemperature,
 #idle_inhibitor,
 #window,
 #mpris,
@@ -51,7 +51,7 @@ tooltip {
 #pulseaudio,
 #backlight,
 #bluetooth,
-#custom-NetworkData,
+#custom-networkData,
 #battery,
 #clock,
 #custom-outOfDatePackages,
@@ -66,7 +66,7 @@ tooltip {
     border-radius: 0.8rem 0 0 0.8rem;
 }
 
-#custom-CombinedTemperature {
+#custom-combinedTemperature {
     color: @peach;
     border-radius: 0 0.8rem 0.8rem 0;
     padding-right: 10px;
@@ -128,7 +128,7 @@ window#waybar.empty #window {
     color: @blue;
 }
 
-#custom-NetworkData {
+#custom-networkData {
     color: @sapphire;
 }
 

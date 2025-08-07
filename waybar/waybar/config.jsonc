@@ -1,6 +1,6 @@
 {
     "position": "top",
-    "modules-left": ["hyprland/workspaces", "cpu", "custom/CombinedTemperature", "idle_inhibitor", "mpris"],
+    "modules-left": ["hyprland/workspaces", "cpu", "custom/combinedTemperature", "idle_inhibitor", "mpris"],
 
     "hyprland/workspaces": {
         "active-only": false,
@@ -25,7 +25,7 @@
         ],
         "on-click": "gnome-system-monitor -r"
     },
-    "custom/CombinedTemperature": {
+    "custom/combinedTemperature": {
         "exec": "~/.config/hypr/scripts/getCombinedTemperature.sh",
         "return-type": "json",
         "interval": 30,
@@ -88,7 +88,7 @@
 
 
 
-    "modules-right": ["pulseaudio", "backlight", "custom/getNetworkData", "bluetooth", "battery", "clock", "custom/outOfDatePackages", "custom/notification"],
+    "modules-right": ["pulseaudio", "backlight", "custom/networkData", "bluetooth", "battery", "clock", "custom/outOfDatePackages", "custom/notification"],
 
     "pulseaudio": {
         "format": "{icon}  {volume}%",
@@ -123,7 +123,7 @@
         "smooth-scrolling-threshold": 1,
         "tooltip": false
     },
-    "custom/NetworkData": {
+    "custom/networkData": {
         "exec": "~/.config/hypr/scripts/getNetworkData.sh",
         "return-type": "json",
         "interval": 30,
