@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+cd "$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
+
+
 STOW_DIRS=(
     bat
     btop
