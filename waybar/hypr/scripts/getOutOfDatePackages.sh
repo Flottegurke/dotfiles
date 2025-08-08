@@ -10,6 +10,7 @@ if [ "$count" -eq 0 ]; then
 fi
 
 # Escape newlines for JSON tooltip
+updates=$(yay -Qu)
 tooltip_text="$count updates available:\n$updates"
 tooltip_escaped=$(printf "%s" "$tooltip_text" | sed ':a;N;$!ba;s/\n/\\n/g')
 
