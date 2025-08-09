@@ -1,0 +1,6 @@
+[Unit]
+Description=Update pacman package database
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/pacman -Sy --quiet
