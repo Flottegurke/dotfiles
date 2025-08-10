@@ -44,8 +44,6 @@ alias fzfo='file="$(fzf)" && [ -n "$file" ] && file="$(realpath "$file")" && his
 alias fzfc='file="$(fzf)" && [ -n "$file" ] && file="$(realpath "$file")" && wl-copy "$file"'
 alias fzffc='file="$(fzf)" && [ -n "$file" ] && file="$(realpath "$file")" && cat "$file" | wl-copy'
 
-alias grep='grep --color=auto'
-
 alias ls='exa --icons=auto --color=auto'
 alias ll='ls -al'
 alias la='ls -A'
@@ -54,14 +52,15 @@ alias lgit=lazygit
 alias icat='kitten icat'
 alias hg='kitten hyperlinked-grep'
 
+alias grep='grep --color=auto'
+
 alias ssh-tui='python3 ~/Programming/ssh-tui/main.py'
-alias ssh-keygen-helper=' bash ~/Programming/flotte-linux-utils/ssh/ssh-key/ssh-keygen-helper/ssh-keygen-helper.sh'
-alias ssh-keypush-helper=' bash ~/Programming/flotte-linux-utils/ssh/ssh-key/ssh-keypush-helper/ssh-keypush-helper.sh'
 
 # Add an "alert" alias for long running commands.  Use like this:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo system-run || echo dialog-warning)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+ndir() { mkdir "$1" && cd "$1"; }
 
 # Enable programmable completion features (see /etc/bash_completion)
 if [ -f /usr/share/bash-completion/bash_completion ]; then
