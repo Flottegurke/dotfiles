@@ -103,8 +103,10 @@ tooltip {
 }
 
 #systemd-failed-units {
-    color: @rosewater;
+    color: @base;
+    border-radius: 0.8rem;
     background-color: @red;
+    padding-right: 10px;
     margin-right: 1rem;
 }
 
