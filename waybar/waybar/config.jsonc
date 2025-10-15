@@ -119,7 +119,7 @@
         "format": "{icon} {percent}% ",
         "format-icons": ["󰹐 ", "󱩎 ", "󱩏 ", "󱩐 ", "󱩑 ", "󱩒 ", "󱩓 ", "󱩔 ", "󱩕 ", "󱩖 ", "󰛨 "],
         "reverse-scrolling": true,
-        "scroll-step": 5,
+        "scroll-step": 2,
         "smooth-scrolling-threshold": 1,
         "tooltip": false
     },
