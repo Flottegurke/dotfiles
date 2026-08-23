@@ -24,11 +24,11 @@ This means (input/config) updates are tested on non crittical hardware, before t
 
 | Directory | Purpose |
 |---|---|
-| `hosts/` | Per-machine entry point (hostname, roles, hardware, other host-unique settings) |
-| `nixos/` | Generall NixOS config (common settings, roles, services) |
-| `home-manager/` | Per-user dotfiles/program config |
-| `modules/` | Custom NixOS/Home Manager modules (with their own `options`) |
-| `overlays/` | Package overrides/patches |
-| `pkgs/` | Custom packages (not in nixpkgs) |
-| `secrets/` | Encrypted secrets (via agenix) |
-| `parts/` | flake-parts modules wiring everything into flake outputs |
+| [`hosts/`](./hosts) | Per-machine entry point (hostname, roles, hardware, other host-unique settings) |
+| [`nixos/`](./nixos) | Generall NixOS config (common settings, roles, services) |
+| [`home-manager/`](./home-manager) | Per-user dotfiles/program config |
+| [`modules/`](./modules) | Custom NixOS/Home Manager modules (with their own `options`) |
+| [`overlays/`](./overlays) | Package overrides/patches |
+| [`pkgs/`](./pkgs) | Custom packages (not in nixpkgs) |
+| [`secrets/`](./secrets) | Encrypted secrets (via agenix) |
+| [`parts/`](./parts) | flake-parts modules wiring everything into flake outputs |
