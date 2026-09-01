@@ -10,5 +10,5 @@ There are two kinds of modules:
 ## Files
 | File | Purpose |
 |---|---|
-| [`nixos-hosts.nix`](./nixos-hosts.nix) | Builds `nixosConfigurations.<name>` for every directory under [`hosts/`](../hosts). |
+| [`nixos-hosts.nix`](./nixos-hosts.nix) | Builds `nixosConfigurations.<name>` for every directory under [`hosts/`](../hosts), pulling in [`common/`](../common) for a shared config. |
 | [`packages.nix`](./packages.nix) | Builds `packages.<name>` for every directory under [`pkgs/`](../pkgs). |

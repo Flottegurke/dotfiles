@@ -22,9 +22,11 @@ This means (input/config) updates are tested on non-critical hardware, before th
 | Directory | Purpose |
 |---|---|
 | [`hosts/`](./hosts) | Per-machine entry point (hostname, roles, hardware, other host-unique settings) |
-| [`nixos/`](./nixos) | General NixOS config (common settings, roles, services) |
-| [`home-manager/`](./home-manager) | Per-user dotfiles/program config |
-| [`modules/`](./modules) | Custom NixOS/Home Manager modules (with their own `options`) |
+| [`common/`](./common) | Common settings, used by every host |
+| [`roles/`](./roles) | Shared Role definitions (Desktop, Server, Work-server, etc) |
+| [`services/`](./services) | Individual service configs (nginx, postgresql, etc.) |
+| [`users/`](./users) | Per user account definitions |
+| [`modules/`](./modules) | Custom NixOS/Home Manager modules |
 | [`overlays/`](./overlays) | Package overrides/patches |
 | [`pkgs/`](./pkgs) | Custom packages (not in `nixpkgs`) |
 | [`secrets/`](./secrets) | Encrypted secrets (via agenix) |
