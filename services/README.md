@@ -2,19 +2,19 @@
 This directory houses service-level defaults (mostly hardening defaults) which are enabled by hosts or roles.
 
 ## Overview
-Every file here is automatically imported via [`default.nix`](./default.nix).
-Each file guards its actual effect with `lib.mkIf config.services.<x>.enable`, meaning it stays inert until a [`role`](../roles) or host flips that service on.
+Every subdirectiry is automatically imported via [`default.nix`](./default.nix).
+Each config guards its actual effect with `lib.mkIf config.services.<x>.enable`, meaning it stays inert until a [`role`](../roles) or host flips that service on.
 
-**What belongs here:** settings identical no matter which host runs the service (TLS hardening, recommended defaults, firewall rules tied to the service itself, etc).
+**What belongs here:** settings which are identical no matter which host runs the service (TLS hardening, recommended defaults, firewall rules tied to the service itself, etc).
 
 ## Files
 | File | Purpose |
 |---|---|
 | [`default.nix`](./default.nix) | Imports all service configs located in its directory. |
-| `*.nix` | The actual service configs. |
+| `*/defult.nix` | The actual service configs. |
 
 ## Adding a new service
-1. Create `services/<name>.nix`:
+1. Create `services/<name>/default.nix` plus anny companion files:
    ```nix
    { lib, config, ... }:
    lib.mkIf config.services.<name>.enable {
