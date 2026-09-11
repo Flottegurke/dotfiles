@@ -6,6 +6,7 @@ lib.mkIf config.roles-config.desktop-base.enable {
     signal-desktop
     gum
     glow
+    tokei
   ];
 
   services = {
