@@ -61,6 +61,22 @@ if gum confirm "Override the default swap size (8192 MB)?"; then
     fi
 fi
 
+readarray -t ROLES_ARR <<< "$SELECTED_ROLES"
+
+IS_DESKTOP=false
+for role in "${ROLES_ARR[@]}"; do
+    [[ "$role" == desktop-* ]] && IS_DESKTOP=true
+done
+
+IS_WORK=false
+if gum confirm "Mark this host as a work machine (ajusts SSH access)?"; then
+    IS_WORK=true
+fi
+
+IS_ADMIN=false
+if gum confirm "Mark this host as an admin machine (grants fleet-wide SSH login)?"; then
+    IS_ADMIN=true
+fi
 
 # -------------------- Show summary --------------------
 
@@ -69,11 +85,14 @@ USERS_DISPLAY="${SELECTED_USERS//$'\n'/, }"
 
 gum style --bold "Host configuration"
 gum style --border rounded --padding "0 1 0 1" \
-"Hostname: | $HOSTNAME_INPUT" \
-"Platform: | $PLATFORM" \
-"Roles:    | $ROLES_DISPLAY" \
-"Users:    | ${USERS_DISPLAY:-none}" \
-"Swap:     | ${SWAP_OVERRIDE:-default (8192MB)}"
+"Hostname:       | $HOSTNAME_INPUT" \
+"Platform:       | $PLATFORM" \
+"Roles:          | $ROLES_DISPLAY" \
+"Users:          | ${USERS_DISPLAY:-none}" \
+"Swap:           | ${SWAP_OVERRIDE:-default (8192MB)}" \
+"SSH DektopRole: | $([[ "$IS_DESKTOP" == true ]] && echo yes || echo no)" \
+"SSH WorkRole:   | $([[ "$IS_WORK" == true ]] && echo yes || echo no)" \
+"SSH AdminRole:  | $([[ "$IS_ADMIN" == true ]] && echo yes || echo no)" 
 
 if ! gum confirm "Create this host?"; then
     gum style --foreground 3 "Cancelled."
@@ -86,11 +105,10 @@ fi
 gum log --level info "Generating ${HOST_DIR}"
 mkdir -p "$HOST_DIR"
 
-readarray -t ROLES_ARR <<< "$SELECTED_ROLES"
 ROLES_NIX=""
 for role in "${ROLES_ARR[@]}"; do
     [[ -z "$role" ]] && continue
-    ROLES_NIX+="  roles-config.${role}.enable = true;
+    ROLES_NIX+="    roles-config.${role}.enable = true;
 "
 done
 
@@ -99,26 +117,34 @@ if [[ -n "$SELECTED_USERS" ]]; then
     readarray -t USERS_ARR <<< "$SELECTED_USERS"
     for user in "${USERS_ARR[@]}"; do
         [[ -z "$user" ]] && continue
-        USERS_NIX+="  users-config.${user}.enable = true;
+        USERS_NIX+="    users-config.${user}.enable = true;
 "
     done
 fi
 
 SWAP_NIX=""
 if [[ -n "$SWAP_OVERRIDE" ]]; then
-    SWAP_NIX=" swapSizeMB = ${SWAP_OVERRIDE};"
+    SWAP_NIX="   swapSizeMB = ${SWAP_OVERRIDE};"
 fi
 
 gum log --level info "Generating ${HOST_DIR}/default.nix"
 cat > "$HOST_DIR/default.nix" <<EOF
-{ ... }:
 {
-  networking.hostName = "$HOSTNAME_INPUT";
-  nixpkgs.hostPlatform = "$PLATFORM";
+  meta = {
+    isDesktop = ${IS_DESKTOP};
+    isWork = ${IS_WORK};
+    isAdmin = ${IS_ADMIN};
+  };
+
+  module = { ... }:
+  {
+    networking.hostName = "$HOSTNAME_INPUT";
+    nixpkgs.hostPlatform = "$PLATFORM";
 
 $USERS_NIX
 $ROLES_NIX
 $SWAP_NIX
+  };
 }
 EOF
 

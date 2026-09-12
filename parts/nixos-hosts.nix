@@ -2,7 +2,7 @@
 let
   mkHost = name: inputs.nixpkgs.lib.nixosSystem { # construct a NixOS system for <name>
     modules = [
-      ../hosts/${name}
+      (import ../hosts/${name}).module
       ../hosts/${name}/hardware-configuration.nix
 #      ../hosts/${name}/disko.nix
       ../common

@@ -51,7 +51,9 @@ case "$SHELL_NAME" in
         SHELL_EXPR='pkgs.fish'
 esac
 
-EXTRA_GROUPS=$(gum choose --no-limit --header "Additional groups:" "wheel" "networkmanager" "audio" "video" "docker")
+EXTRA_GROUPS=$(gum choose --no-limit --header "Additional groups:" "wheel" "networkmanager" "audio" "video" "docker" "libvirtd")
+
+SECRET_GROUP="$(gum choose --header "Which machines should be able to decrypt this user's password?" "allMachines" "allDesktops" "allWorkMachines" "allAdminMachines")"
 
 if gum confirm "Create Home manager configuration?"; then
     HOME_MANAGER=true
@@ -69,7 +71,8 @@ gum style --border rounded --padding "0 1 0 1" \
 "Description:  | $DESCRIPTION" \
 "Shell:        | $SHELL_NAME" \
 "Groups:       | ${EXTRA_GROUPS//$'\n'/, }" \
-"Home Manager: | $([[ "$HOME_MANAGER" == true ]] && echo yes || echo no)"
+"Home Manager: | $([[ "$HOME_MANAGER" == true ]] && echo yes || echo no)" \
+"Secret group: | $SECRET_GROUP"
 
 if ! gum confirm "Create this user?"; then
    gum style --foreground 3 "Cancelled."
@@ -99,7 +102,7 @@ unset PASSWORD PASSWORD_CONFIRM
 # -------------------- Applying config --------------------
 
 gum log --level info "Appending Secret to $SECRETS_NIX."
-SECRET_DECL="  \"users-${USERNAME}-password.age\".publicKeys = allMachines;"
+SECRET_DECL="  \"users-${USERNAME}-password.age\".publicKeys = keys.${SECRET_GROUP};"
 if grep -Fq "\"users-${USERNAME}-password.age\"" "$SECRETS_NIX"; then
     gum style --foreground 1 "A secret entry for $USERNAME already exists."
     exit 1
@@ -111,7 +114,7 @@ awk -v declaration="$SECRET_DECL" '
     { print }
 ' "$SECRETS_NIX" > "$SECRETS_NIX.tmp"
 mv "$SECRETS_NIX.tmp" "$SECRETS_NIX"
-gum log --level warn "Every host will be able to decrypt the user secret!"
+gum log --level warn "Every machine in '${SECRET_GROUP}' will be able to decrypt this user's password!"
 
 gum log --level info "Encrypting pasword hash with agenix."
 TMP_SECRET="$(mktemp)"

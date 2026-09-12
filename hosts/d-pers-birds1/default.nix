@@ -1,12 +1,20 @@
-# config for the old thinkpad with the birds stickers
-{ ... }:
 {
-  networking.hostName = "d-pers-birds1";
+  meta = {
+    isDesktop = true;
+    isWork = false;
+    isAdmin = true;
+  };
 
-  nixpkgs.hostPlatform = "x86_64-linux";
+  module = { ... }:
+  {
+    networking.hostName = "d-pers-birds1";
 
-  users-config.testuser.enable = true;
+    nixpkgs.hostPlatform = "x86_64-linux";
 
-  roles-config.laptop.enable = true;
-  roles-config.desktop-kde.enable = true;
+    users-config.testuser.enable = true;
+    users-config.rescue.enable = true;
+
+    roles-config.laptop.enable = true;
+    roles-config.desktop-kde.enable = true;
+  };
 }

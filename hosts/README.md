@@ -4,6 +4,29 @@ This Directory houses the entry points per machine, with each subdirectory beein
 ## Overview
 Host configs declare whatever is unique to this machine (hostname, disk layout, static IP). Shared behavior (services, roles, modules, universal settings) is imported from [`common/`](../common).
 
+A host's default.nix is a attrset with 2 keys, not a NixOS module:
+```nix
+{
+  meta = {
+    isDesktop = true;
+    isAdmin = false;
+  };
+
+  module = { lib, config, pkgs, ... }:
+  {
+    networking.hostName = "laptop-x1";
+    nixpkgs.hostPlatform = "x86_64-linux";
+
+    roles-config.desktop-hyprland.enable = true;
+    roles-config.laptop.enable = true;
+
+    users-config.flottegurke.enable = true;
+  };
+}
+```
+- **`meta`:** plain data, consumed by [`secrets/keys.nix`](../secrets/keys.nix) to derive groups for secrets access
+- **`module`:** the actual NixOS module, configuring the hosts NixOS system
+
 ## Files
 | Path | Purpose |
 |---|---|
@@ -11,26 +34,9 @@ Host configs declare whatever is unique to this machine (hostname, disk layout, 
 | `<name>/hardware-configuration.nix` | Auto-generated hardware config (Filesystems, kernel modules, CPU microcode) |
 | `<name>/disko.nix` | Disk partitioning (for provisioning via `nixos-anywhere`/`disko`) |
 
-## A typical host file
-```nix
-# hosts/server-web03/default.nix
-{
-  networking.hostName = "server-web03";
-  nixpkgs.hostPlatform = "x86_64-linux";
-
-  roles-config.vaultwarden-server.enable = true;
-
-  users-config.flottegurke.enable = true;
-
-  swapSizeMB = 2048; # override the default set in modules/nixos/swap.nix
-}
-```
-
 ## Adding a new host
-1. Create `hosts/<name>/`.
-2. Provision it (see the root README's workflow section, or [`nixos-anywhere`](https://github.com/nix-community/nixos-anywhere) for remote installs), producing `hardware-configuration.nix` (and `disko.nix`, if declaratively partitioned).
-3. Write `default.nix`: hostname, platform, role(s), enabled user(s), any host-unique overrides.
-4. `git add hosts/<name>` — new files must be tracked before the flake evaluator sees them.
-5. `nixos-rebuild switch --flake .#<name>` (locally) or let it pick up on the next scheduled deploy (see root README).
-
-No other file needs editing — `parts/nixos-hosts.nix` discovers the new directory automatically.
+1. Run the host config creation wizzard:
+   ```shell
+   config-new-host
+   ```
+2. Track & commit canges in git

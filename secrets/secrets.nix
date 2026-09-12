@@ -1,8 +1,9 @@
 let
-  d-pers-birds1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHC43HctB9k4V3TPacVnHVp9U7W74KDG2MlrNw63DRq7 justus.dicker+d-pers-birds1@web.de";
-
-  allMachines = [ d-pers-birds1 ];
+  keys = import ./keys.nix { lib = (import <nixpkgs> {}).lib; };
 in
 {
-  "users-flottegurke-password.age".publicKeys = allMachines;
+  "brave-bitwarden-serverUrl.age".publicKeys = keys.allDesktops;
+
+  # Auto appended by `config-new-user`.
+  "users-flottegurke-password.age".publicKeys = keys.allMachines;
 }
