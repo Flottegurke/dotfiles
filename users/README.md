@@ -20,28 +20,11 @@ users-config.flottegurke.enable = true;
 | `<name>/home.nix` | **This file is optional!** Home Manager config for `<name>` (`programs.*`, `home.packages`, etc). |
 
 ## Adding a new user
-1. Create `users/<name>/default.nix`:
-   ```nix
-   { pkgs, ... }:
-   {
-     isNormalUser = true;
-     shell = pkgs.zsh;
-     extraGroups = [ "wheel" "networkmanager" ];
-     description = "...";
-   }
+1. Run the user creation wizzard:
+   ```shell
+   config-new-user
    ```
-
-2. Optionally, create `users/<name>/home.nix`:
-   ```nix
-   { pkgs, ... }:
-   {
-     programs.git.enable = true;
-     home.packages = [ pkgs.ripgrep ];
-   }
-   ```
-3. Then generate and encrypt their password secret (see [`secrets/`](../secrets)) as `users-<name>-password.age`, and enable the account on whichever hosts it should should exist on:
-   ```nix
-   users-config.<name>.enable = true;
-   ```
-
-No other file needs editing since `default.nix` discovers the new directory automatically.
+2. Review wich host should have access to the user-secret (per defautl every host can decrypt it!)
+3. enable the user on the apropriate hosts
+4. rebuild the system & push the new config
+ 
