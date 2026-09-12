@@ -4,9 +4,8 @@ let
     modules = [
       ../hosts/${name}
       ../hosts/${name}/hardware-configuration.nix
+#      ../hosts/${name}/disko.nix
       ../common
-      inputs.home-manager.nixosModules.default # add home manager module (integrated version)
-      inputs.agenix.nixosModules.default # add agenix module
     ];
     specialArgs = { inherit inputs; }; # make the flake's `inputs` avaiable to the NixOS modules
   };
