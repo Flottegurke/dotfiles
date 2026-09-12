@@ -1,5 +1,4 @@
 { lib, stdenv, makeWrapper, gum, mkpasswd, git, agenix }:
-
 stdenv.mkDerivation {
   pname = "config-new-user";
   version = "1.0.0";
