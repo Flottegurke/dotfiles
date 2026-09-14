@@ -1,5 +1,5 @@
 # services/
-This directory houses service-level defaults (mostly hardening defaults) which are enabled by hosts or roles.
+This directory houses service-level defaults.
 
 ## Overview
 Every subdirectiry is automatically imported via [`default.nix`](./default.nix).
@@ -14,11 +14,11 @@ Each config guards its actual effect with `lib.mkIf config.services.<x>.enable`,
 | `*/defult.nix` | The actual service configs. |
 
 ## Adding a new service
-1. Create `services/<name>/default.nix` plus anny companion files:
+1. Create `services/<name>/default.nix` (plus anny companion files):
    ```nix
    { lib, config, ... }:
    lib.mkIf config.services.<name>.enable {
-     # ...
+     # service.<name>.defautlValue
    }
    ```
 2. Add values that must be set by the host once this config is active as a comment, inorder to speedup the configuration process for the next usecase
@@ -26,5 +26,3 @@ Each config guards its actual effect with `lib.mkIf config.services.<x>.enable`,
 > [!CAUTION]
 > Every default service config must take into account that different roles, each activating the same sevice, might get activated on the same host.
 > Due to this, no value that neds to get changed if this service has to run multiple times per host (eg. a port number) is allowed to be set in the service config and must be set in the host config instead!
-
-No other file needs editing since `default.nix` discovers the new service config automatically.

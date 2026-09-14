@@ -1,6 +1,5 @@
 # pkgs/
-This directory houses custom package derivations not available in `nixpkgs`.
-Each subdirectory is one package, automatically discovered and exposed as a flake output.
+This directory houses custom package derivations (packages which are not available in `nixpkgs`).
 
 ## Overview
 Every directory is picked up by [`parts/packages.nix`](../parts/packages.nix), which calls `pkgs.callPackage` on it and exposes the result as `packages.<name>` for every system in `flake.nix`'s `systems` list.
@@ -16,23 +15,25 @@ The directory name becomes the package name, referenceable from any NixOS config
 
 Create `pkgs/<name>/default.nix` as a standard derivation:
 ```nix
-{ lib, stdenv, fetchFromGitHub }:
-
+{ lib, stdenv, makeWrapper }:
 stdenv.mkDerivation {
-  pname = "<name>";
+  pname = "config-new-user";
   version = "1.0.0";
-  src = fetchFromGitHub { owner = ""; repo = ""; rev = ""; hash = ""; }; # or ./.
+  src = ./.;
+  dontUnpack = true;
+
+  nativeBuildInputs = [ makeWrapper ];
 
   installPhase = ''
     mkdir -p $out/bin
-    cp <name>.sh $out/bin/<name>
-    chmod +x $out/bin/<name>
+    cp ${./config-new-user.sh} $out/bin/config-new-user
+    chmod +x $out/bin/config-new-user
+    wrapProgram $out/bin/config-new-user --prefix PATH : ${lib.makeBinPath [ # programms the shells cript needs]}
   '';
 
   meta = with lib; {
-    description = "...";
+    description = "";
     license = licenses.mit;
   };
 }
 ```
-No other file needs editing since `parts/packages.nix` discovers it automatically on the next evaluation.

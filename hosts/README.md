@@ -1,10 +1,8 @@
 # hosts/
-This Directory houses the entry points per machine, with each subdirectory beeing one physical or virtual machine.
+This Directory houses the entry points per machine.
 
 ## Overview
-Host configs declare whatever is unique to this machine (hostname, disk layout, static IP). Shared behavior (services, roles, modules, universal settings) is imported from [`common/`](../common).
-
-A host's default.nix is a attrset with 2 keys, not a NixOS module:
+The `hosts/<name>/default.nix` file, which typically looks like this:
 ```nix
 {
   meta = {
@@ -24,15 +22,18 @@ A host's default.nix is a attrset with 2 keys, not a NixOS module:
   };
 }
 ```
-- **`meta`:** plain data, consumed by [`secrets/keys.nix`](../secrets/keys.nix) to derive groups for secrets access
-- **`module`:** the actual NixOS module, configuring the hosts NixOS system
+declares 2 things:
+1. **`meta` block:** is consumed by [`secrets/keys.nix`](../secrets/keys.nix) to derive groups for secrets access.
+2. **`module` block:** is the actual NixOS module configuring host specific NixOS settings.
+
+Disk information is stored in `hosts/<name>/disko.nix` and used by disko while the provisioning of new hosts.
 
 ## Files
 | Path | Purpose |
 |---|---|
-| `<name>/default.nix` | Per machine entry point (hostname, role selection, user enablement, host-unique overrides) |
+| `<name>/default.nix` | Host Specific NixOS and secrets-group config |
 | `<name>/hardware-configuration.nix` | Auto-generated hardware config (Filesystems, kernel modules, CPU microcode) |
-| `<name>/disko.nix` | Disk partitioning (for provisioning via `nixos-anywhere`/`disko`) |
+| `<name>/disko.nix` | Disk partitioning (for provisioning of new hosts) |
 
 ## Adding a new host
 1. Run the host config creation wizzard:
