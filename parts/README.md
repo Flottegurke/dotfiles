@@ -12,3 +12,4 @@ There are two kinds of modules:
 |---|---|
 | [`nixos-hosts.nix`](./nixos-hosts.nix) | Builds `nixosConfigurations.<name>` for every directory under [`hosts/`](../hosts), pulling in [`common/`](../common) for a shared config. |
 | [`packages.nix`](./packages.nix) | Builds `packages.<name>` for every directory under [`pkgs/`](../pkgs). |
+| [`isos.nix`](./isos.nix) | Builds a minimal bootstraping system ISO (`nixosConfigurations.installer-iso`) with SSH enabled and every `allAdminMachines` key pre-authorized for root login. |
