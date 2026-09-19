@@ -1,0 +1,49 @@
+name: Build and publish installer ISO
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "parts/isos.nix"
+      - "secrets/keys.nix"
+      - "secrets/keys-data.nix"
+      - "hosts/**/default.nix"
+      - "flake.lock"
+      - "flake.nix"
+  workflow_dispatch: {}
+
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: cachix/install-nix-action@v27
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - uses: cachix/cachix-action@v15
+        with:
+          name: flottegurke-dotfiles
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+
+      - name: Build ISO
+        run: |
+          nix build .#nixosConfigurations.installer-iso.config.system.build.isoImage \
+            --print-out-paths > iso-path.txt
+          echo "ISO_PATH=$(cat iso-path.txt)/iso" >> "$GITHUB_ENV"
+
+      - name: Find ISO file
+        run: |
+          ISO_FILE=$(find "$ISO_PATH" -name '*.iso')
+          echo "ISO_FILE=$ISO_FILE" >> "$GITHUB_ENV"
+
+      - name: Publish as a release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: iso-latest
+          name: "Installer ISO"
+          files: ${{ env.ISO_FILE }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
