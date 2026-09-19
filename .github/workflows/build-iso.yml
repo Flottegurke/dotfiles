@@ -40,7 +40,7 @@ jobs:
           echo "ISO_FILE=$ISO_FILE" >> "$GITHUB_ENV"
 
       - name: Publish as a release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: iso-latest
           name: "Installer ISO"
