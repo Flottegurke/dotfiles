@@ -35,6 +35,7 @@
     imports = [
       ./parts/nixos-hosts.nix
       ./parts/packages.nix
+      ./parts/isos.nix
     ];
 
   };
