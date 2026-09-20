@@ -26,14 +26,10 @@ lib.mkIf config.services.openssh.enable {
       MaxStartups = "10:30:50";
       PermitRootLogin = "no";
       PermitEmptyPasswords = false;
-      KerberosAuthentication = false;
-      GSSAPIKeyExchange = false;
-      GSSAPIAuthentication = false;
       IgnoreRhosts = true;
-      AuthorizedKeysFile = [ ".ssh/authorized_keys" ];
-      RhostsRSAAuthentication = false;
+      AuthorizedKeysFile = ".ssh/authorized_keys";
       HostbasedAuthentication = false;
-      PubkeyAcceptedAlgorithms = [ "ssh-ed25519" ];
+      PubkeyAcceptedAlgorithms = "ssh-ed25519";
       KexAlgorithms = [ "sntrup761x25519-sha512@openssh.com" "curve25519-sha256" ];
       Ciphers = [ "chacha20-poly1305@openssh.com" "aes256-gcm@openssh.com" ];
       Macs = [ "hmac-sha2-512-etm@openssh.com" ];
