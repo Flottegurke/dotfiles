@@ -12,6 +12,9 @@ on:
       - "flake.nix"
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 jobs:
   build-iso:
     runs-on: ubuntu-latest
