@@ -11,6 +11,7 @@
 
     nixpkgs.hostPlatform = "x86_64-linux";
 
+    users-config.graf.enable = true;
     users-config.rescue.enable = true;
 
     roles-config.laptop.enable = true;
