@@ -6,6 +6,6 @@
   home-manager.extraSpecialArgs = { inherit inputs; };
   home-manager.sharedModules = [
     ../modules/home-manager { programs.home-manager.enable = true; }
-    inputs.plasma-manager.homeManagerModules.plasma-manager
+    inputs.plasma-manager.homeModules.plasma-manager
   ];
 }
