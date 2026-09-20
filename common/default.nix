@@ -43,7 +43,7 @@
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   console.keyMap = "de-latin1-nodeadkeys";
-  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  age.identityPaths = [ "/home/flottegurke/.ssh/id_ed25519" ];
 
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -53,6 +53,8 @@
     useOSProber = true;
     theme = inputs.self.packages.${pkgs.system}.modern-grub-theme;
   };
+
+  services.openssh.enable = true;
 
   environment.systemPackages = with pkgs; [
     curl
