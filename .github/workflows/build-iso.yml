@@ -15,11 +15,64 @@ on:
 permissions:
   contents: write
 
+env:
+  ISO_VERSION: "0.0"
+
+concurrency:
+  group: installer-iso-release
+  cancel-in-progress: false
+
 jobs:
   build-iso:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v7
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Determine ISO release version
+        id: version
+        shell: bash
+        run: |
+          TAG_PREFIX="iso-v${ISO_VERSION}."
+
+          REMOTE_TAGS="$(
+            git ls-remote --tags origin "refs/tags/${TAG_PREFIX}*"
+          )"
+
+          LAST="$(
+            printf '%s\n' "$REMOTE_TAGS" |
+              awk -v prefix="refs/tags/${TAG_PREFIX}" '
+                {
+                  ref = $2
+                  sub(/\^\{\}$/, "", ref)
+
+                  if (index(ref, prefix) == 1) {
+                    number = substr(ref, length(prefix) + 1)
+
+                    if (number ~ /^[0-9]+$/) {
+                      print number
+                    }
+                  }
+                }
+              ' |
+              sort -n |
+              tail -1
+          )"
+
+          if [[ -z "$LAST" ]]; then
+            NEXT=0
+          else
+            NEXT=$((LAST + 1))
+          fi
+
+          VERSION="${ISO_VERSION}.${NEXT}"
+          TAG="iso-v${VERSION}"
+
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+          echo "Building installer ISO $VERSION"
 
       - uses: cachix/install-nix-action@v31
         with:
@@ -33,8 +86,8 @@ jobs:
 
       - name: Build ISO
         run: |
-          nix build .#nixosConfigurations.installer-iso.config.system.build.isoImage \
-            --print-out-paths > iso-path.txt
+          nix build .#nixosConfigurations.installer-iso.config.system.build.isoImage  --print-out-paths > iso-path.txt
+
           echo "ISO_PATH=$(cat iso-path.txt)/iso" >> "$GITHUB_ENV"
 
       - name: Find ISO file
@@ -42,11 +95,14 @@ jobs:
           ISO_FILE=$(find "$ISO_PATH" -name '*.iso')
           echo "ISO_FILE=$ISO_FILE" >> "$GITHUB_ENV"
 
-      - name: Publish as a release
+      - name: Publish release
         uses: softprops/action-gh-release@v3
         with:
-          tag_name: iso-latest
-          name: "Installer ISO"
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: "Installer ISO v${{ steps.version.outputs.version }}"
+          target_commitish: ${{ github.sha }}
+          generate_release_notes: true
+          make_latest: true
           files: ${{ env.ISO_FILE }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
