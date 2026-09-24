@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 env:
-  ISO_VERSION: "0.0"
+  ISO_VERSION: "1.0"
 
 concurrency:
   group: installer-iso-release
