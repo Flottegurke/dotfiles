@@ -74,12 +74,14 @@ jobs:
 
           echo "Building installer ISO $VERSION"
 
-      - uses: cachix/install-nix-action@v31
+      - name: Install NixOS
+        uses: cachix/install-nix-action@v31
         with:
           extra_nix_config: |
             experimental-features = nix-command flakes
 
-      - uses: cachix/cachix-action@v17
+      - name: Pull Cache
+        uses: cachix/cachix-action@v17
         with:
           name: flottegurke-dotfiles
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
