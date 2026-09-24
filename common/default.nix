@@ -53,7 +53,6 @@ in
   boot.loader.grub = {
     enable = true;
     useOSProber = false;
-    device = "/dev/sda";
     theme = inputs.self.packages.${pkgs.system}.modern-grub-theme;
   };
 
