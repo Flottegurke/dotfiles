@@ -49,8 +49,8 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.grub = {
     enable = true;
+    useOSProber = false;
     device = "/dev/sda";
-    useOSProber = true;
     theme = inputs.self.packages.${pkgs.system}.modern-grub-theme;
   };
 
