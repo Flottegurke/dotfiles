@@ -1,5 +1,7 @@
 { config, pkgs, inputs, ... }:
-
+let
+  keys = import ../secrets/keys.nix { lib = inputs.nixpkgs.lib; };
+in
 {
   imports = [
       ../users
@@ -38,13 +40,14 @@
     networkmanager.enable = true;
   };
 
+  services.openssh.enable = true;
   users.mutableUsers = false;
   users-config.flottegurke.enable = true; # enable default user on every host
+  users.users.flottegurke.openssh.authorizedKeys.keys = keys.allAdminMachines;
+  age.identityPaths = [ "/home/flottegurke/.ssh/id_ed25519" ];
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   console.keyMap = "de-latin1-nodeadkeys";
-  age.identityPaths = [ "/home/flottegurke/.ssh/id_ed25519" ];
-
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.grub = {
@@ -53,8 +56,6 @@
     device = "/dev/sda";
     theme = inputs.self.packages.${pkgs.system}.modern-grub-theme;
   };
-
-  services.openssh.enable = true;
 
   environment.systemPackages = with pkgs; [
     curl
