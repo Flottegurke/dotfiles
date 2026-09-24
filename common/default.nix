@@ -68,6 +68,7 @@ in
     inputs.agenix.packages.${pkgs.system}.default
     inputs.self.packages.${pkgs.system}.config-new-user
     inputs.self.packages.${pkgs.system}.config-new-host
+    inputs.self.packages.${pkgs.system}.config-provision-host
   ];
 
   system.stateVersion = "26.05"; # Read docs before changing: man configuration.nix or https://nixos.org/nixos/options.html).
