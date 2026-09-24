@@ -3,7 +3,7 @@
 lib.mkIf config.services.openssh.enable {
   services.openssh = {
     openFirewall = true;
-    generateHostKeys = false;
+    generateHostKeys = true;
     allowSFTP = true;
     sftpFlags = [ "-l" "INFO" ];
     hostKeys = [{ path = "/etc/ssh/ssh_host_ed25519_key"; type = "ed25519"; }];
