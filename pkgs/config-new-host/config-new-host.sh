@@ -152,7 +152,7 @@ gum log --level info "Generating ${HOST_DIR}/disko.nix"
 cat > "$HOST_DIR/disko.nix" <<'EOF'
 {
   disko.devices.disk.main = {
-    device = "/dev/CHANGE_ME"; # verify the real device (lsblk) before provisioning
+    device = "/dev/CHANGE_ME"; # changed by config-provision-host if left as CHANGE_ME
     type = "disk";
     content = {
       type = "gpt";
