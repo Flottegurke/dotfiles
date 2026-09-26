@@ -149,6 +149,14 @@ fi
 
 # -------------------- Deploy --------------------
 
+gum log --level info "Discarding all existing data on ${DISK_DEVICE}..."
+if ssh "root@${TARGET_IP}" "blkdiscard -f '$DISK_DEVICE'"
+then
+    gum log --level info "Disk successfully discarded."
+else
+    gum log --level warn "blkdiscard is unavailable; letting disko wipe existing signatures."
+fi
+
 INSTALLER_HOST_KEY="$(
     ssh-keyscan -T 5 -t ed25519 "$TARGET_IP" 2>/dev/null |
         awk 'NR == 1 { print $2 " " $3 }'
