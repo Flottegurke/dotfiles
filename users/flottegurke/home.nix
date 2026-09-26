@@ -10,6 +10,13 @@
   home.file = {
   };
 
+  # general
+  programs.git = {
+    enable = true;
+    userName = "Justus Dicker";
+    userEmail = "justus.dicker@confettico.de";
+  };
+
 
   # dektop-kde
   programs.plasma = lib.mkIf osConfig.roles-config.desktop-kde.enable {
