@@ -9,6 +9,7 @@ lib.mkIf config.roles-config.desktop-base.enable {
     tokei
     rpi-imager
     thunderbird
+    wireguard-tools
   ];
 
   services = {
@@ -18,6 +19,8 @@ lib.mkIf config.roles-config.desktop-base.enable {
     xserver.enable = true;
     libinput.enable = true;
   };
+
+  networking.wireguard.enable = true;
 
   hardware.bluetooth = {
     enable = true;
