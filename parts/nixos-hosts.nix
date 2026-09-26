@@ -4,7 +4,7 @@ let
     modules = [
       (import ../hosts/${name}).module
       ../hosts/${name}/hardware-configuration.nix
-#      ../hosts/${name}/disko.nix
+      ../hosts/${name}/disko.nix
       ../common
     ];
     specialArgs = { inherit inputs; }; # make the flake's `inputs` avaiable to the NixOS modules

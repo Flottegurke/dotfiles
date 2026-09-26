@@ -50,10 +50,15 @@ in
   console.keyMap = "de-latin1-nodeadkeys";
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.loader.grub = {
-    enable = true;
-    useOSProber = false;
-    theme = inputs.self.packages.${pkgs.system}.modern-grub-theme;
+  boot.loader = {
+    grub = {
+      enable = true;
+      efiSupport = true;
+      efiInstallAsRemovable = true;
+      useOSProber = false;
+      theme = inputs.self.packages.${pkgs.system}.modern-grub-theme;
+    };
+    efi.canTouchEfiVariables = false;
   };
 
   environment.systemPackages = with pkgs; [
