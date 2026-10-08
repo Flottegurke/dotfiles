@@ -1,0 +1,50 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [ // Import Renovate Presets
+    "config:recommended",
+    "helpers:pinGitHubActionDigests", // pin to SHAs instead of versions
+    "docker:pinDigests",
+    ":configMigration", // update renovate config
+    "abandonments:recommended"
+  ],
+
+  "timezone": "Europe/Berlin",
+  "schedule": ["* 1-5 * * *"], // free version of renovate runs every 4 hours, so a 5 hour window always cathes 1 run
+  "prCreation": "immediate", // change to "status-success" to wait for CI after branch creation
+
+  "prConcurrentLimit": 20,
+  "prHourlyLimit": 20,
+  "prBodyColumns": [
+    "Package",
+    "Type",
+    "Update",
+    "Change",
+    "Pending",
+    "References"
+  ],
+  "separateMultipleMajor": true,
+
+  "minimumReleaseAge": "3 days",
+  "minimumReleaseAgeBehaviour": "timestamp-optional",
+
+  "automerge": false,
+  "configWarningReuseIssue": true,
+  "dependencyDashboard": true,
+ 
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"],
+    "automerge": false,
+  },
+
+  "packageRules": [
+    { // Group GitHub Actions dependency updates
+      "groupName": "GitHub Actions",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"] // group minor and patch, leaving major seperate
+    }
+  ],
+
+  "assignees": ["flottegurke"], // auto assign user to PR
+  "labels": ["renovate"]
+}
