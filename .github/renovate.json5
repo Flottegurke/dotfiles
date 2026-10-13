@@ -9,7 +9,7 @@
   ],
 
   "timezone": "Europe/Berlin",
-  "schedule": ["* 1-5 * * *"], // free version of renovate runs every 4 hours, so a 5 hour window always cathes 1 run
+  "schedule": ["at any time"],
   "prCreation": "immediate", // change to "status-success" to wait for CI after branch creation
 
   "prConcurrentLimit": 20,
