@@ -17,6 +17,16 @@
     userEmail = "justus.dicker@confettico.de";
   };
 
+  programs.ssh = {
+    enable = true;
+
+    matchBlocks."github.com" = {
+      hostname = "ssh.github.com";
+      user = "git";
+      port = 443;
+    };
+  };
+
 
   # dektop-kde
   programs.plasma = lib.mkIf osConfig.roles-config.desktop-kde.enable {
