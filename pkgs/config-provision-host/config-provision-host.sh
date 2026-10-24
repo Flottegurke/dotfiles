@@ -47,19 +47,29 @@ if [[ ${#DISK_LINES[@]} -eq 0 ]]; then
     gum style --foreground 1 "No disks detected on target."
     exit 1
 fi
-if [[ ${#DISK_LINES[@]} -eq 1 ]]; then
-    SELECTED_DISK_LINE="${DISK_LINES[0]}"
+declare -A DISK_SIZE_BY_NAME
+declare -a DISK_CHOICES=()
+for line in "${DISK_LINES[@]}"; do
+    read -r name size model <<< "$line"
+    size_human="$(numfmt --to=iec-i --suffix=B "$size")"
+    DISK_SIZE_BY_NAME["$name"]="$size"
+    DISK_CHOICES+=("$name | $size_human | ${model:-unknown model}")
+done
+if [[ ${#DISK_CHOICES[@]} -eq 1 ]]; then
+    SELECTED_DISK_LINE="${DISK_CHOICES[0]}"
 else
-    SELECTED_DISK_LINE="$(gum choose --header "Select the install disk:" "${DISK_LINES[@]}")"
+    SELECTED_DISK_LINE="$(gum choose --header "Select the install disk:" "${DISK_CHOICES[@]}")"
 fi
 if [[ -z "$SELECTED_DISK_LINE" ]]; then
     gum style --foreground 1 "A disk needs to be selected."
     exit 1
 fi
 
-DISK_NAME="$(awk '{print $1}' <<< "$SELECTED_DISK_LINE")"
+DISK_NAME="${SELECTED_DISK_LINE%% *}"
 
-DISK_SIZE_BYTES="$(awk '{print $2}' <<< "$SELECTED_DISK_LINE")"
+DISK_SIZE_BYTES="${DISK_SIZE_BY_NAME[$DISK_NAME]}"
+
+DISK_SIZE_HUMAN="$(numfmt --to=iec-i --suffix=B "$DISK_SIZE_BYTES")"
 
 DISK_DEVICE="/dev/${DISK_NAME}"
 
@@ -78,7 +88,7 @@ gum style --border rounded --padding "0 1 0 1" \
 "Host:              | $HOSTNAME_INPUT" \
 "Target IP:         | $TARGET_IP" \
 "Disk Name:         | $DISK_NAME" \
-"Disk Size (bytes): | $DISK_SIZE_BYTES" \
+"Disk Size:         | $DISK_SIZE_HUMAN" \
 "Disk Device:       | $DISK_DEVICE"
 
 gum style --foreground 3 "This will generate a host key, rekey secrets, WIPE '$DISK_DEVICE' on $TARGET_IP, and install NixOS with this config."
