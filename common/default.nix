@@ -72,6 +72,7 @@ in
     inputs.agenix.packages.${pkgs.system}.default
     inputs.self.packages.${pkgs.system}.config-new-user
     inputs.self.packages.${pkgs.system}.config-new-host
+    inputs.self.packages.${pkgs.system}.config-remove-host
     inputs.self.packages.${pkgs.system}.config-provision-host
   ];
 
