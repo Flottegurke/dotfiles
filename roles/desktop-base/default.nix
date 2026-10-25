@@ -83,19 +83,19 @@ lib.mkIf config.roles-config.desktop-base.enable {
     SiteSearchSettings = [
       {
         name = "NixOS Packages";
-        shortcut = "nixpg";
+        shortcut = "nixpkg";
         url = "https://search.nixos.org/packages?query={searchTerms}";
       }
 
       {
         name = "NixOS Options";
-        shortcut = "nixop";
+        shortcut = "nixopt";
         url = "https://search.nixos.org/options?query={searchTerms}";
       }
 
       {
         name = "Home Manager Options";
-        shortcut = "hmop";
+        shortcut = "hmopt";
         url = "https://home-manager-options.extranix.com/?query={searchTerms}";
       }
 
