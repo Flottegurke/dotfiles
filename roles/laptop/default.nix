@@ -9,6 +9,6 @@ lib.mkIf config.roles-config.laptop.enable {
   services.power-profiles-daemon.enable = true;
 
   services.libinput.touchpad.tapping = true;
+  services.libinput.touchpad.naturalScrolling = true;
 }
-
 

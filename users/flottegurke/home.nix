@@ -47,6 +47,15 @@
         ];
       }
     ];
+    input.touchpads = [
+      {
+        name = "ELAN0710:01 04F3:30ED Touchpad";
+        vendorId = "04f3";
+        productId = "30ED";
+        naturalScroll = true;
+        scrollSpeed = 0.25;
+      }
+    ];
   };
 
 
