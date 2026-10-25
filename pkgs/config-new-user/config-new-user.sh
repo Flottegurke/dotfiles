@@ -185,4 +185,4 @@ else
     gum style --foreground 3 "Skipped staging. Run 'git add' manually when ready."
 fi
 
-gum style --faint "Next steps: review wich host should have access to the user-secret / enable the user / rebuild the system."
+gum style --faint "Next steps: enable the user / rebuild the system."
