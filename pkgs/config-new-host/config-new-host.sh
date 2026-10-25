@@ -191,4 +191,4 @@ else
     gum style --foreground 3 "Skipped staging. Run 'git add' manually when ready."
 fi
 
-gum style --faint "Next steps: generate hardware-configuration.nix / fix disko.nix's device."
+gum style --faint "Next step: run config-provision-host."
