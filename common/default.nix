@@ -74,6 +74,7 @@ in
     inputs.self.packages.${pkgs.system}.config-new-host
     inputs.self.packages.${pkgs.system}.config-remove-host
     inputs.self.packages.${pkgs.system}.config-provision-host
+    inputs.self.packages.${pkgs.system}.config-postinstall-host
   ];
 
   system.stateVersion = "26.05"; # Read docs before changing: man configuration.nix or https://nixos.org/nixos/options.html).
