@@ -13,8 +13,8 @@
   # general
   programs.git = {
     enable = true;
-    userName = "Justus Dicker";
-    userEmail = "justus.dicker@confettico.de";
+    settings.user.name = "Flottegurke";
+    settings.user.email = "justus.dicker@web.de";
   };
 
   programs.ssh = {
