@@ -8,7 +8,7 @@ This means, that every module's options exist everywhere, gated by that module's
 ## Files
 | Path | Purpose |
 |---|---|
-| [`nixos/default.nix`](./nixos) / [`home-manager/default.nix`](./home-manager) | Auto-imports every custom home-manager module in its directory. |
+| [`nixos/default.nix`](./nixos) / [`home-manager/default.nix`](./home-manager) | Auto-imports every custom module in its directory. |
 | `home-manager/*.nix` / `nixos/*.nix`                                          | The actual custom modules. |
 
 

@@ -35,7 +35,7 @@ The recipient lists are generated from the metadata block defined in `../hosts/<
    ```shell
    agenix -e my-secret.age
    ```
-3. Reference it from a host or module:
+3. Reference it:
    ```nix
    age.secrets.my-secret.file = ../../secrets/my-secret.age;
    ```
