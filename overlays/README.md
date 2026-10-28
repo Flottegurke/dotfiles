@@ -9,7 +9,7 @@ What the function returns is merged on top of `prev`, becoming the new `pkgs` fo
 ## Files
 | File | Purpose |
 |---|---|
-| [`default.nix`](./default.nix) | The list of overlay functions applied to every host. |
+| [`default.nix`](./default.nix) | The overlays applied to every host. |
 
 ## Adding an override
 - Add an entry inside the returned attrset in `default.nix`:
