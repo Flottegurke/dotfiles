@@ -41,6 +41,13 @@ in
   };
 
   services.openssh.enable = true;
+  age.secrets."users-flottegurke-git-identity" = {
+    file = ../secrets/users-flottegurke-git-identity.age;
+    owner = "flottegurke";
+    group = "users";
+    mode = "0400";
+  };
+
   users.mutableUsers = false;
   users-config.flottegurke.enable = true; # enable default user on every host
   users.users.flottegurke.openssh.authorizedKeys.keys = keys.allAdminMachines;
