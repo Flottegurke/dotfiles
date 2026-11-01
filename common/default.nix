@@ -56,7 +56,7 @@ in
       efiSupport = true;
       efiInstallAsRemovable = true;
       useOSProber = false;
-      theme = inputs.self.packages.${pkgs.system}.modern-grub-theme;
+      theme = inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.modern-grub-theme;
     };
     efi.canTouchEfiVariables = false;
   };
@@ -69,12 +69,12 @@ in
     lazygit
     rsync
     ripgrep
-    inputs.agenix.packages.${pkgs.system}.default
-    inputs.self.packages.${pkgs.system}.config-new-user
-    inputs.self.packages.${pkgs.system}.config-new-host
-    inputs.self.packages.${pkgs.system}.config-remove-host
-    inputs.self.packages.${pkgs.system}.config-provision-host
-    inputs.self.packages.${pkgs.system}.config-postinstall-host
+    inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.config-new-user
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.config-new-host
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.config-remove-host
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.config-provision-host
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.config-postinstall-host
   ];
 
   system.stateVersion = "26.05"; # Read docs before changing: man configuration.nix or https://nixos.org/nixos/options.html).
