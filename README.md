@@ -23,10 +23,12 @@ This means (input/config) updates are tested on non-critical hardware, before th
 | [`hosts/`](./hosts) | Per-machine entry point (hostname, disk layout, roles, users, etc.) |
 | [`common/`](./common) | Common settings used by every host (home-manager setup, agenix setup, modules import, etc.) |
 | [`roles/`](./roles) | Reusable `Role` definitions (desktop-hyprland, vaultwarden, matrix, etc.) |
+| [`programs/`](./programs) | Home Manager application configurations shared across users |
 | [`services/`](./services) | Individual service (hardening) configs (ssh, nginx, postgresql, etc.) |
-| [`users/`](./users) | user-account definitions (home-manager options, default shell, groups, etc.) |
+| [`users/`](./users) | User-account definitions, personal Home Manager overrides (default shell, groups, etc.) |
 | [`modules/`](./modules) | Custom NixOS/Home Manager modules (swap, etc.) |
 | [`overlays/`](./overlays) | Package overrides/patches |
 | [`pkgs/`](./pkgs) | Custom packages (not in `nixpkgs`) (config-new-user, config-new-host, config-provision-host, etc.) |
 | [`secrets/`](./secrets) | encrypted secrets / agenix config (host SSH-key grouping, ACL's) |
 | [`parts/`](./parts) | `flake-parts` modules wiring everything into flake outputs |
+
