@@ -4,7 +4,7 @@ lib.mkIf (lib.elem pkgs.openssh osConfig.environment.systemPackages) {
     enable = true;
     enableDefaultConfig = false;
 
-    matchBlocks."github.com" = {
+    settings."github.com" = {
       hostname = "ssh.github.com";
       user = "git";
       port = 443;
