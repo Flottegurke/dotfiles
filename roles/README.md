@@ -19,18 +19,18 @@ Each subdirectory is automatically imported via [`default.nix`](./default.nix), 
 | File | Purpose |
 |---|---|
 | [`default.nix`](./default.nix) | Imports all role configs located in this directory. |
-| [`*/default.nix`](./default.nix) | The actual role config config. |
+| `*/default.nix` | The actual NixOS role config. |
 
 ## Adding a new role
-1. Create `roles/<name>/default.nix` (plus anny companion files):
+1. Create `roles/<name>/default.nix` (plus any companion files):
    ```nix
    { lib, config, pkgs, ... }:
    lib.mkIf config.roles-config.<name>.enable {
      # roles-config.<base-role>.enable = true;
 
-     # enable whatever services/packages this role needs
-   
-     # configure services
+     environment.systemPackages = [ pkgs.hello ];
+     # Enable services and configure host-wide settings here.
    }
    ```
 2. If this role is mutually exclusive with another, add an assertion in `default.nix`.
+

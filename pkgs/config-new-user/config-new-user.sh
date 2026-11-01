@@ -55,7 +55,7 @@ EXTRA_GROUPS=$(gum choose --no-limit --header "Additional groups:" "wheel" "netw
 
 SECRET_GROUP="$(gum choose --header "Which machines should be able to decrypt this user's password?" "allMachines" "allDesktops" "allWorkMachines" "allAdminMachines")"
 
-if gum confirm "Create Home manager configuration?"; then
+if gum confirm "Create a template for User-spcific Home manager configuration changed?"; then
     HOME_MANAGER=true
 else
     HOME_MANAGER=false
@@ -67,12 +67,12 @@ EXTRA_GROUPS_DISPLAY="${EXTRA_GROUPS//$'\n'/, }"
 
 gum style --bold "User configuration"
 gum style --border rounded --padding "0 1 0 1" \
-"Username:     | $USERNAME" \
-"Description:  | $DESCRIPTION" \
-"Shell:        | $SHELL_NAME" \
-"Groups:       | ${EXTRA_GROUPS//$'\n'/, }" \
-"Home Manager: | $([[ "$HOME_MANAGER" == true ]] && echo yes || echo no)" \
-"Secret group: | $SECRET_GROUP"
+"Username:              | $USERNAME" \
+"Description:           | $DESCRIPTION" \
+"Shell:                 | $SHELL_NAME" \
+"Groups:                | ${EXTRA_GROUPS//$'\n'/, }" \
+"Home Manager template: | $([[ "$HOME_MANAGER" == true ]] && echo yes || echo no)" \
+"Secret group:          | $SECRET_GROUP"
 
 if ! gum confirm "Create this user?"; then
    gum style --foreground 3 "Cancelled."
