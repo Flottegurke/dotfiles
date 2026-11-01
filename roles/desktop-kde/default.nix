@@ -9,5 +9,5 @@ lib.mkIf config.roles-config.desktop-kde.enable {
 
   services.desktopManager.plasma6.enable = true;
   services.desktopManager.plasma6.enableQt5Integration = true;
-services.displayManager.defaultSession = "plasma";
+  services.displayManager.defaultSession = "plasma";
 }
