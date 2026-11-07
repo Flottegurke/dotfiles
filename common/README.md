@@ -1,12 +1,12 @@
 # common/
-This directory houses common NixOS settings and wires in the shared configuration trees ([`roles/`](../roles), [`services/`](../services), [`users/`](../users), [`modules/nixos/`](../modules)), [`programs/`](../programs).
+This directory houses shared NixOS settings and wires in the configuration trees ([`roles/`](../roles), [`services/`](../services), [`users/`](../users), [`programs/`](../programs), [`modules/nixos/`](../modules)).
 
 ## Overview
-Anything here applies unconditionally to every host. If a setting should be optional or vary by machine, it belongs in [`roles/`](../roles) or [`modules/nixos/`](../modules) instead.
+Anything here applies to every host. If a setting should vary by role or machine, its enable switch belongs in [`roles/`](../roles) or a host module rather than in the common baseline.
 
 ## Files
 | File | Purpose |
 |---|---|
-| [`default.nix`](./default.nix) | Imports `roles/`, `services/`, `users/`, `modules/nixos/`, `home.nix`, and home-manager's NixOS module and sets universal settings (locale, networking, nix settings, bootloader, allowUnfree, overlays). |
-| [`home.nix`](./home.nix) | Holds shared Home Manager settings (`useGlobalPkgs`, `useUserPackages`, `extraSpecialArgs`) and imports `programs/`. |
+| [`default.nix`](./default.nix) | Imports `roles/`, `services/`, `users/`, `programs/`, `modules/nixos/`, `home.nix`, and the NixOS integration modules; sets universal host settings. |
+| [`home.nix`](./home.nix) | Configures embedded Home Manager (`useGlobalPkgs`, `useUserPackages`, `extraSpecialArgs`) and loads `programs/home.nix`, custom HM modules, and plasma-manager through `sharedModules`. |
 

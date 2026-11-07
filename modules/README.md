@@ -13,15 +13,13 @@ This means, that every module's options exist everywhere, gated by that module's
 
 
 ## Adding a new module
-1. Create `modules/nixos/<name>.nix` or `modules/home-manager/<name>.nix`:
+1. Create `modules/nixos/<name>.nix` or `modules/home-manager/<name>.nix`. For example:
    ```nix
-   { config, lib, pkgs, ... }:
+   { lib, config, ... }:
    {
-     options.services.my-thing = {
-       enable = lib.mkEnableOption "my thing";
-     };
+     options.services.my-thing.enable = lib.mkEnableOption "my thing";
 
-     config = lib.mkIf config.services.my-thing.enable = {
+     config = lib.mkIf config.services.my-thing.enable {
        # ...
      };
    }
