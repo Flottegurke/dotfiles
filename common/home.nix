@@ -5,8 +5,8 @@
 #  home-manager.backupFileExtension = "backup"; # rename already existing config, instead of throwong an error TODO: enable if errors due to auto generated configs become unberable
   home-manager.extraSpecialArgs = { inherit inputs; };
   home-manager.sharedModules = [
+    ../programs/home.nix
     ../modules/home-manager
-    ../programs
     { programs.home-manager.enable = true; }
     inputs.plasma-manager.homeModules.plasma-manager
   ];
