@@ -7,8 +7,11 @@ in
       ../users
       ../roles
       ../services
+      ../programs
       ../modules/nixos
+
       ./home.nix
+
       inputs.home-manager.nixosModules.default
       inputs.agenix.nixosModules.default
       inputs.disko.nixosModules.default
@@ -41,12 +44,6 @@ in
   };
 
   services.openssh.enable = true;
-  age.secrets."users-flottegurke-git-identity" = {
-    file = ../secrets/users-flottegurke-git-identity.age;
-    owner = "flottegurke";
-    group = "users";
-    mode = "0400";
-  };
 
   users.mutableUsers = false;
   users-config.flottegurke.enable = true; # enable default user on every host

@@ -8,6 +8,9 @@ let
   hasHomeConfig = name: builtins.pathExists (homeConfigPath name);
 in
 {
+
+  imports = map (name: ./${name}/secrets.nix) (builtins.filter (name: builtins.pathExists (./${name}/secrets.nix)) userNames);
+
   options.users-config = lib.genAttrs userNames (name: {
     enable = lib.mkEnableOption "enable user: ${name}";
   }); # generate enable option for every user

@@ -19,7 +19,7 @@ Each subdirectory is automatically imported via [`default.nix`](./default.nix), 
 | File | Purpose |
 |---|---|
 | [`default.nix`](./default.nix) | Imports all role configs located in this directory. |
-| `*/default.nix` | The actual NixOS role config. |
+| `<name>/default.nix` | The actual NixOS role config. |
 
 ## Adding a new role
 1. Create `roles/<name>/default.nix` (plus any companion files):
