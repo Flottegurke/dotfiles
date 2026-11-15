@@ -73,6 +73,9 @@ in
     lazygit
     rsync
     ripgrep
+    nvitop
+    btop
+    wavemon
     inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.config-new-user
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.config-new-host
@@ -80,6 +83,8 @@ in
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.config-provision-host
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.config-postinstall-host
   ];
+  programs.iftop.enable = true;
+  programs.iotop.enable = true;
 
   system.stateVersion = "26.05"; # Read docs before changing: man configuration.nix or https://nixos.org/nixos/options.html).
 }
