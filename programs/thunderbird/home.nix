@@ -22,7 +22,7 @@ lib.mkIf osConfig.programs.thunderbird.enable {
 
       "mailnews.mark_message_read.auto" = true;
       "mailnews.mark_message_read.delay" = true;
-      "mailnews.mark_message_read.delay.interval" = 3; # seconds
+      "mailnews.mark_message_read.delay.interval" = 1; # seconds
       "mailnews.threadpane_select_delay" = 250; # milliseconds
       "mail.warn_on_shift_delete" = true;
       "mail.warn_on_delete_from_trash" = true;
