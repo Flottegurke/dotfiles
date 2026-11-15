@@ -9,6 +9,12 @@ final: prev: {
 
 
   rpi-imager = prev.rpi-imager.overrideAttrs (old: {
+    # KDE dependencies
+    buildInputs = (old.buildInputs or []) ++ [
+      final.kdePackages.kirigami
+    ];
+
+    # Qt 6.10+ compatibility
     postPatch = (old.postPatch or "") + ''
       # Fix missing Material import on Qt 6.10+
       if ! grep -q '^import QtQuick.Controls.Material$' src/wizard/WritingStep.qml; then
