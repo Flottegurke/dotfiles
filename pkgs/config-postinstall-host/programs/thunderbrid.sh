@@ -8,7 +8,9 @@ automatic_thunderbird() {
 
 guide_thunderbird() {
     gum style --border rounded --padding "1 2" \
-	"1. Enter the Mail Password."
+	"1. Enter the Mail Password." \
+	"2. select New Message, right Click and enable German and English Spellchecking" \
+	"3. Go to Settings -> Composition -> Attachments -> Enter cloud credentials"
 }
 
 cleanup_thunderbird() {

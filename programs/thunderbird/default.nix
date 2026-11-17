@@ -11,7 +11,6 @@
       SafeBrowsing = true;
     };
     OfferToSaveLoginsDefault = true;
-    ExtensionUpdate = true;
     Proxy = {
       Mode = "system";
       Locked = false;
@@ -28,12 +27,30 @@
       Default = "Brave Search";
     };
 
-  # ExtensionSettings = {
-  #   "extension-id@example.org" = {
-  #     installation_mode = "force_installed";
-  #     install_url = "https://example.org/extension.xpi";
-  #   };
-  # };
+    ExtensionUpdate = true;
+    ExtensionSettings = {
+      "de-DE@dictionaries.addons.mozilla.org" = {
+        installation_mode = "force_installed";
+        install_url = "https://addons.thunderbird.net/thunderbird/downloads/latest/dictionary-german/addon-3077-latest.xpi";
+      };
+      "cloud@johannes-endres.de" = {
+        installation_mode = "force_installed";
+        install_url = "https://addons.thunderbird.net/thunderbird/downloads/latest/filelink-nextcloud-owncloud/addon-987761-latest.xpi";
+      };
+      "mailmindr@arndissler.net" = {
+        installation_mode = "force_installed";
+        install_url = "https://addons.thunderbird.net/thunderbird/downloads/latest/mailmindr/addon-46207-latest.xpi";
+      };
+      "{049b80ff-2e7d-5d53-8090-d8b53a95f1f6}" = {
+#      "{f6d05f0c-39a8-5c4d-96dd-4852202a8244}" = {
+        installation_mode = "force_installed";
+        install_url = "file://${./themes/mocha-sapphire.xpi}";
+      };
+
+    };
+
+
+
     RequestedLocales = [
       "en-US"
       "de"
