@@ -4,11 +4,13 @@ lib.mkIf osConfig.services.desktopManager.plasma6.enable {
     (pkgs.catppuccin-kde.override { flavour = [ "mocha" ]; accents = [ "sapphire" ]; })
   ];
 
+
+
   programs.plasma = {
     enable = true;
 
     workspace = {
-      wallpaper = ./wallpaper.png;
+      wallpaper = ../../users + "/${config.home.username}/wallpaper.png";
       colorScheme = "CatppuccinMochaSapphire";
       theme = "breeze-dark";
     };
