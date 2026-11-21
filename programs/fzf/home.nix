@@ -1,11 +1,8 @@
-
-{ lib, osConfig, ... }:
+{ config, lib, osConfig, ... }:
 {
   programs.fzf = lib.mkIf osConfig.programs-config.fzf.enable {
     enable = true;
-
-    # Keep fzf-tab responsible for Tab completion
-    enableZshIntegration = false;
+    enableZshIntegration = false; # Keep fzf-tab responsible for Tab completion
 
     colors = {
       bg = "#1e1e2e";

@@ -17,6 +17,16 @@
     };
 
     initContent = lib.mkMerge [
+      (lib.mkIf config.programs.fzf.enable (
+        lib.mkOrder 580 ''
+          # fzf history search
+          export FZF_CTRL_R_OPTS="--height=20% --min-height=5"
+          export FZF_CTRL_T_OPTS="--height=30% --min-height=5"
+          export FZF_ALT_C_OPTS="--height=40% --min-height=5"
+          source ${config.programs.fzf.package}/share/fzf/key-bindings.zsh
+        ''
+      ))
+
       (lib.mkOrder 600 ''
         # fzf-tab
         zstyle ':completion:*:descriptions' format '[%d]'
