@@ -85,6 +85,7 @@ in
   ];
   programs.iftop.enable = true;
   programs.iotop.enable = true;
+  programs-config.fzf.enable = true;
 
   system.stateVersion = "26.05"; # Read docs before changing: man configuration.nix or https://nixos.org/nixos/options.html).
 }

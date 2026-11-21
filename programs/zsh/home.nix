@@ -4,10 +4,6 @@
     source = ./themes/catppuccin-mocha.ini;
   };
 
-  home.packages = lib.optionals config.programs.zsh.enable [
-    pkgs.fzf
-  ];
-
   programs.zsh = lib.mkIf config.programs.zsh.enable {
     enableCompletion = true;
 
@@ -39,10 +35,11 @@
         '
         zstyle ':fzf-tab:complete:*:options' fzf-preview # No file preview for command options
 
+        zstyle ':fzf-tab:*' use-fzf-default-opts yes
         # Catppuccin Mocha with Sapphire accent
-        zstyle ':fzf-tab:*' fzf-flags \
-          '--color=fg:#cdd6f4,fg+:#cdd6f4,bg:#1e1e2e,bg+:#313244,hl:#74c7ec,hl+:#74c7ec,prompt:#74c7ec,pointer:#74c7ec,marker:#a6e3a1,info:#a6adc8,header:#a6adc8' \
-          '--preview-window=right:50%:wrap'
+        #zstyle ':fzf-tab:*' fzf-flags \
+          #'--color=fg:#cdd6f4,fg+:#cdd6f4,bg:#1e1e2e,bg+:#313244,hl:#74c7ec,hl+:#74c7ec,prompt:#74c7ec,pointer:#74c7ec,marker:#a6e3a1,info:#a6adc8,header:#a6adc8' \
+          #'--preview-window=right:50%:wrap'
 
         source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
       '')
