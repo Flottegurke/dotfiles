@@ -1,4 +1,4 @@
-{ lib, pkgs, osConfig, ... }:
+{ config, lib, pkgs, osConfig, ... }:
 lib.mkIf osConfig.services.desktopManager.plasma6.enable {
   home.packages = [
     (pkgs.catppuccin-kde.override { flavour = [ "mocha" ]; accents = [ "sapphire" ]; })
