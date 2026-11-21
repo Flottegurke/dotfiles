@@ -6,5 +6,5 @@
   extraGroups = [ "wheel" "networkmanager" "audio" "video" "docker" "libvirtd" ];
   isNormalUser = true;
   group = "users";
-  shell = pkgs.bashInteractive;
+  shell = pkgs.zsh;
 }

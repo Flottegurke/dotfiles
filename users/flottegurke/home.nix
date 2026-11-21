@@ -4,6 +4,7 @@ let
 in
 {
   programs.git.settings.include.path = osConfig.age.secrets."users-flottegurke-git-identity".path;
+  programs.zsh.enable = true;
 
   home.file.".thunderbird/default/user.js".force = thunderbirdEnabled;
   home.activation.privateThunderbirdAccount = lib.mkIf thunderbirdEnabled (
