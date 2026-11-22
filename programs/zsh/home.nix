@@ -7,6 +7,13 @@
   programs.zsh = lib.mkIf config.programs.zsh.enable {
     enableCompletion = true;
 
+    history = {
+      size = 50000;
+      save = 50000;
+
+      extended = true;
+    };
+
     autosuggestion = {
       enable = true;
       strategy = [
@@ -20,9 +27,9 @@
       (lib.mkIf config.programs.fzf.enable (
         lib.mkOrder 580 ''
           # fzf history search
-          export FZF_CTRL_R_OPTS="--height=20% --min-height=5"
-          export FZF_CTRL_T_OPTS="--height=30% --min-height=5"
-          export FZF_ALT_C_OPTS="--height=40% --min-height=5"
+          export FZF_CTRL_R_OPTS="--height=20% --min-height=7"
+          export FZF_CTRL_T_OPTS="--height=30% --min-height=7"
+          export FZF_ALT_C_OPTS="--height=40% --min-height=7 --walker-skip .git,node_modules,.direnv,result"
           source ${config.programs.fzf.package}/share/fzf/key-bindings.zsh
         ''
       ))
@@ -34,6 +41,7 @@
         zstyle ':completion:*:git-checkout:*' sort false
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
         zstyle ':fzf-tab:*' show-group full
+        zstyle ':fzf-tab:*' fzf-min-height 10
 
         # File and directory previews
         zstyle ':fzf-tab:complete:*:*' fzf-preview '
@@ -66,6 +74,11 @@
 
         fast-theme -q XDG:catppuccin-mocha
       '')
+      (lib.mkIf config.programs.zoxide.enable (
+        lib.mkOrder 2100 ''
+          eval "$(${lib.getExe config.programs.zoxide.package} init zsh)"
+        ''
+      ))
     ];
 
   };
