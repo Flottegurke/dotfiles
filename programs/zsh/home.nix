@@ -42,6 +42,8 @@
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
         zstyle ':fzf-tab:*' show-group full
         zstyle ':fzf-tab:*' fzf-min-height 10
+        zstyle ':fzf-tab:*' fzf-bindings 'tab:transform:if [ "$FZF_MATCH_COUNT" -eq 1 ]; then echo accept; else echo down; fi' # Accept with Tab if only one result remains otherwise move to the next result
+
 
         # File and directory previews
         zstyle ':fzf-tab:complete:*:*' fzf-preview '
