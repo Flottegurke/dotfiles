@@ -7,6 +7,15 @@
   programs.zsh = lib.mkIf config.programs.zsh.enable {
     enableCompletion = true;
 
+    setOptions = [
+      "AUTO_PUSHD" # Remember previously visited directorys
+      "PUSHD_IGNORE_DUPS"
+    ];
+
+    localVariables = {
+      DIRSTACKSIZE = 20;
+    };
+
     history = {
       size = 50000;
       save = 50000;
@@ -28,8 +37,14 @@
         lib.mkOrder 580 ''
           # fzf history search
           export FZF_CTRL_R_OPTS="--height=20% --min-height=7"
-          export FZF_CTRL_T_OPTS="--height=30% --min-height=7"
+          export FZF_CTRL_T_OPTS="--height=30% --min-height=10 --walker-skip .git,node_modules,.direnv,result \
+            --preview 'if [ -d {} ]; then ${pkgs.eza}/bin/eza -la --group-directories-first --color=always -- {}; \
+            elif [ -f {} ]; then ${pkgs.bat}/bin/bat --color=always --paging=never --style=numbers --line-range=:200 -- {}; fi' \
+            --preview-window='right,50%,wrap' --bind='ctrl-/:toggle-preview'"
           export FZF_ALT_C_OPTS="--height=40% --min-height=7 --walker-skip .git,node_modules,.direnv,result"
+          export FZF_ALT_C_OPTS="--height=40% --min-height=12 --walker-skip .git,node_modules,.direnv,result
+            --preview '${pkgs.eza}/bin/eza -la --group-directories-first --color=always -- {}'
+            --preview-window='right,50%,wrap' --bind='ctrl-/:toggle-preview'"
           source ${config.programs.fzf.package}/share/fzf/key-bindings.zsh
         ''
       ))
