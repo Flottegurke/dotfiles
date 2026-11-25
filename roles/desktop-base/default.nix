@@ -13,6 +13,8 @@ lib.mkIf config.roles-config.desktop-base.enable {
   programs-config.brave.enable = true;
   programs-config.kitty.enable = true;
   programs-config.zoxide.enable = true;
+  programs-config.yazi.enable = true;
+  programs-config.eza.enable = true;
 
   services = {
     fwupd.enable = true; # BIOS update daemon
