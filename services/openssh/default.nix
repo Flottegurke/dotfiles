@@ -27,7 +27,6 @@ lib.mkIf config.services.openssh.enable {
       PermitRootLogin = "no";
       PermitEmptyPasswords = false;
       IgnoreRhosts = true;
-      AuthorizedKeysFile = ".ssh/authorized_keys";
       HostbasedAuthentication = false;
       PubkeyAcceptedAlgorithms = "ssh-ed25519";
       KexAlgorithms = [ "sntrup761x25519-sha512@openssh.com" "curve25519-sha256" ];
